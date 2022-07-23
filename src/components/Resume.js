@@ -30,7 +30,7 @@ export default function Resume() {
             </div>
             <div className="col-md-10">
             {schools.map((school, index) => (
-                <EducationCard school={school} key={"school" + index} />
+                <EducationCard education={school} key={"school" + index} />
             ))}
             </div>
         </div>
@@ -41,7 +41,7 @@ export default function Resume() {
             </div>
             <div className="col-md-10">
             {jobs.map((job, index) => (
-                <WorkCard job={job} key={"job" + index} />
+                <WorkCard work={job} key={"job" + index} />
             ))}
             </div>
         </div>
