@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "./ProjectCard";
 
 export default function Portfolio() {
 
@@ -31,7 +31,7 @@ export default function Portfolio() {
     ]);
 
     return (
-        <div className="flex=row">
+        <div className="flex-row">
             {projects.map((project, index) => (
                 <ProjectCard project={project} key={"project" + index} />
             ))}
