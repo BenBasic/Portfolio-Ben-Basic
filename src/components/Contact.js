@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { validateEmail } from "../utils/helpers";
 
 export default function Contact() {
+    // Assigning the formState to empty values so that the form is empty by default
     const [formState, setFormState] = useState({
         name: "",
         email: "",
