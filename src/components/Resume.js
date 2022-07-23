@@ -39,7 +39,7 @@ export default function Resume() {
                 <h1><span>Work Experience</span></h1>
             </div>
             <div className="col-md-10">
-            {schools.map((job, index) => (
+            {jobs.map((job, index) => (
                 <WorkCard job={job} key={"job" + index} />
             ))}
             </div>
