@@ -6,7 +6,7 @@ export default function ProjectCard({ project }) {
     return (
         <div className='project' key={name}>
             <img 
-            src={require(`../../assets/projectList/${name}.png`)}
+            src={require(`../../assets/images/${name}.png`)}
             alt={`Screenshot of ${name} project`}
             className='projectItem-bg'
             />
