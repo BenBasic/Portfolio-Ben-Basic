@@ -23,6 +23,7 @@ export default function Resume() {
     ]);
 
     return (
+        <>
         <div className="flex-row">
             <div className="col-md-2">
                 <h1><span>Education</span></h1>
@@ -44,5 +45,6 @@ export default function Resume() {
             ))}
             </div>
         </div>
+        </>
     )
 }
