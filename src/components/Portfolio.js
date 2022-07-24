@@ -31,7 +31,7 @@ export default function Portfolio() {
     ]);
 
     return (
-        <div className="flex-row">
+        <div className="row">
             {projects.map((project, index) => (
                 <ProjectCard project={project} key={"project" + index} />
             ))}
