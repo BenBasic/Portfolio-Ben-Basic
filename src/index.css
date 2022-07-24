@@ -25,7 +25,7 @@ code {
   top: 0;
 }
 
-.navbar-nav .active{
+.nav-link .active{
   color:rgb(70, 227, 255);
 }
 
