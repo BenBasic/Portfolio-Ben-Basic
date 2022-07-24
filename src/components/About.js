@@ -5,8 +5,9 @@ export default function About() {
         <div className='container'>
             <div className='mx-5 mt-5 p3 aboutPage'>
                 <h1 className='text-center'>About Me</h1>
+                <div className='row'>
                 <div className="col-md-2">
-                    <img className='profilePicture' sec='./assets/images/me.png' alt='Benjamin Basic smiling' />
+                    <img className='profilePicture' src={require('./assets/images/me.png')} alt='Benjamin Basic smiling' />
                 </div>
                 <div className="col-md-10">
                     <p>Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text.</p>
@@ -33,6 +34,8 @@ export default function About() {
                         </div>
                     </div>
                 </div>
+                </div>
+                
             </div>
         </div>
     );

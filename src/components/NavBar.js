@@ -3,6 +3,7 @@ import React from 'react';
 // NavBar functionality will make it so that when an item is clicked, the page content and highlighted button will change accordingly
 export default function NavBar({ currentPage, handlePageChange }) {
     return (
+        <nav className='navigationBar'>
         <ul className="nav nav-tabs navBar justify-content-center">
             <li className="nav-item">
                 <a href="#about"
@@ -40,5 +41,7 @@ export default function NavBar({ currentPage, handlePageChange }) {
                 </a>
             </li>
         </ul>
+        </nav>
+
     );
 };

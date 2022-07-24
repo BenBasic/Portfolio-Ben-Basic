@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navigationBar {
+  font: 12px 'opensans-bold', sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.aboutPage {
+  background: #2B2B2B;
+  color: white;
+  padding-top: 96px;
+  padding-bottom: 66px;
+  overflow: hidden;
+}
+
+
+.profilePicture {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 5px solid white;
+  margin-left: 5%;
+}
