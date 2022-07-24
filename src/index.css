@@ -15,6 +15,7 @@ code {
 .navigationBar {
   font: 12px 'opensans-bold', sans-serif;
   width: 100%;
+  background-color: rgb(100, 90, 138);
   text-transform: uppercase;
   letter-spacing: 2.5px;
   margin: 0 auto;
@@ -24,12 +25,44 @@ code {
   top: 0;
 }
 
+.navbar-nav .active{
+  color:rgb(70, 227, 255);
+}
+
+.nav-item>a:hover {
+  color: green;
+}
+
+.nav-item>a:visited:hover {
+  color: rgb(225, 255, 117);
+}
+
+.nav-item>a:visited {
+  color: rgb(128, 0, 0);
+}
+
+.headerComponent {
+  position: relative;
+  background-image: linear-gradient(90deg, rgb(105, 192, 241), rgb(252, 132, 212));
+  height: 300px;
+  min-height: 300px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.headerComponent h1 {
+  margin-top: 50px;
+}
+
 .aboutPage {
   background: #2B2B2B;
   color: white;
   padding-top: 96px;
   padding-bottom: 66px;
+  margin-top: 50%;
   overflow: hidden;
+  position: relative;
 }
 
 
@@ -41,3 +74,4 @@ code {
   border: 5px solid white;
   margin-left: 5%;
 }
+
