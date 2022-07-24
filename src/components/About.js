@@ -17,8 +17,11 @@ export default function About() {
 
                             <p className='contactDetailList'>
                             <span>Benjamin Basic</span>
+                            <br />
                             <span>905-348-8223</span>
+                            <br />
                             <span>BenjaminYBasic@gmail.com</span>
+                            <br />
                             <span>Toronto, Ontario</span>
                             </p>
 
