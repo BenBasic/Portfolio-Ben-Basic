@@ -35,7 +35,7 @@ export default function Contact() {
             }
         } else {
             // If there is nothing entered in either name or message fields when theyre selected, it will set the error based on if the field is empty
-            if (!e.taget.value.length) {
+            if (!e.target.value.length) {
                 setErrorMessage(`Please enter a ${e.target.name}`)
             } else {
                 setErrorMessage("");
