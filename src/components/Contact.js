@@ -24,7 +24,7 @@ export default function Contact() {
             // Service ID for EmailJS
             'service_dctgumg',
             // Template ID for EmailJS
-            'TEMPLATE ID',
+            'template_c85uomt',
             // From state will be sent with all data inside of it for name, email, and message
             formState,
             // Public key for EmailJS
@@ -36,7 +36,6 @@ export default function Contact() {
             .catch((err) => {
               console.log('FAILED...', err);
             });
-        };
         // Setting the formState to empty values so that the form clears after being submitted
         setFormState({ ...formState,
         name: "",
