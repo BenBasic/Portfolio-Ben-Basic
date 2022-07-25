@@ -31,7 +31,7 @@ export default function Portfolio() {
     ]);
 
     return (
-        <div className="row">
+        <div className="row mt-5">
             {projects.map((project, index) => (
                 <ProjectCard project={project} key={"project" + index} />
             ))}

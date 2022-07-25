@@ -5,18 +5,20 @@ export default function ProjectCard({ project }) {
 
     return (
         <div className='project col-md-3' key={name}>
+            <div className="d-flex justify-content-center">
             <img 
             src={require(`../../assets/images/${name}.png`)}
             alt={`Screenshot of ${name} project`}
             className='projectItem-bg'
             />
+            </div>
             <div className='projectTitle'>
                 <h2>
-                    <a href={link}>{name}</a>
-                    <br />
-                    <a href={repo}>GitHub Repository</a>
+                    <a className='d-flex justify-content-center' href={link} target="_blank" rel="noreferrer">{name}</a>
+                    
+                    <a className='d-flex justify-content-center' href={repo} target="_blank" rel="noreferrer">GitHub Repository</a>
                 </h2>
-                <p>{description}</p>
+                <p className='d-flex justify-content-center'>{description}</p>
             </div>
         </div>
     );
