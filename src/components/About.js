@@ -29,7 +29,7 @@ export default function About() {
                         </div>
                         <div className='col-md-6 resumeDownload'>
                             <p>
-                                <a href='put resume here later' className='button' target='_blank'>Download Resume</a>
+                                <a href='put resume here later' className='resumeButton' target='_blank'>Download Resume</a>
                             </p>
                         </div>
                     </div>

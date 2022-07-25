@@ -49,41 +49,44 @@ export default function Contact() {
     };
 
     return (
-        <section>
-            <form id='contact-form' onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='name'>Name:</label>
-                    <input
-                    type='text'
-                    name='name'
-                    defaultValue={name}
-                    onBlur={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor='email'>Email:</label>
-                    <input
-                    type='email'
-                    name='email'
-                    defaultValue={email}
-                    onBlur={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor='message'>Message:</label>
-                    <input
-                    name='message'
-                    rows='6'
-                    defaultValue={message}
-                    onBlur={handleChange}
-                    />
-                </div>
-                {errorMessage && (
+        <div>
+            <h1 className='text-center contactTitle mt-5'>Contact</h1>
+            <section className="contactContainer mt-5">
+                <form id='contact-form' onSubmit={handleSubmit}>
                     <div>
-                        <p className="errorAlert">{errorMessage}</p>
+                        <label htmlFor='name'>Name:</label>
+                        <input
+                        type='text'
+                        name='name'
+                        defaultValue={name}
+                        onBlur={handleChange}
+                        />
                     </div>
-                )}
-            </form>
-        </section>
+                    <div>
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                        type='email'
+                        name='email'
+                        defaultValue={email}
+                        onBlur={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='message'>Message:</label>
+                        <textarea
+                        name='message'
+                        rows='6'
+                        defaultValue={message}
+                        onBlur={handleChange}
+                        />
+                    </div>
+                    {errorMessage && (
+                        <div>
+                            <p className="errorAlert">{errorMessage}</p>
+                        </div>
+                    )}
+                </form>
+            </section>
+        </div>
     )
 }

@@ -14,9 +14,9 @@ export default function ProjectCard({ project }) {
             </div>
             <div className='projectTitle'>
                 <h2>
-                    <a className='d-flex justify-content-center' href={link} target="_blank" rel="noreferrer">{name}</a>
-                    
-                    <a className='d-flex justify-content-center' href={repo} target="_blank" rel="noreferrer">GitHub Repository</a>
+                    <a className='projectText' href={link} target="_blank" rel="noreferrer">{name}</a>
+                    <br />
+                    <a className='githubText' href={repo} target="_blank" rel="noreferrer">GitHub Repository</a>
                 </h2>
                 <p className='d-flex justify-content-center'>{description}</p>
             </div>
