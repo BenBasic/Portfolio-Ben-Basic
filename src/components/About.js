@@ -10,7 +10,7 @@ export default function About() {
                     <img className='profilePicture' src={require('./assets/images/me.png')} alt='Benjamin Basic smiling' />
                 </div>
                 <div className="col-md-10">
-                    <p>Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text.</p>
+                    <p>Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text. </p>
                     <div className='row'>
                         <div className='col-md-6 contactDetails'>
                             
@@ -29,7 +29,7 @@ export default function About() {
                         </div>
                         <div className='col-md-6 resumeDownload'>
                             <p>
-                                <a href='put resume here later' className='resumeButton' target='_blank'>Download Resume</a>
+                                <a href='https://drive.google.com/file/d/1FPnrSS36yMK0BbkWNatFhyYkPHFnJDBG/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
                             </p>
                         </div>
                     </div>

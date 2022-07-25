@@ -18,37 +18,42 @@ export default function Contact() {
     const handleSubmit = (e) => {
         // Preventing the page from refreshing which is the default behaviour of form submit (which is what this will be used for later)
         e.preventDefault();
-        console.log("submit happened")
-        console.log("Form data SUBMIT check", formState)
-        send(
-            // Service ID for EmailJS
-            'service_dctgumg',
-            // Template ID for EmailJS
-            'template_c85uomt',
-            // From state will be sent with all data inside of it for name, email, and message
-            formState,
-            // Public key for EmailJS
-            '9EiVelwl5z7V7K7yV'
-          )
-            .then((response) => {
-              console.log('SUCCESS!', response.status, response.text);
-            })
-            .catch((err) => {
-              console.log('FAILED...', err);
-            });
-        // Setting the formState to empty values so that the form clears after being submitted
-        setFormState({ ...formState,
-        name: "",
-        email: "",
-        message: "",
-    });
+        const validCheck = validateEmail(email);
+        if (!validCheck || name === '' || message === '') {
+            setErrorMessage("Please fill out a name, valid email, and message")
+        } else {
+            console.log("Form data SUBMIT check", formState)
+            send(
+                // Service ID for EmailJS
+                'service_dctgumg',
+                // Template ID for EmailJS
+                'template_c85uomt',
+                // From state will be sent with all data inside of it for name, email, and message
+                formState,
+                // Public key for EmailJS
+                '9EiVelwl5z7V7K7yV'
+              )
+                .then((response) => {
+                  console.log('Email has been sent!', response.status, response.text);
+                })
+                .catch((err) => {
+                  console.log('Email failed to send', err);
+                });
+            // Setting the formState to empty values so that the form clears after being submitted
+            setFormState({ ...formState,
+            name: "",
+            email: "",
+            message: "",
+        });
+    
+        const inputs = document.querySelectorAll('#name, #email, #message');
+    
+        inputs.forEach(input => {
+            input.value = '';
+        });
+        };
+    }
 
-    const inputs = document.querySelectorAll('#name, #email, #message');
-
-    inputs.forEach(input => {
-        input.value = '';
-    });
-    };
 
     const handleChange = (e) => {
         // If the selected field is email, then it will perform a validation from the helper, it will then set the error message based on if the validation passed or not
@@ -77,7 +82,7 @@ export default function Contact() {
     return (
         <div>
             <h1 className='text-center contactTitle mt-5'>Contact</h1>
-            <section className="contactContainer mt-5">
+            <section className="contactContainer mt-3">
                 <form id='contact-form' onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='name'>Name:</label>
@@ -117,7 +122,9 @@ export default function Contact() {
                             <p className="errorAlert">{errorMessage}</p>
                         </div>
                     )}
-                    <button type="submit">Submit</button>
+                    <div className="submitContainer">
+                    <button type="submit" className='submitButton'>Send</button>
+                    </div>
                 </form>
             </section>
         </div>

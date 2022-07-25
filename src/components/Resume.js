@@ -24,25 +24,34 @@ export default function Resume() {
 
     return (
         <>
-        <div className="row">
-            <div className="col-md-2">
-                <h1><span>Education</span></h1>
-            </div>
-            <div className="col-md-10">
-            {schools.map((school, index) => (
-                <EducationCard education={school} key={"school" + index} />
-            ))}
-            </div>
-        </div>
+        <div className="container ">
+            <div className="mx-5 mt-5 p3 resumePage">
+                <div className='resumeDownload text-center'>
+                    <p>
+                        <a href='https://drive.google.com/file/d/1FPnrSS36yMK0BbkWNatFhyYkPHFnJDBG/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                    </p>
+                </div>
+                <div className="row top-border">
+                    <div className="col-md-2 resumePageTitles">
+                        <h1><span>Education</span></h1>
+                    </div>
+                    <div className="col-md-10 resumePageDescriptions">
+                    {schools.map((school, index) => (
+                        <EducationCard education={school} key={"school" + index} />
+                    ))}
+                    </div>
+                </div>
 
-        <div className="row">
-            <div className="col-md-2">
-                <h1><span>Work Experience</span></h1>
-            </div>
-            <div className="col-md-10">
-            {jobs.map((job, index) => (
-                <WorkCard work={job} key={"job" + index} />
-            ))}
+                <div className="row">
+                    <div className="col-md-2 resumePageTitles">
+                        <h1><span>Work Experience</span></h1>
+                    </div>
+                    <div className="col-md-10 resumePageDescriptions">
+                    {jobs.map((job, index) => (
+                        <WorkCard work={job} key={"job" + index} />
+                    ))}
+                    </div>
+                </div>
             </div>
         </div>
         </>
