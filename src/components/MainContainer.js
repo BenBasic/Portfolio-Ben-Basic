@@ -27,7 +27,7 @@ export default function MainContainer() {
     return (
         <div className="mainContainer">
             <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-            <NavBarMobile />
+            <NavBarMobile currentPage={currentPage} handlePageChange={handlePageChange} />
             {renderPage()}
         </div>
     );
