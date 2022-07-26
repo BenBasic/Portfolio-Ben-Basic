@@ -70,7 +70,7 @@ export default function Resume() {
 
     return (
         <>
-        <div className="container ">
+        <div className="container">
             <div className="mx-5 mt-5 p3 resumePage">
                 <div className='resumeDownload text-center'>
                     <p>

@@ -334,7 +334,7 @@ code {
   padding-bottom: 5rem;
   margin-top: 50%;
   overflow: hidden;
-  position: relative;
+
 }
 
 .resumePage .row {
@@ -354,10 +354,12 @@ code {
 
 footer {
   border-top: 0.2rem solid white;
-  position: absolute;
+  height: 2.5rem;
   bottom: 0px;
   width: 100%;
   background-color: #2B2B2B;
+  margin-top: auto;
+  margin-bottom: 2.8rem;
 }
 
 footer a {
@@ -371,4 +373,11 @@ footer a {
 footer a:hover {
   opacity: 1;
   color: white;
+}
+
+.fullPortfolio {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
 }
