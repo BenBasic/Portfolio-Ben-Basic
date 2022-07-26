@@ -9,6 +9,7 @@ import Resume from './Resume';
 export default function MainContainer() {
     const [currentPage, setCurrentPage] = useState('About');
 
+    // Running if statements within the renderPage function to check for what page the user is on, then returning the appropriate component based on that
     const renderPage = () => {
         if (currentPage === 'About') {
             return <About />;

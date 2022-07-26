@@ -18,10 +18,12 @@ export default function Contact() {
     const handleSubmit = (e) => {
         // Preventing the page from refreshing which is the default behaviour of form submit (which is what this will be used for later)
         e.preventDefault();
+        // Running a validation check for the email to make sure it contains valid characters, also checking if the other fields have anything written in them
         const validCheck = validateEmail(email);
         if (!validCheck || name === '' || message === '') {
             setErrorMessage("Please fill out a name, valid email, and message")
         } else {
+            // If checks are passed, then the program will use emailJS and send the required information to be used to send an email to my inbox
             console.log("Form data SUBMIT check", formState)
             send(
                 // Service ID for EmailJS
@@ -34,20 +36,22 @@ export default function Contact() {
                 '9EiVelwl5z7V7K7yV'
               )
                 .then((response) => {
-                  console.log('Email has been sent!', response.status, response.text);
+                  console.log('Email has been sent!', response.status, response.text); // If send works, log a message with the response status and text
                 })
                 .catch((err) => {
-                  console.log('Email failed to send', err);
+                  console.log('Email failed to send', err); // If send fails, log a message with the error
                 });
-            // Setting the formState to empty values so that the form clears after being submitted
+            // Setting the formState to empty values so that the formState clears after being submitted
             setFormState({ ...formState,
             name: "",
             email: "",
             message: "",
         });
     
+        // Defining inputs to the query of the field ids for the form
         const inputs = document.querySelectorAll('#name, #email, #message');
     
+        // Runs a for each method to clear the fields after hitting submit so that what was submitted doesnt stay in the form
         inputs.forEach(input => {
             input.value = '';
         });

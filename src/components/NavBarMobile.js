@@ -1,5 +1,6 @@
 import React from 'react';
 
+// NavBar functionality will make it so that when an item is clicked, the page content and highlighted button will change accordingly
 export default function NavBarMobile({ currentPage, handlePageChange }) {
     return (
         <div className="dropdown">
