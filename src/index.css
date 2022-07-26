@@ -184,10 +184,10 @@ code {
 }
 
 @media screen and (max-width: 767px) {
-  .testClass {
+  .bioContainer {
     text-align: center;
   }
-  .testClass2 {
+  .bio {
     display: inline-block;
     text-align: left;
   }
@@ -241,7 +241,6 @@ code {
   }
 }
 
-
 .aboutPage {
   background: #2B2B2B;
   color: white;
@@ -249,6 +248,15 @@ code {
   margin-top: 50%;
   overflow: hidden;
   position: relative;
+}
+
+.bioContainer .row {
+  padding-top: 2rem;
+  border-top: 0.1rem solid gray;
+}
+
+.bio {
+  padding-bottom: 1rem;
 }
 
 .resumeButton {
