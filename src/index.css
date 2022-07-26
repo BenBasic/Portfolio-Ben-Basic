@@ -30,6 +30,7 @@ code {
   position: fixed;
   left: 0;
   top: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -87,6 +88,10 @@ code {
   border-top-right-radius: 0px !important;
 }
 
+.dropdown {
+  display: none;
+}
+
 
 .headerComponent {
   position: relative;
@@ -127,6 +132,62 @@ code {
   animation: text-shadow-pop-br 0.3s both !important;
   
 }
+
+@media screen and (max-width: 1199px) {
+  .profilePicture {
+    display: none;
+  }
+  .col-md-2 {
+    width: 0% !important;
+  }
+  .row {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .testClass {
+    text-align: center;
+  }
+  .testClass2 {
+    display: inline-block;
+    text-align: left;
+  }
+  .contactDetails h2 {
+    border-top: 0.1rem solid gray;
+    padding-top: 0.5rem;
+  }
+  .navigationBar {
+    display: none;
+  }
+  .dropdown {
+    display: inline-block;
+    margin: 0 auto !important;
+    z-index: 100 !important;
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+  .dropdown .btn-secondary {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+  .dropdown .btn {
+    font-size: 2rem;
+    background-color: rgb(100, 90, 138) !important;
+    border: none !important;
+  }
+  .btn.show:focus {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8) !important;
+  }
+  .btn-check:focus, .btn:focus {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8) !important;
+  }
+  .dropdown-item {
+    font-weight: bold !important;
+    font-size: larger !important;
+  }
+}
+
 
 .aboutPage {
   background: #2B2B2B;
@@ -350,6 +411,12 @@ code {
 .resumePage .resumePageDescriptions {
   padding-left: 5rem;
   width: 70%;
+}
+
+.noUnderline {
+  border-bottom: 0px solid transparent !important;
+  padding-top: 0rem !important;
+  margin-bottom: 1.5rem;
 }
 
 footer {

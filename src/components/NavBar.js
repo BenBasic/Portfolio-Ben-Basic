@@ -42,6 +42,5 @@ export default function NavBar({ currentPage, handlePageChange }) {
             </li>
         </ul>
         </nav>
-
     );
 };

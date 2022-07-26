@@ -64,7 +64,7 @@ export default function Resume() {
             skillItem: "GraphQL",
         },
         {
-            skillItem: "Progressive Web Applications",
+            skillItem: "PWA",
         },
     ]);
 
@@ -104,14 +104,20 @@ export default function Resume() {
                         <h1><span>Skills</span></h1>
                     </div>
                     <div className="col-md-10 resumePageDescriptions">
-                        <h3>Front End</h3>
-                        {frontEndSkills.map((singleSkill, index) => (
-                            <SkillCard skill={singleSkill} key={"skill" + index} />
-                        ))}
-                        <h3>Back End</h3>
-                        {backEndSkills.map((singleSkill, index) => (
-                            <SkillCard skill={singleSkill} key={"skill" + index} />
-                        ))}
+                        <div className="row noUnderline">
+                            <div className="col-md-6">
+                                <h3>Front End</h3>
+                                {frontEndSkills.map((singleSkill, index) => (
+                                    <SkillCard skill={singleSkill} key={"skill" + index} />
+                                ))}
+                            </div>
+                            <div className="col-md-6">
+                                <h3>Back End</h3>
+                                {backEndSkills.map((singleSkill, index) => (
+                                    <SkillCard skill={singleSkill} key={"skill" + index} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

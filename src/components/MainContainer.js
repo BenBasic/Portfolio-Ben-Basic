@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar';
+import NavBarMobile from './NavBarMobile';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
@@ -26,6 +27,7 @@ export default function MainContainer() {
     return (
         <div className="mainContainer">
             <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
+            <NavBarMobile />
             {renderPage()}
         </div>
     );

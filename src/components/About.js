@@ -9,8 +9,8 @@ export default function About() {
                 <div className="col-md-2">
                     <img className='profilePicture' src={require('./assets/images/me.png')} alt='Benjamin Basic smiling' />
                 </div>
-                <div className="col-md-10">
-                    <p>Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text, Placeholder text. </p>
+                <div className="col-md-10 testClass">
+                    <p className='testClass2'>test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at test at </p>
                     <div className='row'>
                         <div className='col-md-6 contactDetails'>
                             
