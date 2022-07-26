@@ -78,6 +78,7 @@ export default function Resume() {
                     </p>
                 </div>
                 <div className="row top-border">
+                <h1 className="mobilePageTitles"><span>Education</span></h1>
                     <div className="col-md-2 resumePageTitles">
                         <h1><span>Education</span></h1>
                     </div>
@@ -89,6 +90,7 @@ export default function Resume() {
                 </div>
 
                 <div className="row">
+                <h1 className="mobilePageTitles"><span>Work Experience</span></h1>
                     <div className="col-md-2 resumePageTitles">
                         <h1><span>Work Experience</span></h1>
                     </div>
@@ -100,6 +102,7 @@ export default function Resume() {
                 </div>
 
                 <div className="row">
+                <h1 className="mobilePageTitles"><span>Skills</span></h1>
                     <div className="col-md-2 resumePageTitles">
                         <h1><span>Skills</span></h1>
                     </div>
@@ -112,7 +115,7 @@ export default function Resume() {
                                 ))}
                             </div>
                             <div className="col-md-6">
-                                <h3>Back End</h3>
+                                <h3 className="bottomSkill">Back End</h3>
                                 {backEndSkills.map((singleSkill, index) => (
                                     <SkillCard skill={singleSkill} key={"skill" + index} />
                                 ))}

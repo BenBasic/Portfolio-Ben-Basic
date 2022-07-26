@@ -137,12 +137,50 @@ code {
   .profilePicture {
     display: none;
   }
-  .col-md-2 {
+  .aboutPage .row .col-md-2 {
     width: 0% !important;
   }
   .row {
     justify-content: center;
   }
+}
+
+@media screen and (max-width: 991px) {
+  .top-border {
+    text-align: center !important;
+  }
+  
+  .resumePageTitles, .resumePageDescriptions {
+    text-align: center;
+    padding: 0px !important;
+  }
+
+  .resumePageTitles {
+    display: none;
+  }
+
+  .mobilePageTitles {
+    display: block !important;
+    text-align: center;
+    border-bottom: 0.1rem solid gray;
+    border-top: 0.1rem solid gray;
+    padding-bottom: 0.7rem;
+    padding-top: 0.7rem;
+  }
+
+  .resumePage .row {
+    border-bottom: 0rem solid transparent !important;
+  }
+  
+  .resumePage .top-border {
+    border-top: 0rem solid transparent !important;
+  }
+
+  .noUnderline li {
+    text-align: left;
+    margin-left: 3rem;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -192,6 +230,14 @@ code {
   .dropdown-item {
     font-weight: bold !important;
     font-size: larger !important;
+  }
+  .bottomSkill {
+    padding-top: 1rem;
+  }
+  .noUnderline li {
+    text-align: center;
+    margin-left: 0rem;
+    list-style: none;
   }
 }
 
@@ -418,6 +464,10 @@ code {
 .resumePage .resumePageDescriptions {
   padding-left: 5rem;
   width: 70%;
+}
+
+.mobilePageTitles {
+  display: none;
 }
 
 .noUnderline {
