@@ -28,6 +28,18 @@ export default function Portfolio() {
             link: "https://benbasic.github.io/Toronto-Event-Finder/",
             repo: "https://github.com/BenBasic/Toronto-Event-Finder",
         },
+        {
+            name: "Rad Employee Tracker",
+            description: "Back end using node.js and mySQL",
+            link: "https://youtu.be/y3yFcRdOaNg",
+            repo: "https://github.com/BenBasic/Rad-Employee-Tracker",
+        },
+        {
+            name: "Weather Dashboard",
+            description: "Front end application using the Open Weather api",
+            link: "https://benbasic.github.io/Module-6-Weather-Dashboard/",
+            repo: "https://github.com/BenBasic/Module-6-Weather-Dashboard",
+        },
     ]);
 
     return (

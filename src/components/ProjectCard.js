@@ -4,7 +4,7 @@ export default function ProjectCard({ project }) {
     const { name, repo, link, description } = project;
 
     return (
-        <div className='project col-md-3' key={name}>
+        <div className='project col-md-4' key={name}>
             <div className="d-flex justify-content-center">
             <img 
             src={require(`../../assets/images/${name}.png`)}

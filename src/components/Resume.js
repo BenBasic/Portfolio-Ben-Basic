@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EducationCard from "./EducationCard";
 import WorkCard from "./WorkCard";
+import SkillCard from "./SkillCard"
 
 export default function Resume() {
 
@@ -19,6 +20,51 @@ export default function Resume() {
             title: "Hotel General Manager",
             years: "March 2020 - May 2022",
             description: "Managed and supervised the daily operations of two hotel properties, led and facilitated the onboarding and training of a staff of over 20 team members, initiated and managed relationships with individual clients and corporations",
+        },
+    ]);
+
+    const [frontEndSkills] = useState([
+        {
+            skillItem: "JavaScript",
+        },
+        {
+            skillItem: "React",
+        },
+        {
+            skillItem: "jQuery",
+        },
+        {
+            skillItem: "Handlebars",
+        },
+        {
+            skillItem: "HTML",
+        },
+        {
+            skillItem: "CSS",
+        },
+        {
+            skillItem: "Bootstrap",
+        },
+    ]);
+
+    const [backEndSkills] = useState([
+        {
+            skillItem: "Express",
+        },
+        {
+            skillItem: "Node",
+        },
+        {
+            skillItem: "MySQL",
+        },
+        {
+            skillItem: "MongoDB",
+        },
+        {
+            skillItem: "GraphQL",
+        },
+        {
+            skillItem: "Progressive Web Applications",
         },
     ]);
 
@@ -50,6 +96,22 @@ export default function Resume() {
                     {jobs.map((job, index) => (
                         <WorkCard work={job} key={"job" + index} />
                     ))}
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-2 resumePageTitles">
+                        <h1><span>Skills</span></h1>
+                    </div>
+                    <div className="col-md-10 resumePageDescriptions">
+                        <h3>Front End</h3>
+                        {frontEndSkills.map((singleSkill, index) => (
+                            <SkillCard skill={singleSkill} key={"skill" + index} />
+                        ))}
+                        <h3>Back End</h3>
+                        {backEndSkills.map((singleSkill, index) => (
+                            <SkillCard skill={singleSkill} key={"skill" + index} />
+                        ))}
                     </div>
                 </div>
             </div>
