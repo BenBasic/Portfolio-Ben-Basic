@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Portfolio-Ben-Basic/static/css/main.b48f160d.css",
+    "main.js": "/Portfolio-Ben-Basic/static/js/main.6edad5b7.js",
+    "static/js/787.12e7f510.chunk.js": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js",
+    "static/media/Toronto Event Finder.png": "/Portfolio-Ben-Basic/static/media/Toronto Event Finder.96bb9060e533b941acfb.png",
+    "static/media/Greenify.png": "/Portfolio-Ben-Basic/static/media/Greenify.7c9fb68ea22e1425d4d5.png",
+    "static/media/me.png": "/Portfolio-Ben-Basic/static/media/me.6270be3e1807d1931865.png",
+    "static/media/Social Network API.png": "/Portfolio-Ben-Basic/static/media/Social Network API.5c15a1901a119568b91c.png",
+    "static/media/Rad Employee Tracker.png": "/Portfolio-Ben-Basic/static/media/Rad Employee Tracker.155fd4a430ac8dd0c1fd.png",
+    "static/media/Weather Dashboard.png": "/Portfolio-Ben-Basic/static/media/Weather Dashboard.229a8dfd219cc556cc35.png",
+    "static/media/PWA Text Editor.png": "/Portfolio-Ben-Basic/static/media/PWA Text Editor.0d40a78c91781074ddb5.png",
+    "index.html": "/Portfolio-Ben-Basic/index.html",
+    "main.b48f160d.css.map": "/Portfolio-Ben-Basic/static/css/main.b48f160d.css.map",
+    "main.6edad5b7.js.map": "/Portfolio-Ben-Basic/static/js/main.6edad5b7.js.map",
+    "787.12e7f510.chunk.js.map": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b48f160d.css",
+    "static/js/main.6edad5b7.js"
+  ]
+}
