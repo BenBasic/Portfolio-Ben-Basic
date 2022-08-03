@@ -5,10 +5,10 @@ export default function Portfolio() {
 
     const [projects] = useState([
         {
-            name: "Greenify",
-            description: "Full stack application using Express, Handlebars, and mySQL",
-            link: "https://greenifywiki.herokuapp.com",
-            repo: "https://github.com/JamesF905/greenify",
+            name: "Locally",
+            description: "Full stack MERN application for Toronto based e-commerce",
+            link: "https://dry-badlands-98649.herokuapp.com/",
+            repo: "https://github.com/DlonMusk/Locally",
         },
         {
             name: "PWA Text Editor",
