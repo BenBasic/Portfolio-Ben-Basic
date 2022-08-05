@@ -10,7 +10,7 @@ export default function About() {
                     <img className='profilePicture' src={require('./assets/images/me.png')} alt='Benjamin Basic smiling' />
                 </div>
                 <div className="col-md-10 bioContainer">
-                    <p className='bio'>My name is Ben Basic. Im 27 years old and I've been a 2D animator for 17 of those years. Animation might not seem too similar to programming, but they both involve staying up until 4 in the morning fixing something that almost nobody is going to notice, so programming fits right in my comfort zone.  I'm currently attending the University of Toronto's programming bootcamp, where I hope to create things that both my peers and potential employers find value in by the time I graduate.</p>
+                    <p className='bio'>My name is Ben Basic, Im a 27 year old full stack web developer with a background in animation and hotel management driven by a passion to learn and expand my skill set. Recently certified in Full Stack Web Development from the University of Toronto Coding Boot Camp. An adaptive and quick learner with proficiencies for creative thinking, effective communication and collaborative teamwork.</p>
                     <div className='row'>
                         <div className='col-md-6 contactDetails'>
                             
