@@ -29,7 +29,7 @@ export default function About() {
                         </div>
                         <div className='col-md-6 resumeDownload'>
                             <p>
-                                <a href='https://drive.google.com/file/d/1FPnrSS36yMK0BbkWNatFhyYkPHFnJDBG/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                                <a href='https://drive.google.com/file/d/1gicGF1p_xTj4pCqfIT0MWNAY3VPkBkTk/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
                             </p>
                         </div>
                     </div>

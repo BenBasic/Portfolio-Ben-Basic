@@ -74,7 +74,7 @@ export default function Resume() {
             <div className="mx-5 mt-5 p3 resumePage">
                 <div className='resumeDownload text-center'>
                     <p>
-                        <a href='https://drive.google.com/file/d/1FPnrSS36yMK0BbkWNatFhyYkPHFnJDBG/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                        <a href='https://drive.google.com/file/d/1gicGF1p_xTj4pCqfIT0MWNAY3VPkBkTk/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
                     </p>
                 </div>
                 <div className="row top-border">

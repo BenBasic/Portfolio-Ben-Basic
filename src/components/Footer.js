@@ -8,7 +8,7 @@ export default function Footer() {
         },
         {
             info: "fab fa-linkedin",
-            link: "https://www.linkedin.com/in/benjamin-basic-1aa60017a/",
+            link: "https://www.linkedin.com/in/benbasic/",
         },
     ];
 
