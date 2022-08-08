@@ -18,7 +18,7 @@ export default function Resume() {
         {
             company: "Lion Building Group",
             title: "Hotel General Manager",
-            years: "March 2020 - May 2022",
+            years: "March 2020 - September 2021",
             description: "Managed and supervised the daily operations of two hotel properties, led and facilitated the onboarding and training of a staff of over 20 team members, initiated and managed relationships with individual clients and corporations",
         },
     ]);
@@ -74,7 +74,7 @@ export default function Resume() {
             <div className="mx-5 mt-5 p3 resumePage">
                 <div className='resumeDownload text-center'>
                     <p>
-                        <a href='https://drive.google.com/file/d/1gicGF1p_xTj4pCqfIT0MWNAY3VPkBkTk/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                        <a href='https://drive.google.com/file/d/1Ksui5Fr_NJIxeuqa05vX72K9rT8BQ2or/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
                     </p>
                 </div>
                 <div className="row top-border">
