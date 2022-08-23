@@ -288,6 +288,12 @@ code {
 }
 
 
+.aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
+  width: 20%;
+  cursor: pointer;
+}
+
+
 .projectItem-bg {
   /* max-width: 350px;
   max-height: 197px;
