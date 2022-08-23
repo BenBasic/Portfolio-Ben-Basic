@@ -76,8 +76,9 @@ export default function MainContainer() {
 
     return (
         <>
+        <div className="row mt-5 mainButtonContainer">
             <Spritesheet
-                className={`aboutMeAnimation`}
+                className={`aboutMeAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -96,7 +97,7 @@ export default function MainContainer() {
                     }}
             />
             <Spritesheet
-                className={`portfolioAnimation`}
+                className={`portfolioAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -115,7 +116,7 @@ export default function MainContainer() {
                     }}
             />
             <Spritesheet
-                className={`contactAnimation`}
+                className={`contactAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -134,7 +135,7 @@ export default function MainContainer() {
                     }}
             />
             <Spritesheet
-                className={`resumeAnimation`}
+                className={`resumeAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -152,6 +153,7 @@ export default function MainContainer() {
                         setClickedState(true);
                     }}
             />
+            </div>
             <div className="mainContainer">
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 <NavBarMobile currentPage={currentPage} handlePageChange={handlePageChange} />

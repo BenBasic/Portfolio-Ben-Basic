@@ -287,10 +287,23 @@ code {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
+.mainButtonContainer {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
 
 .aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
-  width: 20%;
   cursor: pointer;
+  margin: 1rem;
+}
+
+.contactAnimation, .resumeAnimation {
+  padding-top: 1rem;
 }
 
 
