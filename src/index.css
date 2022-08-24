@@ -351,7 +351,6 @@ code {
   width: 100%;
   height: auto;
   justify-content: center;
-  padding-bottom: 1rem;
   padding-left: 30%;
   padding-right: 30%;
 }
@@ -375,6 +374,11 @@ code {
   sizeOut 200ms ease-in-out 500ms forwards;
 }
 
+.hiddenRow {
+  animation:
+  sizeOut 200ms ease-in-out 500ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -393,7 +397,8 @@ code {
   }
 
   30% {
-    transform: scale(0);
+    
+    margin: 0px;
   }
 
   100% {

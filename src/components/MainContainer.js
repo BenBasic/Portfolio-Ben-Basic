@@ -41,7 +41,7 @@ export default function MainContainer() {
 
     let removedItem;
 
-    var count = 200;
+    var count = 700;
 
     var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
 
@@ -61,7 +61,7 @@ export default function MainContainer() {
                 console.log("INSIDE IF REMOVE ITEM IS-----")
                 console.log(removeItemState)
                 removedItem = "removedItem"
-                count = 200
+                count = 700
                 console.log("COUNT WITHIN IF")
                 console.log(count)
                 return;
@@ -91,10 +91,18 @@ export default function MainContainer() {
     //     }
     // }
 
+    // THE SOLUTION IS PROBABLY TO MAKE THE TOP AND BOTTOM ROW SEPARATE, THIS WOULD LIKELY MAKE IS SO I CAN
+    // SHRINK THE HEIGHT OF EITHER ROW DEPENDING ON WHICH BUTTON IS CLICKED AND THAT WAY IT WONT HAVE ALL THE
+    // JITTERY MOVEMENT WHEN THE ROWS JOIN INTO ONE LINE
+    // EXAMPLE, BUTTON ON ROW 1 MAKES ROW 2 SHRINK HEIGHT AND MAKES THE UPWARD MOTION NATURAL AND AVOIDS JITTERING
+    // WOULDNT HAVE TO WORRY ABOUT TIMING WIDTH SHRINKING EITHER SINCE THEYRE TWO SEPERATE ROWS, SO IT CAN BE SAME TIMING
+
 
     return (
         <>
-        <div className="row mt-5 mainButtonContainer">
+        <div className={fadeState[0] && fadeState[1] ?
+        `hiddenRow row mt-5 mainButtonContainer ${removeItemState}` :
+        "row mt-5 mainButtonContainer"}>
             <Spritesheet
                 className={fadeState[0] ?
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
@@ -144,6 +152,10 @@ export default function MainContainer() {
                         timer();
                     }}
             />
+            </div>
+            <div className={fadeState[2] && fadeState[3] ?
+            `hiddenRow row mainButtonContainer ${removeItemState}` :
+            "row mainButtonContainer"}>
             <Spritesheet
                 className={fadeState[2] ?
                     `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
