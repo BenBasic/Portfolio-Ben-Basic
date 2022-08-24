@@ -156,7 +156,7 @@ code {
   }
 
   .aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
-    margin: 0.5rem !important;
+    margin: 0.5rem
   }
 
   .contactAnimation, .resumeAnimation {
@@ -218,7 +218,7 @@ code {
   .mainButtonContainer .portfolioAnimation,
   .mainButtonContainer .contactAnimation,
   .mainButtonContainer .resumeAnimation {
-    margin: 0.5rem !important;
+    margin: 0.5rem;
     max-width: 45% !important;
   }
 
@@ -384,22 +384,23 @@ code {
   to {
     opacity: 0;
     padding-top: 5rem;
-    
   }
 }
 
 @keyframes sizeOut {
   from {
+    transform: scale(1);
   }
 
   30% {
-    width: 0px;
+    transform: scale(0);
   }
 
   100% {
     margin: 0px;
     height: 0px;
     width: 0px;
+    transform: scale(0);
   }
 }
 
