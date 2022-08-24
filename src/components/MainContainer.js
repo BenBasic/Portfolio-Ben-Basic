@@ -26,59 +26,26 @@ export default function MainContainer() {
 
     const handlePageChange = (page) => setCurrentPage(page);
 
-    // const canvas = document.getElementsByClassName("spritesheetCanvas");
-    // const context = canvas.getContext("2d");
-    // const width = 351;
-    // const height = 351;
-    // const spriteRow = 0;
-    // const spriteColumn = 0;
-    // const spriteFrameSize = 351;
-    // const spritesheetWidth = 2106;
-    // const spritesheetHeight = 1755;
-    // const fps = 24;
-    // const xPos = 351;
-    // const yPos = 351;
-    // const scale = 1;
-    // const timeToUpdate = 1 * fps;
-    // let frameNumber = 0;
-
-    // const spritesheet = new Image();
-    // spritesheet.src = "./assets/images/PortfolioArtAboutMe.png"
-
-    // function animate() {
-    //     context.drawImage(
-    //         spritesheet,
-    //         0, // First pixel on x axis
-    //         0, // First pixel on y axis
-    //         spriteFrameSize, // Frame width
-    //         spriteFrameSize, // Frame height
-    //         xPos, // x position to draw on canvas
-    //         yPos, // y position to draw on canvas
-    //         spriteFrameSize * scale, // Desired width to draw on canvas (size of frame multiplied be desired scale)
-    //         spriteFrameSize * scale, // Desired height to draw on canvas (size of frame multiplied be desired scale)
-
-    //     )
-    // }
-
-    // function frame() {
-    //     context.clearRect(0, 0, width, height);
-    //     animate();
-    //     requestAnimationFrame(frame);
-    // }
-
-    // frame();
-
     const [clickedState, setClickedState] = useState(false);
-    //let clicked = false;
-    console.log("CLICKED IS")
-    console.log(clickedState)
+
+    const [fadeState, setFadeState] = useState([false, false, false, false]);
+    
+    console.log("CLICKED IS");
+    console.log(clickedState);
+    console.log("FADE IS");
+    console.log(fadeState);
+    console.log("FADESTATE ARRAY CHECK IS");
+    console.log(fadeState[0]);
 
 
     return (
         <>
         <div className="row mt-5 mainButtonContainer">
             <Spritesheet
-                className={`aboutMeAnimation col-md-5`}
+                className={fadeState[0] ?
+                    `hiddenItem aboutMeAnimation col-md-5`
+                :
+                `aboutMeAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -94,10 +61,14 @@ export default function MainContainer() {
                     spritesheet => {
                         spritesheet.play();
                         setClickedState(true);
+                        setFadeState([false, true, true, true]);
                     }}
             />
             <Spritesheet
-                className={`portfolioAnimation col-md-5`}
+                className={fadeState[1] ?
+                    `hiddenItem portfolioAnimation col-md-5`
+                :
+                `portfolioAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -113,10 +84,14 @@ export default function MainContainer() {
                     spritesheet => {
                         spritesheet.play();
                         setClickedState(true);
+                        setFadeState([true, false, true, true]);
                     }}
             />
             <Spritesheet
-                className={`contactAnimation col-md-5`}
+                className={fadeState[2] ?
+                    `hiddenItem contactAnimation col-md-5`
+                :
+                `contactAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -132,10 +107,14 @@ export default function MainContainer() {
                     spritesheet => {
                         spritesheet.play();
                         setClickedState(true);
+                        setFadeState([true, true, false, true]);
                     }}
             />
             <Spritesheet
-                className={`resumeAnimation col-md-5`}
+                className={fadeState[3] ?
+                    `hiddenItem resumeAnimation col-md-5`
+                :
+                `resumeAnimation col-md-5`}
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -151,6 +130,7 @@ export default function MainContainer() {
                     spritesheet => {
                         spritesheet.play();
                         setClickedState(true);
+                        setFadeState([true, true, true, false]);
                     }}
             />
             </div>
