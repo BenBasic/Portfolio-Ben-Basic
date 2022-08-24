@@ -149,6 +149,19 @@ code {
   .top-border {
     text-align: center !important;
   }
+
+  .mainButtonContainer {
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+  }
+
+  .aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
+    margin: 0.5rem !important;
+  }
+
+  .contactAnimation, .resumeAnimation {
+    padding-top: 0.3rem !important;
+  }
   
   .resumePageTitles, .resumePageDescriptions {
     text-align: center;
@@ -195,6 +208,24 @@ code {
     border-top: 0.1rem solid gray;
     padding-top: 0.5rem;
   }
+
+  .mainButtonContainer {
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+  }
+
+  .mainButtonContainer .aboutMeAnimation,
+  .mainButtonContainer .portfolioAnimation,
+  .mainButtonContainer .contactAnimation,
+  .mainButtonContainer .resumeAnimation {
+    margin: 0.5rem !important;
+    max-width: 45% !important;
+  }
+
+  .contactAnimation, .resumeAnimation {
+    padding-top: 0rem !important;
+  }
+
   .navigationBar {
     display: none;
   }
@@ -239,6 +270,35 @@ code {
     margin-left: 0rem;
     list-style: none;
   }
+}
+
+@media screen and (max-width: 532px) {
+
+  .mainButtonContainer {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+  }
+
+}
+
+@media screen and (max-width: 457px) {
+
+  .mainButtonContainer {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .mainButtonContainer .aboutMeAnimation,
+  .mainButtonContainer .portfolioAnimation,
+  .mainButtonContainer .contactAnimation,
+  .mainButtonContainer .resumeAnimation {
+    max-width: 40% !important;
+  }
+
 }
 
 .aboutPage {
@@ -292,14 +352,15 @@ code {
   height: auto;
   justify-content: center;
   padding-bottom: 1rem;
-  padding-left: 15rem;
-  padding-right: 15rem;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
 
 .aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
   cursor: pointer;
   margin: 1rem;
+  max-width: 351px !important;
 }
 
 .contactAnimation, .resumeAnimation {
