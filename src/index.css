@@ -376,7 +376,7 @@ code {
 
 .hiddenRow {
   animation:
-  sizeOut 200ms ease-in-out 500ms forwards;
+  sizeOut 220ms ease-in-out 500ms forwards;
 }
 
 @keyframes fadeOut {

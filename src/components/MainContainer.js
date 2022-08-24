@@ -77,21 +77,6 @@ export default function MainContainer() {
     console.log(count)
 
 
-    // Dont this this commented code was doing anything, still keeping around just in case though
-
-    // function changeBGColor(containerName) {
-    //     var cols = document.getElementsByClassName(containerName);
-    //     console.log("---------------------COLS CHECK COLS")
-    //     console.log(cols)
-    //     for(let i = 0; i < cols.length; i++) {
-    //       //cols[i].style.paddingTop = "200px";
-    //       cols[i].style.transition = "1s";
-    //       console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFOR")
-    //       console.log(cols[i])
-    //     }
-    // }
-
-
     return (
         <>
         <div className={fadeState[0] && fadeState[1] ?
@@ -115,11 +100,13 @@ export default function MainContainer() {
                     }
                     :
                     spritesheet => {
-                        //changeBGColor('mainButtonContainer')
-                        spritesheet.play();
+                        //spritesheet.play();
                         setClickedState(true);
                         setFadeState([false, true, true, true]);
                         timer();
+                        setTimeout(function(){
+                            spritesheet.play();
+                        },500);
                     }}
             />
             <Spritesheet
@@ -140,10 +127,13 @@ export default function MainContainer() {
                     }
                     :
                     spritesheet => {
-                        spritesheet.play();
+                        //spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, false, true, true]);
                         timer();
+                        setTimeout(function(){
+                            spritesheet.play();
+                        },500);
                     }}
             />
             </div>
@@ -168,10 +158,13 @@ export default function MainContainer() {
                     }
                     :
                     spritesheet => {
-                        spritesheet.play();
+                        //spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, true, false, true]);
                         timer();
+                        setTimeout(function(){
+                            spritesheet.play();
+                        },500);
                     }}
             />
             <Spritesheet
@@ -192,10 +185,13 @@ export default function MainContainer() {
                     }
                     :
                     spritesheet => {
-                        spritesheet.play();
+                        //spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, true, true, false]);
                         timer();
+                        setTimeout(function(){
+                            spritesheet.play();
+                        },500);
                     }}
             />
             </div>
