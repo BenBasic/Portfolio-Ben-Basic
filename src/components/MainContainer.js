@@ -29,6 +29,8 @@ export default function MainContainer() {
     const [clickedState, setClickedState] = useState(false);
 
     const [fadeState, setFadeState] = useState([false, false, false, false]);
+
+    const [removeItemState, setRemoveItemState] = useState("");
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -37,15 +39,67 @@ export default function MainContainer() {
     console.log("FADESTATE ARRAY CHECK IS");
     console.log(fadeState[0]);
 
+    let removedItem;
+
+    var count = 200;
+
+    var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
+
+    console.log("removedItem check")
+    console.log(removeItemState)
+
+
+    function timer()
+    {
+        if (clickedState) {
+
+            if (count <= 0)
+            {
+                console.log("COUNTDOWN FINISHED")
+                clearInterval(counter);
+                setRemoveItemState("removedItem")
+                console.log("INSIDE IF REMOVE ITEM IS-----")
+                console.log(removeItemState)
+                removedItem = "removedItem"
+                count = 200
+                console.log("COUNT WITHIN IF")
+                console.log(count)
+                return;
+            }
+            count--; 
+            console.log("COUNT ELSE")
+            console.log(count)
+
+        }
+    }
+
+    console.log("RETURN COUNT CHECK")
+    console.log(count)
+
+
+    // Dont this this commented code was doing anything, still keeping around just in case though
+
+    // function changeBGColor(containerName) {
+    //     var cols = document.getElementsByClassName(containerName);
+    //     console.log("---------------------COLS CHECK COLS")
+    //     console.log(cols)
+    //     for(let i = 0; i < cols.length; i++) {
+    //       //cols[i].style.paddingTop = "200px";
+    //       cols[i].style.transition = "1s";
+    //       console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFOR")
+    //       console.log(cols[i])
+    //     }
+    // }
+
 
     return (
         <>
         <div className="row mt-5 mainButtonContainer">
             <Spritesheet
                 className={fadeState[0] ?
-                    `hiddenItem aboutMeAnimation col-md-5`
-                :
-                `aboutMeAnimation col-md-5`}
+                    `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
+                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition` : `aboutMeAnimation col-md-5`)
+                }
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -59,16 +113,18 @@ export default function MainContainer() {
                     }
                     :
                     spritesheet => {
+                        //changeBGColor('mainButtonContainer')
                         spritesheet.play();
                         setClickedState(true);
                         setFadeState([false, true, true, true]);
+                        timer();
                     }}
             />
             <Spritesheet
                 className={fadeState[1] ?
-                    `hiddenItem portfolioAnimation col-md-5`
-                :
-                `portfolioAnimation col-md-5`}
+                    `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
+                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition` : `portfolioAnimation col-md-5`)
+                }
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -85,13 +141,14 @@ export default function MainContainer() {
                         spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, false, true, true]);
+                        timer();
                     }}
             />
             <Spritesheet
                 className={fadeState[2] ?
-                    `hiddenItem contactAnimation col-md-5`
-                :
-                `contactAnimation col-md-5`}
+                    `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
+                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition` : `contactAnimation col-md-5`)
+                }
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -108,13 +165,14 @@ export default function MainContainer() {
                         spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, true, false, true]);
+                        timer();
                     }}
             />
             <Spritesheet
                 className={fadeState[3] ?
-                    `hiddenItem resumeAnimation col-md-5`
-                :
-                `resumeAnimation col-md-5`}
+                    `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
+                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition` : `resumeAnimation col-md-5`)
+                }
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}
                 heightFrame={351}
@@ -131,6 +189,7 @@ export default function MainContainer() {
                         spritesheet.play();
                         setClickedState(true);
                         setFadeState([true, true, true, false]);
+                        timer();
                     }}
             />
             </div>

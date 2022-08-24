@@ -370,7 +370,9 @@ code {
 }
 
 .hiddenItem {
-  animation: fadeOut 0.5s forwards;
+  animation: 
+  fadeOut 500ms 0ms forwards,
+  sizeOut 200ms ease-in-out 500ms forwards;
 }
 
 @keyframes fadeOut {
@@ -382,7 +384,31 @@ code {
   to {
     opacity: 0;
     padding-top: 5rem;
+    
   }
+}
+
+@keyframes sizeOut {
+  from {
+  }
+
+  30% {
+    width: 0px;
+  }
+
+  100% {
+    margin: 0px;
+    height: 0px;
+    width: 0px;
+  }
+}
+
+.removedItem {
+  display: none;
+}
+
+.buttonTransition {
+  transition: 1s;
 }
 
 
