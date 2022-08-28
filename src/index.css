@@ -381,10 +381,14 @@ code {
 .navIcon {
   max-width: 50% !important;
   padding: 1% !important;
-  cursor: pointer;
+  /* cursor: pointer; */
   /* opacity: 0;
   animation:
   sizeIn 220ms ease-in-out 500ms forwards; */
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 
@@ -430,15 +434,30 @@ code {
   sizeOut 220ms ease-in-out 500ms forwards;
 }
 
+.fadeInIcon {
+  animation: 
+  fadeIn 500ms ease-in-out 0ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
-    padding-top: 1rem;
+    padding-top: 0rem;
   }
 
   to {
     opacity: 0;
     padding-top: 5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

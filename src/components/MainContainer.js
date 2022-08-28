@@ -50,6 +50,8 @@ export default function MainContainer() {
     const [fadeState, setFadeState] = useState([false, false, false, false]);
 
     const [removeItemState, setRemoveItemState] = useState("");
+
+    const [fadeInState, setFadeInState] = useState("");
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -77,6 +79,7 @@ export default function MainContainer() {
                 console.log("COUNTDOWN FINISHED")
                 clearInterval(counter);
                 setRemoveItemState("removedItem")
+                setFadeInState("fadeInIcon")
                 console.log("INSIDE IF REMOVE ITEM IS-----")
                 console.log(removeItemState)
                 removedItem = "removedItem"
@@ -104,6 +107,8 @@ export default function MainContainer() {
     // ends so that the fading times smoothly, pairing this with an if statement for the className would likely solve the weird
     // behaviour with full opacity icons appearing and then performing an animation in a delayed way.
 
+    // Maybe consider adding shadows to the main grid buttons
+
 
     return (
         <>
@@ -118,7 +123,7 @@ export default function MainContainer() {
                 alt={icon.title}
                 key={"button" + index}
                 className={fadeState[index] && clickedState ?
-                    'navIcon col-3 col-sm-3 col-md-3' :
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon clickable ${fadeInState}` :
                     !clickedState ?
                     'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
                     'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
