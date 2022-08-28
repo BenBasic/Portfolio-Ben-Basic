@@ -375,6 +375,7 @@ code {
   padding-right: 30%;
   transition: 1s;
   justify-content: center;
+  position: relative;
 }
 
 .navIcon {
@@ -397,6 +398,17 @@ code {
 
 .contactAnimation, .resumeAnimation {
   
+}
+
+.instructions {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+}
+
+.hiddenInstructions {
+  animation: 
+  smallerFadeOut 500ms 0ms forwards;
 }
 
 .hiddenIcon {
@@ -427,6 +439,18 @@ code {
   to {
     opacity: 0;
     padding-top: 5rem;
+  }
+}
+
+@keyframes smallerFadeOut {
+  from {
+    opacity: 1;
+    padding-top: 0.5rem;
+  }
+
+  to {
+    opacity: 0;
+    padding-top: 2rem;
   }
 }
 

@@ -60,7 +60,7 @@ export default function MainContainer() {
 
     let removedItem;
 
-    var count = 700;
+    var count = 100;
 
     var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
 
@@ -80,7 +80,7 @@ export default function MainContainer() {
                 console.log("INSIDE IF REMOVE ITEM IS-----")
                 console.log(removeItemState)
                 removedItem = "removedItem"
-                count = 700
+                count = 100
                 console.log("COUNT WITHIN IF")
                 console.log(count)
                 return;
@@ -95,10 +95,23 @@ export default function MainContainer() {
     console.log("RETURN COUNT CHECK")
     console.log(count)
 
+    // Consider adding col-sm-3 and col-3 to the main 4 grid buttons as it made the animation look less jank for the contact button
+    // on smaller screens, but test it out a bit, make sure it doesnt conflict with anything as I remember the
+    // margin between top and bottom rows was smaller after adding those. Maybe try only adding it to the bottom 2 buttons instead
+    // of all of them? Or just look into adjusting margins for bottom 2 buttons if adding the col-sm and col
+
+    // ADD ANOTHER SET STATE TO THE TIMER FUNCTION could do this for adding a class for the navbar icons to fade in after the countdown
+    // ends so that the fading times smoothly, pairing this with an if statement for the className would likely solve the weird
+    // behaviour with full opacity icons appearing and then performing an animation in a delayed way.
+
 
     return (
         <>
         <div className='row topNavButtons mt-3'>
+            <h1 className={clickedState ?
+            `instructions hiddenInstructions ${removeItemState}` :
+            `instructions`
+            }>Select an icon</h1>
             {buttonArray.map((icon, index) => (
                 <img 
                 src={require(`./assets/images/${icon.image}.png`)}
@@ -114,8 +127,8 @@ export default function MainContainer() {
         </div>
         
         <div className={fadeState[0] && fadeState[1] ?
-        `hiddenRow row mt-5 mainButtonContainer ${removeItemState}` :
-        "row mt-5 mainButtonContainer"}>
+        `hiddenRow row mt-3 mainButtonContainer ${removeItemState}` :
+        "row mt-3 mainButtonContainer"}>
             <Spritesheet
                 className={fadeState[0] ?
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
