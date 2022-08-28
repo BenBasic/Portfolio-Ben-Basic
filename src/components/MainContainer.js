@@ -24,6 +24,25 @@ export default function MainContainer() {
         return <Resume />
     };
 
+    const buttonArray = [
+        {
+            title: "About Me",
+            image: "PortfolioArtAboutMeSingle"
+        },
+        {
+            title: "Portfolio",
+            image: "PortfolioArtPortfolioSingle"
+        },
+        {
+            title: "Contact",
+            image: "PortfolioArtContactSingle"
+        },
+        {
+            title: "Resume",
+            image: "PortfolioArtResumeSingle"
+        },
+    ]
+
     const handlePageChange = (page) => setCurrentPage(page);
 
     const [clickedState, setClickedState] = useState(false);
@@ -79,6 +98,21 @@ export default function MainContainer() {
 
     return (
         <>
+        <div className='row topNavButtons mt-3'>
+            {buttonArray.map((icon, index) => (
+                <img 
+                src={require(`./assets/images/${icon.image}.png`)}
+                alt={icon.title}
+                key={"button" + index}
+                className={fadeState[index] && clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3' :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }></img>
+            ))}
+        </div>
+        
         <div className={fadeState[0] && fadeState[1] ?
         `hiddenRow row mt-5 mainButtonContainer ${removeItemState}` :
         "row mt-5 mainButtonContainer"}>

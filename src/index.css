@@ -226,6 +226,16 @@ code {
     padding-top: 0rem;
   }
 
+  .topNavButtons {
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+  }
+
+  /* .navIcon {
+    max-width: 50% !important;
+    padding: 0% !important;
+  } */
+
   .navigationBar {
     display: none;
   }
@@ -286,6 +296,11 @@ code {
   .mainButtonContainer {
     padding-left: 10% !important;
     padding-right: 10% !important;
+  }
+
+  .topNavButtons {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
   }
 
 }
@@ -355,6 +370,22 @@ code {
   padding-right: 30%;
 }
 
+.topNavButtons {
+  padding-left: 30%;
+  padding-right: 30%;
+  transition: 1s;
+  justify-content: center;
+}
+
+.navIcon {
+  max-width: 50% !important;
+  padding: 1% !important;
+  cursor: pointer;
+  /* opacity: 0;
+  animation:
+  sizeIn 220ms ease-in-out 500ms forwards; */
+}
+
 
 .aboutMeAnimation, .portfolioAnimation, .contactAnimation, .resumeAnimation {
   cursor: pointer;
@@ -366,6 +397,14 @@ code {
 
 .contactAnimation, .resumeAnimation {
   
+}
+
+.hiddenIcon {
+  display: none;
+}
+
+.invisibleIcon {
+  opacity: 0;
 }
 
 .hiddenItem {
@@ -409,6 +448,18 @@ code {
     height: 0px;
     width: 0px;
     transform: scale(0);
+  }
+}
+
+@keyframes sizeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
