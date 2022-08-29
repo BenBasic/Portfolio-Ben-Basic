@@ -53,7 +53,7 @@ export default function MainContainer() {
 
     const [fadeInState, setFadeInState] = useState("");
 
-    const [spriteState, setSpriteState] = useState("");
+    const [spriteState, setSpriteState] = useState([]);
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -139,14 +139,20 @@ export default function MainContainer() {
                 }
                 onClick={index === 0 && clickedState ? () => {
                     setFadeState([false, true, true, true])
-                    spriteState.goToAndPlay(1);
+                    spriteState[0].goToAndPlay(1);
                 } :
                     index === 1 && clickedState ? () => {
                         setFadeState([true, false, true, true])
-                        // this.spritesheetInstance.play();
+                        spriteState[1].goToAndPlay(1);
                     } :
-                    index === 2 && clickedState ? () => setFadeState([true, true, false, true]) :
-                    index === 3 && clickedState ? () => setFadeState([true, true, true, false]) :
+                    index === 2 && clickedState ? () => {
+                        setFadeState([true, true, false, true])
+                        spriteState[2].goToAndPlay(1);
+                    } :
+                    index === 3 && clickedState ? () => {
+                        setFadeState([true, true, true, false])
+                        spriteState[3].goToAndPlay(1);
+                    } :
                     null
                 }
                 ></img>
@@ -169,7 +175,7 @@ export default function MainContainer() {
                 autoplay={false}
                 loop={false}
                 getInstance={!fadeState[0] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(spritesheet); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                    setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
                 } :
                 null}
                 onClick={clickedState ?
@@ -199,6 +205,10 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                getInstance={!fadeState[1] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                } :
+                null}
                 onClick={clickedState ?
                     spritesheet => {
                         spritesheet.pause();
@@ -230,6 +240,10 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                getInstance={!fadeState[2] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                } :
+                null}
                 onClick={clickedState ?
                     spritesheet => {
                         spritesheet.pause();
@@ -257,6 +271,10 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                getInstance={!fadeState[3] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                } :
+                null}
                 onClick={clickedState ?
                     spritesheet => {
                         spritesheet.pause();
