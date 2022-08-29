@@ -52,6 +52,8 @@ export default function MainContainer() {
     const [removeItemState, setRemoveItemState] = useState("");
 
     const [fadeInState, setFadeInState] = useState("");
+
+    const [spriteState, setSpriteState] = useState("");
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -62,7 +64,7 @@ export default function MainContainer() {
 
     let removedItem;
 
-    var count = 100;
+    var count = 80;
 
     var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
 
@@ -83,20 +85,23 @@ export default function MainContainer() {
                 console.log("INSIDE IF REMOVE ITEM IS-----")
                 console.log(removeItemState)
                 removedItem = "removedItem"
-                count = 100
-                console.log("COUNT WITHIN IF")
-                console.log(count)
+                count = 80
+                //console.log("COUNT WITHIN IF")
+                //console.log(count)
                 return;
             }
             count--; 
-            console.log("COUNT ELSE")
-            console.log(count)
+            //console.log("COUNT ELSE")
+            //console.log(count)
 
         }
     }
 
     console.log("RETURN COUNT CHECK")
     console.log(count)
+
+    console.log("++++++++++++++++++++++++ INSTANCE CHECK +++++++++++++++++++++++++++")
+    console.log(spriteState)
 
     // Consider adding col-sm-3 and col-3 to the main 4 grid buttons as it made the animation look less jank for the contact button
     // on smaller screens, but test it out a bit, make sure it doesnt conflict with anything as I remember the
@@ -108,6 +113,10 @@ export default function MainContainer() {
     // behaviour with full opacity icons appearing and then performing an animation in a delayed way.
 
     // Maybe consider adding shadows to the main grid buttons
+
+    // NEED TO WORK ON SPRITESHEET CSS WHEN CLICKED FROM THE TOP NAV ROW OF ICONS AS IT WILL BRIEFLY SHOW THE LAST FRAME OF THE ANIMATION
+    // BEFORE STARTING THE ANIMATION AT ITS INTENDED FRAME. CAN FIX THIS WITH 0 OPACITY ANIMATION WITH CSS, WILL BE FINE BECAUSE IM
+    // PLANNING TO DO A SLIDE IN FROM LEFT/ SLIDE OUT TO RIGHT ANIMATION FOR THESE ANYWAY
 
 
     return (
@@ -127,7 +136,20 @@ export default function MainContainer() {
                     !clickedState ?
                     'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
                     'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
-                }></img>
+                }
+                onClick={index === 0 && clickedState ? () => {
+                    setFadeState([false, true, true, true])
+                    spriteState.goToAndPlay(1);
+                } :
+                    index === 1 && clickedState ? () => {
+                        setFadeState([true, false, true, true])
+                        // this.spritesheetInstance.play();
+                    } :
+                    index === 2 && clickedState ? () => setFadeState([true, true, false, true]) :
+                    index === 3 && clickedState ? () => setFadeState([true, true, true, false]) :
+                    null
+                }
+                ></img>
             ))}
         </div>
         
@@ -146,6 +168,10 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                getInstance={!fadeState[0] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(spritesheet); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                } :
+                null}
                 onClick={clickedState ?
                     spritesheet => {
                         spritesheet.pause();
