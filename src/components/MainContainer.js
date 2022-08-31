@@ -8,7 +8,7 @@ import Resume from './Resume';
 import Spritesheet from 'react-responsive-spritesheet';
 
 export default function MainContainer() {
-    const [currentPage, setCurrentPage] = useState('About');
+    const [currentPage, setCurrentPage] = useState('');
 
     // Running if statements within the renderPage function to check for what page the user is on, then returning the appropriate component based on that
     const renderPage = () => {
@@ -21,7 +21,9 @@ export default function MainContainer() {
         if (currentPage === 'Contact') {
             return <Contact />;
         }
-        return <Resume />
+        if (currentPage === 'Resume') {
+            return <Resume />;
+        }
     };
 
     const handlePageChange = (page) => setCurrentPage(page);
@@ -108,6 +110,10 @@ export default function MainContainer() {
     console.log("NULL CHECK")
     console.log(!spriteState[2])
 
+    if (spriteState[3] === undefined) {
+        console.log("UNDEFINED CHECK")
+    }
+
     // Consider adding col-sm-3 and col-3 to the main 4 grid buttons as it made the animation look less jank for the contact button
     // on smaller screens, but test it out a bit, make sure it doesnt conflict with anything as I remember the
     // margin between top and bottom rows was smaller after adding those. Maybe try only adding it to the bottom 2 buttons instead
@@ -187,7 +193,7 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[0] && !spriteState[0] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[0] && (typeof spriteState[0] === 'undefined' || spriteState[0] === undefined) && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
                 } :
                 null}
@@ -195,12 +201,12 @@ export default function MainContainer() {
                     () => null
                     :
                     spritesheet => {
-                        handlePageChange('About')
                         setClickedState(true);
                         setFadeState([false, true, true, true]);
                         timer();
                         setTimeout(function(){
                             spritesheet.play();
+                            handlePageChange('About')
                         },500);
                     }}
             />
@@ -216,7 +222,7 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[1] && !spriteState[1] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[1] && (typeof spriteState[1] === 'undefined' || spriteState[1] === undefined) && spriteState.length < 2 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
@@ -224,12 +230,12 @@ export default function MainContainer() {
                     () => null
                     :
                     spritesheet => {
-                        handlePageChange('Portfolio')
                         setClickedState(true);
                         setFadeState([true, false, true, true]);
                         timer();
                         setTimeout(function(){
                             spritesheet.play();
+                            handlePageChange('Portfolio')
                         },500);
                     }}
             />
@@ -249,7 +255,7 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[2] && !spriteState[2] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[2] && (typeof spriteState[2] === 'undefined' || spriteState[2] === undefined) && spriteState.length < 3 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], current[1], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
@@ -257,12 +263,12 @@ export default function MainContainer() {
                     () => null
                     :
                     spritesheet => {
-                        handlePageChange('Contact')
                         setClickedState(true);
                         setFadeState([true, true, false, true]);
                         timer();
                         setTimeout(function(){
                             spritesheet.play();
+                            handlePageChange('Contact')
                         },500);
                     }}
             />
@@ -278,7 +284,7 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[3] && !spriteState[3] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[3] && (typeof spriteState[3] === 'undefined' || spriteState[3] === undefined) && spriteState.length < 4 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], current[1], current[2], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
@@ -286,12 +292,12 @@ export default function MainContainer() {
                     () => null
                     :
                     spritesheet => {
-                        handlePageChange('Resume')
                         setClickedState(true);
                         setFadeState([true, true, true, false]);
                         timer();
                         setTimeout(function(){
                             spritesheet.play();
+                            handlePageChange('Resume')
                         },500);
                     }}
             />

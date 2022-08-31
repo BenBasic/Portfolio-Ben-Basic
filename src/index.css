@@ -443,6 +443,11 @@ code {
   fadeIn 500ms ease-in-out 0ms forwards;
 }
 
+.fadeInPage {
+  animation: 
+  fadeIn 500ms ease-in-out 500ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
