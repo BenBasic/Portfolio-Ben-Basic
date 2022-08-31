@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #2B2B2B !important;
+  background: #BAE2F2 !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -95,27 +95,29 @@ code {
 
 .headerComponent {
   position: relative;
-  background-image: linear-gradient(90deg, rgb(105, 192, 241), rgb(252, 132, 212));
-  height: 300px;
-  min-height: 300px;
+  background-color: #2B52C1;
+  height: 10%;
+  min-height: 10%;
   width: 100%;
   text-align: center;
   overflow: hidden;
 }
 
 .headerComponent h1 {
-  margin-top: 50px;
+  color: white;
+  margin-top: 2rem;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent h2 {
+  color: white;
   opacity: 80%;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent a {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 0.5rem;
   padding: 5px;
   border-radius: 10%;
   color: #fff;
@@ -381,6 +383,7 @@ code {
 .navIcon {
   max-width: 50% !important;
   padding: 1% !important;
+  filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
   /* cursor: pointer; */
   /* opacity: 0;
   animation:
@@ -398,6 +401,8 @@ code {
   max-width: 351px !important;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
+  
 }
 
 .navTransition {
@@ -441,11 +446,6 @@ code {
 .fadeInIcon {
   animation: 
   fadeIn 500ms ease-in-out 0ms forwards;
-}
-
-.fadeInPage {
-  animation: 
-  fadeIn 500ms ease-in-out 500ms forwards;
 }
 
 @keyframes fadeOut {
@@ -725,7 +725,6 @@ footer {
   height: 2.5rem;
   bottom: 0px;
   width: 100%;
-  background-color: #2B2B2B;
   margin-top: auto;
   margin-bottom: 2.8rem;
 }

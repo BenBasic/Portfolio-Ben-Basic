@@ -303,8 +303,10 @@ export default function MainContainer() {
             />
             </div>
             <div className="mainContainer">
+                {/* 
                 <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
                 <NavBarMobile currentPage={currentPage} handlePageChange={handlePageChange} />
+                */}
                 {renderPage()}
             </div>
         </>
