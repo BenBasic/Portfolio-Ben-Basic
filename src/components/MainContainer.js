@@ -53,6 +53,8 @@ export default function MainContainer() {
 
     const [fadeInState, setFadeInState] = useState("");
 
+    const [transitionState, setTransitionState] = useState("");
+
     const [spriteState, setSpriteState] = useState([]);
     
     console.log("CLICKED IS");
@@ -103,6 +105,9 @@ export default function MainContainer() {
     console.log("++++++++++++++++++++++++ INSTANCE CHECK +++++++++++++++++++++++++++")
     console.log(spriteState)
 
+    console.log("NULL CHECK")
+    console.log(!spriteState[2])
+
     // Consider adding col-sm-3 and col-3 to the main 4 grid buttons as it made the animation look less jank for the contact button
     // on smaller screens, but test it out a bit, make sure it doesnt conflict with anything as I remember the
     // margin between top and bottom rows was smaller after adding those. Maybe try only adding it to the bottom 2 buttons instead
@@ -140,18 +145,22 @@ export default function MainContainer() {
                 onClick={index === 0 && clickedState ? () => {
                     setFadeState([false, true, true, true])
                     spriteState[0].goToAndPlay(1);
-                } :
+                    setTransitionState("fadeInIcon")
+                    } :
                     index === 1 && clickedState ? () => {
                         setFadeState([true, false, true, true])
                         spriteState[1].goToAndPlay(1);
+                        setTransitionState("fadeInIcon")
                     } :
                     index === 2 && clickedState ? () => {
                         setFadeState([true, true, false, true])
                         spriteState[2].goToAndPlay(1);
+                        setTransitionState("fadeInIcon")
                     } :
                     index === 3 && clickedState ? () => {
                         setFadeState([true, true, true, false])
                         spriteState[3].goToAndPlay(1);
+                        setTransitionState("fadeInIcon")
                     } :
                     null
                 }
@@ -165,7 +174,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[0] ?
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition` : `aboutMeAnimation col-md-5`)
+                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition ${transitionState}` : `aboutMeAnimation col-md-5`)
                 }
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
@@ -174,7 +183,7 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[0] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[0] && !spriteState[0] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
                 } :
                 null}
@@ -196,7 +205,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[1] ?
                     `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition` : `portfolioAnimation col-md-5`)
+                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition ${transitionState}` : `portfolioAnimation col-md-5`)
                 }
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
@@ -205,8 +214,8 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[1] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                getInstance={!fadeState[1] && !spriteState[1] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [current[0], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
                 onClick={clickedState ?
@@ -231,7 +240,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[2] ?
                     `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition` : `contactAnimation col-md-5`)
+                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition ${transitionState}` : `contactAnimation col-md-5`)
                 }
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
@@ -240,8 +249,8 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[2] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                getInstance={!fadeState[2] && !spriteState[2] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [current[0], current[1], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
                 onClick={clickedState ?
@@ -262,7 +271,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[3] ?
                     `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition` : `resumeAnimation col-md-5`)
+                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition ${transitionState}` : `resumeAnimation col-md-5`)
                 }
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}
@@ -271,8 +280,8 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                getInstance={!fadeState[3] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(current => [...current, spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                getInstance={!fadeState[3] && !spriteState[3] ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setSpriteState(current => [current[0], current[1], current[2], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
                 onClick={clickedState ?
