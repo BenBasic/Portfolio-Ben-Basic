@@ -84,7 +84,7 @@ export default function Contact() {
     };
 
     return (
-        <div>
+        <div className="fadeInIcon">
             <h1 className='text-center contactTitle mt-5'>Contact</h1>
             <section className="contactContainer mt-3">
                 <form id='contact-form' onSubmit={handleSubmit}>

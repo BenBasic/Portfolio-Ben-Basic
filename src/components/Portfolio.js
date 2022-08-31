@@ -43,7 +43,7 @@ export default function Portfolio() {
     ]);
 
     return (
-        <div className="row mt-5">
+        <div className="row mt-5 fadeInIcon">
             {projects.map((project, index) => (
                 <ProjectCard project={project} key={"project" + index} />
             ))}

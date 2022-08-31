@@ -24,6 +24,8 @@ export default function MainContainer() {
         return <Resume />
     };
 
+    const handlePageChange = (page) => setCurrentPage(page);
+
     const buttonArray = [
         {
             title: "About Me",
@@ -42,8 +44,6 @@ export default function MainContainer() {
             image: "PortfolioArtResumeSingle"
         },
     ]
-
-    const handlePageChange = (page) => setCurrentPage(page);
 
     const [clickedState, setClickedState] = useState(false);
 
@@ -143,21 +143,25 @@ export default function MainContainer() {
                     'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
                 }
                 onClick={index === 0 && clickedState ? () => {
+                    handlePageChange('About')
                     setFadeState([false, true, true, true])
                     spriteState[0].goToAndPlay(1);
                     setTransitionState("fadeInIcon")
                     } :
                     index === 1 && clickedState ? () => {
+                        handlePageChange('Portfolio')
                         setFadeState([true, false, true, true])
                         spriteState[1].goToAndPlay(1);
                         setTransitionState("fadeInIcon")
                     } :
                     index === 2 && clickedState ? () => {
+                        handlePageChange('Contact')
                         setFadeState([true, true, false, true])
                         spriteState[2].goToAndPlay(1);
                         setTransitionState("fadeInIcon")
                     } :
                     index === 3 && clickedState ? () => {
+                        handlePageChange('Resume')
                         setFadeState([true, true, true, false])
                         spriteState[3].goToAndPlay(1);
                         setTransitionState("fadeInIcon")
@@ -188,12 +192,10 @@ export default function MainContainer() {
                 } :
                 null}
                 onClick={clickedState ?
-                    spritesheet => {
-                        spritesheet.pause();
-                    }
+                    () => null
                     :
                     spritesheet => {
-                        //spritesheet.play();
+                        handlePageChange('About')
                         setClickedState(true);
                         setFadeState([false, true, true, true]);
                         timer();
@@ -219,12 +221,10 @@ export default function MainContainer() {
                 } :
                 null}
                 onClick={clickedState ?
-                    spritesheet => {
-                        spritesheet.pause();
-                    }
+                    () => null
                     :
                     spritesheet => {
-                        //spritesheet.play();
+                        handlePageChange('Portfolio')
                         setClickedState(true);
                         setFadeState([true, false, true, true]);
                         timer();
@@ -254,12 +254,10 @@ export default function MainContainer() {
                 } :
                 null}
                 onClick={clickedState ?
-                    spritesheet => {
-                        spritesheet.pause();
-                    }
+                    () => null
                     :
                     spritesheet => {
-                        //spritesheet.play();
+                        handlePageChange('Contact')
                         setClickedState(true);
                         setFadeState([true, true, false, true]);
                         timer();
@@ -285,12 +283,10 @@ export default function MainContainer() {
                 } :
                 null}
                 onClick={clickedState ?
-                    spritesheet => {
-                        spritesheet.pause();
-                    }
+                    () => null
                     :
                     spritesheet => {
-                        //spritesheet.play();
+                        handlePageChange('Resume')
                         setClickedState(true);
                         setFadeState([true, true, true, false]);
                         timer();
