@@ -135,7 +135,7 @@ export default function MainContainer() {
         <div className='row topNavButtons mt-3'>
             <h1 className={clickedState ?
             `instructions hiddenInstructions ${removeItemState}` :
-            `instructions`
+            `instructions invisibleIcon`
             }>Select an icon</h1>
             {buttonArray.map((icon, index) => (
                 <img 
@@ -184,7 +184,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[0] ?
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition ${transitionState}` : `aboutMeAnimation col-md-5`)
+                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear`)
                 }
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
@@ -213,7 +213,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[1] ?
                     `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition ${transitionState}` : `portfolioAnimation col-md-5`)
+                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear`)
                 }
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
@@ -246,7 +246,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[2] ?
                     `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition ${transitionState}` : `contactAnimation col-md-5`)
+                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition ${transitionState}` : `contactAnimation col-md-5 iconStartAppear`)
                 }
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
@@ -275,7 +275,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[3] ?
                     `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition ${transitionState}` : `resumeAnimation col-md-5`)
+                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear`)
                 }
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}

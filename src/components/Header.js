@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
     return (
-        <header className="row headerComponent">
+        <header className="row headerComponent invisibleIcon headerStartAppear">
             <h1>Benjamin Basic</h1>
             <h2>Full Stack Web Developer</h2>
             <ul className="social">
