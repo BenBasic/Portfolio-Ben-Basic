@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function About() {
     return (
-        <div className='container aboutContainer invisibleIcon fadeInIcon'>
-            <div className='mx-5 mt-5 p3 aboutPage'>
+        <div className='container aboutContainer invisibleIcon fadeInPage'>
+            <div className='mx-5 mt-md-5 mt-3 p3 aboutPage'>
                 <h1 className='text-center'>About Me</h1>
                 <div className='row'>
                 <div className="col-md-2">

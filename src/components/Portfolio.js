@@ -43,11 +43,13 @@ export default function Portfolio() {
     ]);
 
     return (
-        <div className="portfolioContainer row mt-5 invisibleIcon fadeInIcon">
+        <div className="invisibleIcon fadeInPage">
+        <div className="portfolioContainer row mt-md-5 mt-3">
             <h1 className='text-center'>Portfolio</h1>
             {projects.map((project, index) => (
                 <ProjectCard project={project} key={"project" + index} />
             ))}
+        </div>
         </div>
     )
 }

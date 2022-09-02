@@ -16,11 +16,17 @@ export default function Resume() {
 
     const [jobs] = useState([
         {
-            company: "Lion Building Group",
-            title: "Hotel General Manager",
-            years: "March 2020 - September 2021",
-            description: "Managed and supervised the daily operations of two hotel properties, led and facilitated the onboarding and training of a staff of over 20 team members, initiated and managed relationships with individual clients and corporations",
+            company: "NutraBee",
+            title: "Creative Director",
+            years: "September 2021 - May 2022",
+            description: "Managed and supervised the daily operations of the marketing team, oversaw social media rebranding campaign, created all content required for the company's online marketing with the workload including photographing, recording video, editing, designing, staging, scripting, animating, and recording voice over.",
         },
+        // {
+        //     company: "Lion Building Group",
+        //     title: "Hotel General Manager",
+        //     years: "March 2020 - September 2021",
+        //     description: "Managed and supervised the daily operations of two hotel properties, led and facilitated the onboarding and training of a staff of over 20 team members, initiated and managed relationships with individual clients and corporations.",
+        // },
     ]);
 
     const [frontEndSkills] = useState([
@@ -70,8 +76,8 @@ export default function Resume() {
 
     return (
         <>
-        <div className="container resumeContainer invisibleIcon fadeInIcon">
-            <div className="mx-5 mt-5 p3 resumePage">
+        <div className="container resumeContainer invisibleIcon fadeInPage">
+            <div className="mx-5 mt-md-5 mt-3 p3 resumePage">
             <h1 className='text-center resumeTitle'>Resume</h1>
                 <div className='resumeDownload text-center'>
                     <p>
