@@ -70,8 +70,9 @@ export default function Resume() {
 
     return (
         <>
-        <div className="container invisibleIcon fadeInIcon">
+        <div className="container resumeContainer invisibleIcon fadeInIcon">
             <div className="mx-5 mt-5 p3 resumePage">
+            <h1 className='text-center resumeTitle'>Resume</h1>
                 <div className='resumeDownload text-center'>
                     <p>
                         <a href='https://drive.google.com/file/d/1Ksui5Fr_NJIxeuqa05vX72K9rT8BQ2or/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>

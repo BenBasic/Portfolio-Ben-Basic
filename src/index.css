@@ -167,6 +167,10 @@ code {
   .contactAnimation, .resumeAnimation {
     padding-top: 0.3rem;
   }
+
+  .container {
+    
+  }
   
   .resumePageTitles, .resumePageDescriptions {
     text-align: center;
@@ -205,13 +209,32 @@ code {
   .bioContainer {
     text-align: center;
   }
+
   .bio {
     display: inline-block;
     text-align: left;
   }
+
+  .aboutContainer {
+    max-width: 85% !important;
+  }
+
+  .aboutContainer .mx-5 {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+  }
+
+  .contactContainer {
+    max-width: 80% !important;
+  }
+
   .contactDetails h2 {
     border-top: 0.1rem solid gray;
     padding-top: 0.5rem;
+  }
+
+  .resumeContainer {
+    max-width: 80% !important;
   }
 
   .mainButtonContainer {
@@ -544,6 +567,7 @@ code {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   background-color: white;
   border-radius: 1rem;
+  filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
 }
 
 .portfolioContainer h1 {
@@ -653,23 +677,26 @@ code {
 */
 
 .contactTitle {
-  color: white;
+  color: black;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .contactContainer {
-  background: rgb(100, 90, 138); 
+  /* background: rgb(100, 90, 138);  */
+  background: white;
 	border-radius: 1rem;
 	padding: 10px;
 	max-width: 40rem;
 	margin: auto;
+  filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
 }
 
 #contact-form {
-  margin: 1.5rem;
+  margin: 0rem 1.5rem 1.5rem 1.5rem;
 }
 
 #contact-form label {
-  color: white;
+  color: black;
 }
 
 #contact-form input {
@@ -677,13 +704,22 @@ code {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
-  background-color: rgb(66, 55, 109);
-  color: white;
+  /* background-color: rgb(66, 55, 109); */
+  /* background-color: #2B52C1; */
+  background-color: #d8dce7;
+  color: black;
+  border-style: none;
+  border-radius: 0.4rem;
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3));
+  text-indent: 0.2rem;
 }
 
 #contact-form input:focus {
-  background-color: rgb(50, 40, 87);
-  outline: 0.2rem solid rgb(84, 71, 133);
+  /* background-color: rgb(50, 40, 87); */
+  /* background-color: #13307e; */
+  background-color: #c3cef1;
+  /* outline: 0.2rem solid rgb(84, 71, 133); */
+  outline: none;
 }
 
 #contact-form textarea {
@@ -691,16 +727,25 @@ code {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
-  background-color: rgb(66, 55, 109);
+  /* background-color: rgb(66, 55, 109); */
+  /* background-color: #2B52C1; */
+  background-color: #d8dce7;
   resize: vertical; 
   min-height: 11rem;
   max-height: 11rem;
-  color: white;
+  color: black;
+  border-style: none;
+  border-radius: 0.4rem;
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3));
+  text-indent: 0.2rem;
 }
 
 #contact-form textarea:focus {
-  background-color: rgb(50, 40, 87);
-  outline: 0.2rem solid rgb(84, 71, 133);
+  /* background-color: rgb(50, 40, 87); */
+  /* background-color: #13307e; */
+  background-color: #c3cef1;
+  /* outline: 0.2rem solid rgb(84, 71, 133); */
+  outline: none;
 }
 
 #contact-form .submitContainer {
@@ -709,7 +754,8 @@ code {
 }
 
 #contact-form .submitButton {
-  background-color: violet;
+  /* background-color: violet; */
+  background-color: #2B52C1;
   font-size: 1.5rem;
   justify-content: center;
   border-radius: 0.5rem;
@@ -720,20 +766,37 @@ code {
   font-weight: bold;
   transition: all 0.4s ease-in-out;
   margin-bottom: -1rem;
+  border: none;
 }
 
 #contact-form .submitButton:hover {
-  background-color: rgb(192, 91, 192);
+  /* background-color: rgb(192, 91, 192); */
+  background-color: #13307e;
 }
 
+.resumeContainer {
+  
+  background-color: white;
+  border-radius: 1rem;
+  filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
+}
 
 .resumePage {
-  background: #2B2B2B;
-  color: white;
+  color: black;
+  padding-top: 1rem;
   padding-bottom: 5rem;
   margin-top: 50%;
   overflow: hidden;
+}
 
+.resumeTitle {
+  color: black;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+  margin-bottom: 1rem;
+}
+
+.resumePageTitles, .school h3, .work h3, .resumePageDescriptions h3 {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .resumePage .row {
