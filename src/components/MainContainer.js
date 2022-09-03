@@ -110,25 +110,21 @@ export default function MainContainer() {
     console.log("NULL CHECK")
     console.log(!spriteState[2])
 
-    if (spriteState[3] === undefined) {
-        console.log("UNDEFINED CHECK")
-    }
 
-    // Consider adding col-sm-3 and col-3 to the main 4 grid buttons as it made the animation look less jank for the contact button
-    // on smaller screens, but test it out a bit, make sure it doesnt conflict with anything as I remember the
-    // margin between top and bottom rows was smaller after adding those. Maybe try only adding it to the bottom 2 buttons instead
-    // of all of them? Or just look into adjusting margins for bottom 2 buttons if adding the col-sm and col
+    // NEED TO LOOK INTO HOW TO USE onPlay WITH SPRITESHEET PROPERTIES, COULD MAYBE USE THAT TO CHECK FOR CSS VALUE OF THE
+    // SPRITE CONTAINER CLASS THE PACKAGE USES TO THEN CHECK FOR IF ITS AT A 0 VALUE FOR SCALE AND MAKE IT MATCH ANOTHER
+    // SCALE VALUE WHICH IS GREATER THAN 0 SO THAT WAY IT CAN STOP SHOWING UP WITH 0 SCALE AND BEING INVISIBLE WHEN
+    // RESIZING THE WINDOW
 
-    // ADD ANOTHER SET STATE TO THE TIMER FUNCTION could do this for adding a class for the navbar icons to fade in after the countdown
-    // ends so that the fading times smoothly, pairing this with an if statement for the className would likely solve the weird
-    // behaviour with full opacity icons appearing and then performing an animation in a delayed way.
+    // var spriteFind = document.querySelector(".aboutMeAnimation .react-responsive-spritesheet-container")
+    // var cssChecking = window.getComputedStyle(spriteFind);
+    // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ")
+    // console.log(cssChecking)
 
-    // Maybe consider adding shadows to the main grid buttons
-
-    // NEED TO WORK ON SPRITESHEET CSS WHEN CLICKED FROM THE TOP NAV ROW OF ICONS AS IT WILL BRIEFLY SHOW THE LAST FRAME OF THE ANIMATION
-    // BEFORE STARTING THE ANIMATION AT ITS INTENDED FRAME. CAN FIX THIS WITH 0 OPACITY ANIMATION WITH CSS, WILL BE FINE BECAUSE IM
-    // PLANNING TO DO A SLIDE IN FROM LEFT/ SLIDE OUT TO RIGHT ANIMATION FOR THESE ANYWAY
-
+    const color = document.getElementsByClassName("react-responsive-spritesheet-container")[0]
+    console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
+    let newValueYay = color?.style
+    console.log(newValueYay)
 
     return (
         <>
@@ -193,6 +189,18 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                onPlay={spritesheet => {
+                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    let scaleChecking = spritesheet.getInfo('scale')
+                    console.log(scaleChecking)
+                    if (scaleChecking === 0)  {
+                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        newValueYay.transform = `scale(${1})`
+                        console.log("New Scale check is")
+                        console.log(scaleChecking)
+                        console.log(newValueYay)
+                    }
+                }}
                 getInstance={!fadeState[0] && (typeof spriteState[0] === 'undefined' || spriteState[0] === undefined) && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
                 } :
