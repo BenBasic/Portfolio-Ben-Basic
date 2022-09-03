@@ -112,17 +112,6 @@ export default function MainContainer() {
     console.log("NULL CHECK")
     console.log(!spriteState[2])
 
-
-    // NEED TO LOOK INTO HOW TO USE onPlay WITH SPRITESHEET PROPERTIES, COULD MAYBE USE THAT TO CHECK FOR CSS VALUE OF THE
-    // SPRITE CONTAINER CLASS THE PACKAGE USES TO THEN CHECK FOR IF ITS AT A 0 VALUE FOR SCALE AND MAKE IT MATCH ANOTHER
-    // SCALE VALUE WHICH IS GREATER THAN 0 SO THAT WAY IT CAN STOP SHOWING UP WITH 0 SCALE AND BEING INVISIBLE WHEN
-    // RESIZING THE WINDOW
-
-    // var spriteFind = document.querySelector(".aboutMeAnimation .react-responsive-spritesheet-container")
-    // var cssChecking = window.getComputedStyle(spriteFind);
-    // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ")
-    // console.log(cssChecking)
-
     function scaleFix(value) {
         
         const color = document.getElementsByClassName("react-responsive-spritesheet-container")
@@ -177,45 +166,6 @@ export default function MainContainer() {
 
     }
 
-    // const color = document.getElementsByClassName("react-responsive-spritesheet-container")
-    // const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
-    // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
-
-    // const cssValueArray = [];
-    // const cssHeightArray = [];
-    
-    // for (let i = 0; i < color?.length; i++) {
-    //     cssValueArray.push(
-    //         parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
-    //     )
-    // }
-
-    // for (let i = 0; i < spriteHeights?.length; i++) {
-    //     cssHeightArray.push(
-    //         parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
-    //     )
-    // }
-
-    // var greaterThanArray = cssValueArray.filter(function(scaleValue) {
-    //     return scaleValue > 0;
-    // });
-
-    // var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
-    //     return scaleValue > 0;
-    // });
-
-    // console.log(greaterThanArray)
-    // console.log(greaterThanHeightArray)
-    
-
-    // let newValueYay = color[0]?.style
-    // let newHeightYay = spriteHeights[0]?.style
-
-    // console.log(newValueYay)
-    // console.log(cssValueArray)
-    // console.log(cssHeightArray)
-    // console.log(newHeightYay?.height)
-
     return (
         <>
         <div className='row topNavButtons mt-3'>
@@ -229,7 +179,7 @@ export default function MainContainer() {
                 alt={icon.title}
                 key={"button" + index}
                 className={fadeState[index] && clickedState ?
-                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon clickable ${fadeInState}` :
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon clickable hoverFX ${fadeInState}` :
                     !clickedState ?
                     'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
                     'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
