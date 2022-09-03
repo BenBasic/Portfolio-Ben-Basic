@@ -59,7 +59,7 @@ export default function MainContainer() {
 
     const [spriteState, setSpriteState] = useState([]);
 
-    const [resizeState, setResizeState] = useState("");
+    const [transitionButtonClassState, setTransitionButtonClassState] = useState("buttonTransition");
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -170,6 +170,11 @@ export default function MainContainer() {
         // console.log(scaleChecking)
         console.log(newValueYay)
 
+        setTransitionButtonClassState("")
+        setTimeout(function(){
+            setTransitionButtonClassState("buttonTransition")
+        },500);
+
     }
 
     // const color = document.getElementsByClassName("react-responsive-spritesheet-container")
@@ -265,7 +270,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[0] ?
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 buttonTransition ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
+                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
                 }
                 image={require('./assets/images/PortfolioArtAboutMe.png')}
                 widthFrame={351}
@@ -281,6 +286,10 @@ export default function MainContainer() {
                     if (scaleChecking === 0)  {
                         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                         scaleFix(0);
+                        // setTransitionButtonClassState("")
+                        // setTimeout(function(){
+                        //     setTransitionButtonClassState("buttonTransition")
+                        // },500);
                         // newValueYay.transform = `scale(${greaterThanArray[1]})`
                         // newHeightYay.height = `${greaterThanHeightArray[1]}px`
                         // console.log("New Scale check is")
@@ -308,7 +317,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[1] ?
                     `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 buttonTransition ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
+                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
                 }
                 image={require('./assets/images/PortfolioArtPortfolio.png')}
                 widthFrame={351}
@@ -350,7 +359,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[2] ?
                     `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 buttonTransition ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
+                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
                 }
                 image={require('./assets/images/PortfolioArtContact.png')}
                 widthFrame={351}
@@ -388,7 +397,7 @@ export default function MainContainer() {
             <Spritesheet
                 className={fadeState[3] ?
                     `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 buttonTransition ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
+                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
                 }
                 image={require('./assets/images/PortfolioArtResume.png')}
                 widthFrame={351}
