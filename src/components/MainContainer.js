@@ -58,6 +58,8 @@ export default function MainContainer() {
     const [transitionState, setTransitionState] = useState("");
 
     const [spriteState, setSpriteState] = useState([]);
+
+    const [resizeState, setResizeState] = useState("");
     
     console.log("CLICKED IS");
     console.log(clickedState);
@@ -121,44 +123,93 @@ export default function MainContainer() {
     // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ")
     // console.log(cssChecking)
 
-    const color = document.getElementsByClassName("react-responsive-spritesheet-container")
-    const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
-    console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
-
-    const cssValueArray = [];
-    const cssHeightArray = [];
+    function scaleFix(value) {
+        
+        const color = document.getElementsByClassName("react-responsive-spritesheet-container")
+        const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
+        console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
     
-    for (let i = 0; i < color?.length; i++) {
-        cssValueArray.push(
-            parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
-        )
+        const cssValueArray = [];
+        const cssHeightArray = [];
+        
+        for (let i = 0; i < color?.length; i++) {
+            cssValueArray.push(
+                parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
+            )
+        }
+    
+        for (let i = 0; i < spriteHeights?.length; i++) {
+            cssHeightArray.push(
+                parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
+            )
+        }
+    
+        var greaterThanArray = cssValueArray.filter(function(scaleValue) {
+            return scaleValue > 0;
+        });
+    
+        var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
+            return scaleValue > 0;
+        });
+    
+        console.log(greaterThanArray)
+        console.log(greaterThanHeightArray)
+        
+    
+        let newValueYay = color[value]?.style
+        let newHeightYay = spriteHeights[value]?.style
+    
+        console.log(newValueYay)
+        console.log(cssValueArray)
+        console.log(cssHeightArray)
+        console.log(newHeightYay?.height)
+
+        newValueYay.transform = `scale(${greaterThanArray[0]})`
+        newHeightYay.height = `${greaterThanHeightArray[0]}px`
+        console.log("New Scale check is")
+        // console.log(scaleChecking)
+        console.log(newValueYay)
+
     }
 
-    for (let i = 0; i < spriteHeights?.length; i++) {
-        cssHeightArray.push(
-            parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
-        )
-    }
+    // const color = document.getElementsByClassName("react-responsive-spritesheet-container")
+    // const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
+    // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
 
-    var greaterThanArray = cssValueArray.filter(function(scaleValue) {
-        return scaleValue > 0;
-    });
+    // const cssValueArray = [];
+    // const cssHeightArray = [];
+    
+    // for (let i = 0; i < color?.length; i++) {
+    //     cssValueArray.push(
+    //         parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
+    //     )
+    // }
 
-    var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
-        return scaleValue > 0;
-    });
+    // for (let i = 0; i < spriteHeights?.length; i++) {
+    //     cssHeightArray.push(
+    //         parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
+    //     )
+    // }
 
-    console.log(greaterThanArray)
-    console.log(greaterThanHeightArray)
+    // var greaterThanArray = cssValueArray.filter(function(scaleValue) {
+    //     return scaleValue > 0;
+    // });
+
+    // var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
+    //     return scaleValue > 0;
+    // });
+
+    // console.log(greaterThanArray)
+    // console.log(greaterThanHeightArray)
     
 
-    let newValueYay = color[0]?.style
-    let newHeightYay = spriteHeights[0]?.style
+    // let newValueYay = color[0]?.style
+    // let newHeightYay = spriteHeights[0]?.style
 
-    console.log(newValueYay)
-    console.log(cssValueArray)
-    console.log(cssHeightArray)
-    console.log(newHeightYay?.height)
+    // console.log(newValueYay)
+    // console.log(cssValueArray)
+    // console.log(cssHeightArray)
+    // console.log(newHeightYay?.height)
 
     return (
         <>
@@ -223,19 +274,18 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
-                style={ /* Put something here to check for scale, which will then assign the height value appropriately*/{} }
                 onPlay={spritesheet => {
                     console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
                     let scaleChecking = spritesheet.getInfo('scale')
                     console.log(scaleChecking)
                     if (scaleChecking === 0)  {
                         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
-                        newValueYay.transform = `scale(${greaterThanArray[0]})`
-                        newHeightYay.height = `${greaterThanHeightArray[0]}px`
-                        console.log("New Scale check is")
-                        console.log(scaleChecking)
-                        console.log(newValueYay)
+                        scaleFix(0);
+                        // newValueYay.transform = `scale(${greaterThanArray[1]})`
+                        // newHeightYay.height = `${greaterThanHeightArray[1]}px`
+                        // console.log("New Scale check is")
+                        // console.log(scaleChecking)
+                        // console.log(newValueYay)
                     }
                 }}
                 getInstance={!fadeState[0] && (typeof spriteState[0] === 'undefined' || spriteState[0] === undefined) && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
@@ -267,6 +317,15 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                onPlay={spritesheet => {
+                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    let scaleChecking = spritesheet.getInfo('scale')
+                    console.log(scaleChecking)
+                    if (scaleChecking === 0)  {
+                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        scaleFix(1);
+                    }
+                }}
                 getInstance={!fadeState[1] && (typeof spriteState[1] === 'undefined' || spriteState[1] === undefined) && spriteState.length < 2 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
@@ -300,6 +359,15 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                onPlay={spritesheet => {
+                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    let scaleChecking = spritesheet.getInfo('scale')
+                    console.log(scaleChecking)
+                    if (scaleChecking === 0)  {
+                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        scaleFix(2);
+                    }
+                }}
                 getInstance={!fadeState[2] && (typeof spriteState[2] === 'undefined' || spriteState[2] === undefined) && spriteState.length < 3 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], current[1], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
@@ -329,6 +397,15 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                onPlay={spritesheet => {
+                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    let scaleChecking = spritesheet.getInfo('scale')
+                    console.log(scaleChecking)
+                    if (scaleChecking === 0)  {
+                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        scaleFix(3);
+                    }
+                }}
                 getInstance={!fadeState[3] && (typeof spriteState[3] === 'undefined' || spriteState[3] === undefined) && spriteState.length < 4 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], current[1], current[2], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
