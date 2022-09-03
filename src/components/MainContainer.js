@@ -121,10 +121,26 @@ export default function MainContainer() {
     // console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ")
     // console.log(cssChecking)
 
-    const color = document.getElementsByClassName("react-responsive-spritesheet-container")[0]
+    const color = document.getElementsByClassName("react-responsive-spritesheet-container")
     console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
-    let newValueYay = color?.style
+
+    const cssValueArray = [];
+    
+    for (let i = 0; i < color?.length; i++) {
+        cssValueArray.push(
+            parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
+        )
+    }
+
+    var greaterThanArray = cssValueArray.filter(function(scaleValue) {
+        return scaleValue > 0;
+    });
+    console.log(greaterThanArray)
+    
+
+    let newValueYay = color[0]?.style
     console.log(newValueYay)
+    console.log(cssValueArray)
 
     return (
         <>
@@ -189,13 +205,15 @@ export default function MainContainer() {
                 fps={24}
                 autoplay={false}
                 loop={false}
+                style={ /* Put something here to check for scale, which will then assign the height value appropriately*/{} }
                 onPlay={spritesheet => {
                     console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
                     let scaleChecking = spritesheet.getInfo('scale')
                     console.log(scaleChecking)
                     if (scaleChecking === 0)  {
                         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                        newValueYay.transform = `scale(${1})`
+
+                        newValueYay.transform = `scale(${greaterThanArray[0]})`
                         console.log("New Scale check is")
                         console.log(scaleChecking)
                         console.log(newValueYay)
