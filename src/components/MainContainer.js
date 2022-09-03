@@ -122,9 +122,11 @@ export default function MainContainer() {
     // console.log(cssChecking)
 
     const color = document.getElementsByClassName("react-responsive-spritesheet-container")
+    const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
     console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
 
     const cssValueArray = [];
+    const cssHeightArray = [];
     
     for (let i = 0; i < color?.length; i++) {
         cssValueArray.push(
@@ -132,15 +134,31 @@ export default function MainContainer() {
         )
     }
 
+    for (let i = 0; i < spriteHeights?.length; i++) {
+        cssHeightArray.push(
+            parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
+        )
+    }
+
     var greaterThanArray = cssValueArray.filter(function(scaleValue) {
         return scaleValue > 0;
     });
+
+    var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
+        return scaleValue > 0;
+    });
+
     console.log(greaterThanArray)
+    console.log(greaterThanHeightArray)
     
 
     let newValueYay = color[0]?.style
+    let newHeightYay = spriteHeights[0]?.style
+
     console.log(newValueYay)
     console.log(cssValueArray)
+    console.log(cssHeightArray)
+    console.log(newHeightYay?.height)
 
     return (
         <>
@@ -214,6 +232,7 @@ export default function MainContainer() {
                         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
                         newValueYay.transform = `scale(${greaterThanArray[0]})`
+                        newHeightYay.height = `${greaterThanHeightArray[0]}px`
                         console.log("New Scale check is")
                         console.log(scaleChecking)
                         console.log(newValueYay)
