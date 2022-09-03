@@ -15,11 +15,11 @@ export default function ProjectCard({ project }) {
             </a>
             </div>
             <div className='projectTitle'>
-                <h2>
+
                     <h2 className='projectText'>{name}</h2>
                     
                     <a className='githubText' href={repo} target="_blank" rel="noreferrer">GitHub Repository</a>
-                </h2>
+
                 <p className='d-flex justify-content-center'>{description}</p>
             </div>
         </div>
