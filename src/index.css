@@ -456,7 +456,6 @@ code {
   animation:
   sizeIn 220ms ease-in-out 500ms forwards; */
   backface-visibility: hidden;
-  transform: translateZ(0) scale(1, 1);
 }
 
 .clickable {
@@ -472,7 +471,7 @@ code {
   margin-right: 0.5rem;
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
   backface-visibility: hidden;
-  transform: translateZ(0) scale(1, 1);
+
 }
 
 .hoverFX {

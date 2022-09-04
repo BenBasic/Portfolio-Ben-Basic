@@ -8,7 +8,7 @@ export default function ProjectCard({ project }) {
             <div className="imageContainer d-flex justify-content-center">
             <a href={link} target="_blank" rel="noreferrer">
             <img 
-            src={require(`../../assets/images/${name}.png`)}
+            src={require(`../../assets/images/${name}.webp`)}
             alt={`Screenshot of ${name} project`}
             className='projectItem-bg'
             />

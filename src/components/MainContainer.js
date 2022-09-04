@@ -175,7 +175,7 @@ export default function MainContainer() {
             }>Select an icon</h1>
             {buttonArray.map((icon, index) => (
                 <img 
-                src={require(`./assets/images/${icon.image}.png`)}
+                src={require(`./assets/images/${icon.image}.webp`)}
                 alt={icon.title}
                 key={"button" + index}
                 className={fadeState[index] && clickedState ?
@@ -222,7 +222,7 @@ export default function MainContainer() {
                     `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
                     (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
                 }
-                image={require('./assets/images/PortfolioArtAboutMe.png')}
+                image={require('./assets/images/PortfolioArtAboutMe.webp')}
                 widthFrame={351}
                 heightFrame={351}
                 steps={26}
@@ -269,7 +269,7 @@ export default function MainContainer() {
                     `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
                     (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
                 }
-                image={require('./assets/images/PortfolioArtPortfolio.png')}
+                image={require('./assets/images/PortfolioArtPortfolio.webp')}
                 widthFrame={351}
                 heightFrame={351}
                 steps={34}
@@ -311,7 +311,7 @@ export default function MainContainer() {
                     `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
                     (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
                 }
-                image={require('./assets/images/PortfolioArtContact.png')}
+                image={require('./assets/images/PortfolioArtContact.webp')}
                 widthFrame={351}
                 heightFrame={351}
                 steps={22}
@@ -349,7 +349,7 @@ export default function MainContainer() {
                     `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
                     (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
                 }
-                image={require('./assets/images/PortfolioArtResume.png')}
+                image={require('./assets/images/PortfolioArtResume.webp')}
                 widthFrame={351}
                 heightFrame={351}
                 steps={19}
