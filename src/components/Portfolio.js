@@ -42,8 +42,14 @@ export default function Portfolio() {
         },
     ]);
 
+    const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
+
+    setTimeout(function(){
+        setFinishPageAppearState('')
+    },490);
+
     return (
-        <div className="invisibleIcon fadeInPage">
+        <div className={`${finishPageAppearState}`}>
         <div className="portfolioContainer row mt-md-5 mt-3">
             <h1 className='text-center'>Portfolio</h1>
             {projects.map((project, index) => (

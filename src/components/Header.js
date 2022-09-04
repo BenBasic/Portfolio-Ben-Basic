@@ -6,12 +6,18 @@ export default function Header() {
 
     const [reloadState, setReloadState] = useState(false);
 
+    const [finishAppearState, setFinishAppearState] = useState("invisibleIcon headerStartAppear")
+
+    setTimeout(function(){
+        setFinishAppearState('')
+    },1300);
+
     if (reloadState === true) {
         window.location.reload()
     }
 
     return (
-        <header className="row headerComponent invisibleIcon headerStartAppear">
+        <header className={`row headerComponent ${finishAppearState}`}>
             <h1><span className='myNameHeader hoverFX clickable' onClick={ () => {setReloadState(true)}}>Benjamin Basic</span></h1>
             <h2>Full Stack Web Developer</h2>
             <ul className="social">

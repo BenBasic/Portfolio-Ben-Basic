@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from "react";
 
 export default function About() {
+
+    const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
+
+    setTimeout(function(){
+        setFinishPageAppearState('')
+    },490);
+
     return (
-        <div className='container aboutContainer invisibleIcon fadeInPage'>
+        <div className={`container aboutContainer ${finishPageAppearState}`}>
             <div className='mx-5 mt-md-5 mt-3 p3 aboutPage'>
                 <h1 className='text-center'>About Me</h1>
                 <div className='row'>

@@ -5,6 +5,12 @@ import SkillCard from "./SkillCard"
 
 export default function Resume() {
 
+    const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
+
+    setTimeout(function(){
+        setFinishPageAppearState('')
+    },490);
+
     const [schools] = useState([
         {
             school: "University of Toronto",
@@ -76,7 +82,7 @@ export default function Resume() {
 
     return (
         <>
-        <div className="container resumeContainer invisibleIcon fadeInPage">
+        <div className={`container resumeContainer ${finishPageAppearState}`}>
             <div className="mx-5 mt-md-5 mt-3 p3 resumePage">
             <h1 className='text-center resumeTitle'>Resume</h1>
                 <div className='resumeDownload text-center'>

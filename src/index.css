@@ -456,6 +456,8 @@ code {
   animation:
   sizeIn 220ms ease-in-out 500ms forwards; */
   backface-visibility: hidden;
+  /* setting scale to 0.99 causes the buttons not to jitter after transition*/
+  scale: 0.99;
 }
 
 .clickable {
@@ -660,7 +662,7 @@ code {
   /* border: 5px solid violet; */
   border-radius: 1rem;
   opacity: 1;
-  transition: .5s ease;
+  transition: .5s ease-in-out;
   backface-visibility: hidden;
   /* display: flex; */
   justify-content: center;
@@ -671,7 +673,6 @@ code {
 
 .projectItem-bg:hover {
   opacity: 0.5;
-  filter: drop-shadow(5px 5px 8px rgba(0,0,0,0.49));
 }
 
 .projectTitle {

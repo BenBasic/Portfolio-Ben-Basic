@@ -5,6 +5,14 @@ import { validateEmail } from "../utils/helpers";
 import { send } from 'emailjs-com';
 
 export default function Contact() {
+
+    const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
+
+    setTimeout(function(){
+        setFinishPageAppearState('')
+    },490);
+
+
     // Assigning the formState to empty values so that the form is empty by default
     const [formState, setFormState] = useState({
         name: "",
@@ -84,7 +92,7 @@ export default function Contact() {
     };
 
     return (
-        <div className="invisibleIcon fadeInPage">
+        <div className={`${finishPageAppearState}`}>
             
             <section className="contactContainer mt-md-5 mt-3">
             <h1 className='text-center contactTitle'>Contact</h1>
