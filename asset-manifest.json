@@ -1,23 +1,32 @@
 {
   "files": {
-    "main.css": "/Portfolio-Ben-Basic/static/css/main.b48f160d.css",
-    "main.js": "/Portfolio-Ben-Basic/static/js/main.d629f25b.js",
+    "main.css": "/Portfolio-Ben-Basic/static/css/main.5c80c249.css",
+    "main.js": "/Portfolio-Ben-Basic/static/js/main.43ec5d86.js",
     "static/js/787.12e7f510.chunk.js": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js",
-    "static/media/me.png": "/Portfolio-Ben-Basic/static/media/me.10bd5476c029a6b74411.png",
     "static/media/screenshot.png": "/Portfolio-Ben-Basic/static/media/screenshot.d3aee7c755235ec8f9d6.png",
     "static/media/Toronto Event Finder.png": "/Portfolio-Ben-Basic/static/media/Toronto Event Finder.96bb9060e533b941acfb.png",
+    "static/media/me.png": "/Portfolio-Ben-Basic/static/media/me.93f034e8a8305ff19219.png",
+    "static/media/PortfolioScreenshot2.png": "/Portfolio-Ben-Basic/static/media/PortfolioScreenshot2.7d80ea2b0d8e606ee61a.png",
     "static/media/Locally.png": "/Portfolio-Ben-Basic/static/media/Locally.4547ae014f3621b2b8f5.png",
+    "static/media/PortfolioArtPortfolio.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolio.7cf3282aaf813b198015.png",
+    "static/media/header.png": "/Portfolio-Ben-Basic/static/media/header.5e6421dc105378e26751.png",
     "static/media/Social Network API.png": "/Portfolio-Ben-Basic/static/media/Social Network API.5c15a1901a119568b91c.png",
+    "static/media/PortfolioArtAboutMe.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtAboutMe.ee9dd09ab6c2fb9d8862.png",
+    "static/media/PortfolioArtContact.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtContact.68ee2b53ed678c34b1d4.png",
+    "static/media/PortfolioArtResume.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtResume.24f4a991df2033a1c426.png",
+    "static/media/PortfolioScreenshot1.png": "/Portfolio-Ben-Basic/static/media/PortfolioScreenshot1.1031ab45d03e21f52da5.png",
     "static/media/Rad Employee Tracker.png": "/Portfolio-Ben-Basic/static/media/Rad Employee Tracker.1d25aecf7eecbc695ccf.png",
     "static/media/Weather Dashboard.png": "/Portfolio-Ben-Basic/static/media/Weather Dashboard.a9e8685145a43638c138.png",
+    "static/media/PortfolioArtContactSingle.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtContactSingle.c914b80be7b2503f3e76.png",
+    "static/media/PortfolioArtAboutMeSingle.png": "/Portfolio-Ben-Basic/static/media/PortfolioArtAboutMeSingle.8f2f78156d1982a0c0e0.png",
     "static/media/PWA Text Editor.png": "/Portfolio-Ben-Basic/static/media/PWA Text Editor.0d40a78c91781074ddb5.png",
     "index.html": "/Portfolio-Ben-Basic/index.html",
-    "main.b48f160d.css.map": "/Portfolio-Ben-Basic/static/css/main.b48f160d.css.map",
-    "main.d629f25b.js.map": "/Portfolio-Ben-Basic/static/js/main.d629f25b.js.map",
+    "main.5c80c249.css.map": "/Portfolio-Ben-Basic/static/css/main.5c80c249.css.map",
+    "main.43ec5d86.js.map": "/Portfolio-Ben-Basic/static/js/main.43ec5d86.js.map",
     "787.12e7f510.chunk.js.map": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b48f160d.css",
-    "static/js/main.d629f25b.js"
+    "static/css/main.5c80c249.css",
+    "static/js/main.43ec5d86.js"
   ]
 }
