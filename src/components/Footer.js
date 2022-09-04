@@ -13,7 +13,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="flex-row px-1 d-flex justify-content-center">
+        <footer className="flex-row px-1 d-flex justify-content-center invisibleIcon headerStartAppear">
             {icons.map((icon) => (
                 <a href={icon.link} key={icon.info} target="_blank" rel="noreferrer">
                     <i className={icon.info}></i>

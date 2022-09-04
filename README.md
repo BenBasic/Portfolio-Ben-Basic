@@ -16,7 +16,8 @@
   ## Screenshots
 
 
-![alt text](assets/images/screenshot.png)
+![alt text](assets/images/PortfolioScreenshot1.png)
+![alt text](assets/images/PortfolioScreenshot2.png)
 
 
   ## Link

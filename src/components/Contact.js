@@ -84,9 +84,10 @@ export default function Contact() {
     };
 
     return (
-        <div>
-            <h1 className='text-center contactTitle mt-5'>Contact</h1>
-            <section className="contactContainer mt-3">
+        <div className="invisibleIcon fadeInPage">
+            
+            <section className="contactContainer mt-md-5 mt-3">
+            <h1 className='text-center contactTitle'>Contact</h1>
                 <form id='contact-form' onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='name'>Name:</label>
