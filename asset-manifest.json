@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio-Ben-Basic/static/css/main.d11c1abc.css",
-    "main.js": "/Portfolio-Ben-Basic/static/js/main.eda79e67.js",
+    "main.js": "/Portfolio-Ben-Basic/static/js/main.62dccfad.js",
     "static/js/787.12e7f510.chunk.js": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js",
     "static/media/me.webp": "/Portfolio-Ben-Basic/static/media/me.dab420165a1d3cc5e8f2.webp",
     "static/media/PortfolioArtPortfolio.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolio.19fe5bbb594b4ca7de3c.webp",
@@ -20,11 +20,11 @@
     "static/media/PortfolioArtResumeSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtResumeSingle.644d6497eed03d9c9115.webp",
     "index.html": "/Portfolio-Ben-Basic/index.html",
     "main.d11c1abc.css.map": "/Portfolio-Ben-Basic/static/css/main.d11c1abc.css.map",
-    "main.eda79e67.js.map": "/Portfolio-Ben-Basic/static/js/main.eda79e67.js.map",
+    "main.62dccfad.js.map": "/Portfolio-Ben-Basic/static/js/main.62dccfad.js.map",
     "787.12e7f510.chunk.js.map": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d11c1abc.css",
-    "static/js/main.eda79e67.js"
+    "static/js/main.62dccfad.js"
   ]
 }
