@@ -166,6 +166,13 @@ export default function MainContainer() {
 
     }
 
+    console.log("SPRITE STATE UNDEFINED CHECK%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+    console.log(spriteState[3])
+    console.log(spriteState[3] == null)
+    console.log("truthy check")
+    console.log(!fadeState[3])
+    console.log(spriteState.length < 4)
+
     return (
         <>
         <div className='row topNavButtons mt-3'>
@@ -215,7 +222,7 @@ export default function MainContainer() {
         </div>
         
         <div className={fadeState[0] && fadeState[1] ?
-        `hiddenRow row mt-3 mainButtonContainer ${removeItemState}` :
+        `hiddenRow row mainButtonContainer ${removeItemState}` :
         "row mt-3 mainButtonContainer"}>
             <Spritesheet
                 className={fadeState[0] ?
@@ -247,7 +254,7 @@ export default function MainContainer() {
                         // console.log(newValueYay)
                     }
                 }}
-                getInstance={!fadeState[0] && (typeof spriteState[0] === 'undefined' || spriteState[0] === undefined) && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[0] && spriteState[0] == null && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
                 } :
                 null}
@@ -285,7 +292,7 @@ export default function MainContainer() {
                         scaleFix(1);
                     }
                 }}
-                getInstance={!fadeState[1] && (typeof spriteState[1] === 'undefined' || spriteState[1] === undefined) && spriteState.length < 2 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[1] && spriteState[1] == null && spriteState.length < 2 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
@@ -305,6 +312,7 @@ export default function MainContainer() {
             </div>
             <div className={fadeState[2] && fadeState[3] ?
             `hiddenRow row mainButtonContainer ${removeItemState}` :
+            fadeState[0] && fadeState[1] ? "row mt-3 mainButtonContainer" :
             "row mainButtonContainer"}>
             <Spritesheet
                 className={fadeState[2] ?
@@ -327,7 +335,7 @@ export default function MainContainer() {
                         scaleFix(2);
                     }
                 }}
-                getInstance={!fadeState[2] && (typeof spriteState[2] === 'undefined' || spriteState[2] === undefined) && spriteState.length < 3 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[2] && spriteState[2] == null && spriteState.length < 3 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setSpriteState(current => [current[0], current[1], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
                 } :
                 null}
@@ -365,10 +373,12 @@ export default function MainContainer() {
                         scaleFix(3);
                     }
                 }}
-                getInstance={!fadeState[3] && (typeof spriteState[3] === 'undefined' || spriteState[3] === undefined) && spriteState.length < 4 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!fadeState[3] && spriteState[3] == null && spriteState.length < 4 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    console.log("NOT FIRING OFF GET INSTANCE BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
                     setSpriteState(current => [current[0], current[1], current[2], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
+                    console.log("SETTING SPRITE BUT WRONG WAY I GUESS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
                 } :
-                null}
+                console.log("TRIGGERS THE ELSE FOR NO REASON??????????????????????????")}
                 onClick={clickedState ?
                     () => null
                     :
