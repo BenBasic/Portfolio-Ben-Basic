@@ -59,6 +59,11 @@ export default function MainContainer() {
 
     const [spriteState, setSpriteState] = useState([]);
 
+    const [testState1, setTestState1] = useState();
+    const [testState2, setTestState2] = useState();
+    const [testState3, setTestState3] = useState();
+    const [testState4, setTestState4] = useState();
+
     const [transitionButtonClassState, setTransitionButtonClassState] = useState("buttonTransition");
     
     console.log("CLICKED IS");
@@ -111,6 +116,8 @@ export default function MainContainer() {
 
     console.log("NULL CHECK")
     console.log(!spriteState[2])
+
+
 
     function scaleFix(value) {
         
@@ -172,6 +179,8 @@ export default function MainContainer() {
     console.log("truthy check")
     console.log(!fadeState[3])
     console.log(spriteState.length < 4)
+    console.log("NEW STATE ATTEMPT CHECKING")
+    console.log([testState1, testState2, testState3, testState4])
 
     return (
         <>
@@ -194,25 +203,25 @@ export default function MainContainer() {
                 onClick={index === 0 && clickedState ? () => {
                     handlePageChange('About')
                     setFadeState([false, true, true, true])
-                    spriteState[0].goToAndPlay(1);
+                    testState1.goToAndPlay(1);
                     setTransitionState("fadeInIcon")
                     } :
                     index === 1 && clickedState ? () => {
                         handlePageChange('Portfolio')
                         setFadeState([true, false, true, true])
-                        spriteState[1].goToAndPlay(1);
+                        testState2.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
                     } :
                     index === 2 && clickedState ? () => {
                         handlePageChange('Contact')
                         setFadeState([true, true, false, true])
-                        spriteState[2].goToAndPlay(1);
+                        testState3.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
                     } :
                     index === 3 && clickedState ? () => {
                         handlePageChange('Resume')
                         setFadeState([true, true, true, false])
-                        spriteState[3].goToAndPlay(1);
+                        testState4.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
                     } :
                     null
@@ -254,8 +263,9 @@ export default function MainContainer() {
                         // console.log(newValueYay)
                     }
                 }}
-                getInstance={!fadeState[0] && spriteState[0] == null && spriteState.length === 0 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState([spritesheet]); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setTestState1(spritesheet); // Also cant use the fadeState to check all without additional check cause it also breaks it
+                    console.log("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")
                 } :
                 null}
                 onClick={clickedState ?
@@ -292,8 +302,9 @@ export default function MainContainer() {
                         scaleFix(1);
                     }
                 }}
-                getInstance={!fadeState[1] && spriteState[1] == null && spriteState.length < 2 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(current => [current[0], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
+                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setTestState2(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
+                    console.log("22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222")
                 } :
                 null}
                 onClick={clickedState ?
@@ -335,8 +346,9 @@ export default function MainContainer() {
                         scaleFix(2);
                     }
                 }}
-                getInstance={!fadeState[2] && spriteState[2] == null && spriteState.length < 3 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    setSpriteState(current => [current[0], current[1], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
+                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setTestState3(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
+                    console.log("3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333")
                 } :
                 null}
                 onClick={clickedState ?
@@ -373,10 +385,10 @@ export default function MainContainer() {
                         scaleFix(3);
                     }
                 }}
-                getInstance={!fadeState[3] && spriteState[3] == null && spriteState.length < 4 ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
-                    console.log("NOT FIRING OFF GET INSTANCE BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-                    setSpriteState(current => [current[0], current[1], current[2], spritesheet]); // Using ...current caused items to be added twice, current[0] etc fixed this
-                    console.log("SETTING SPRITE BUT WRONG WAY I GUESS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+                getInstance={
+                    !clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    setTestState4(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
+                    console.log("44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444")
                 } :
                 console.log("TRIGGERS THE ELSE FOR NO REASON??????????????????????????")}
                 onClick={clickedState ?
