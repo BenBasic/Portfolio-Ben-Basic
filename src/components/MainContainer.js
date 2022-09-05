@@ -263,7 +263,7 @@ export default function MainContainer() {
                         // console.log(newValueYay)
                     }
                 }}
-                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!clickedState && testState1 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState1(spritesheet); // Also cant use the fadeState to check all without additional check cause it also breaks it
                     console.log("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")
                 } :
@@ -302,7 +302,7 @@ export default function MainContainer() {
                         scaleFix(1);
                     }
                 }}
-                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!clickedState && testState2 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState2(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
                     console.log("22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222")
                 } :
@@ -346,7 +346,7 @@ export default function MainContainer() {
                         scaleFix(2);
                     }
                 }}
-                getInstance={!clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                getInstance={!clickedState && testState3 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState3(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
                     console.log("3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333")
                 } :
@@ -386,11 +386,11 @@ export default function MainContainer() {
                     }
                 }}
                 getInstance={
-                    !clickedState ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
+                    !clickedState && testState4 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState4(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
                     console.log("44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444")
                 } :
-                console.log("TRIGGERS THE ELSE FOR NO REASON??????????????????????????")}
+                null}
                 onClick={clickedState ?
                     () => null
                     :
