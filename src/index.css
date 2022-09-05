@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   background: #BAE2F2 !important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Oswald', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Oswald', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   font-weight: 400; 
@@ -51,6 +51,11 @@ code {
   .resumeContainer
   {
     filter: none !important;
+  }
+
+  /* Avoid buggy movement when clicking on icons on mobile */
+  .hoverFX:hover {
+    scale: 1;
   }
 }
 
