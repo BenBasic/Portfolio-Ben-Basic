@@ -282,6 +282,11 @@ code {
     margin-left: 0rem !important;
     margin-right: 0rem !important;
   }
+  
+  .projectTitle p {
+    border-bottom: 0.1rem solid gray;
+    padding-bottom: 0.5rem;
+  }
 
   .contactContainer {
     max-width: 80% !important;

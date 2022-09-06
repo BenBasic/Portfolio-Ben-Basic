@@ -87,7 +87,7 @@ export default function Resume() {
             <h1 className='text-center resumeTitle'>Resume</h1>
                 <div className='resumeDownload text-center'>
                     <p>
-                        <a href='https://drive.google.com/file/d/1Ksui5Fr_NJIxeuqa05vX72K9rT8BQ2or/view?usp=sharing' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                        <a href='https://docs.google.com/document/d/11R4EKIcuLiq21gNKZl-miMzTM2Ezkj7Y/edit?usp=sharing&ouid=102663915874628547290&rtpof=true&sd=true' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
                     </p>
                 </div>
                 <div className="row top-border">
