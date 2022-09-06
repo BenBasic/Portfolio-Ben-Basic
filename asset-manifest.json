@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-Ben-Basic/static/css/main.bac5027c.css",
-    "main.js": "/Portfolio-Ben-Basic/static/js/main.62dccfad.js",
+    "main.css": "/Portfolio-Ben-Basic/static/css/main.a7bb2037.css",
+    "main.js": "/Portfolio-Ben-Basic/static/js/main.366ddc0e.js",
     "static/js/787.12e7f510.chunk.js": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js",
     "static/media/me.webp": "/Portfolio-Ben-Basic/static/media/me.dab420165a1d3cc5e8f2.webp",
     "static/media/PortfolioArtPortfolio.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolio.19fe5bbb594b4ca7de3c.webp",
@@ -19,12 +19,12 @@
     "static/media/PortfolioArtPortfolioSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolioSingle.829d953d5f13546a569f.webp",
     "static/media/PortfolioArtResumeSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtResumeSingle.644d6497eed03d9c9115.webp",
     "index.html": "/Portfolio-Ben-Basic/index.html",
-    "main.bac5027c.css.map": "/Portfolio-Ben-Basic/static/css/main.bac5027c.css.map",
-    "main.62dccfad.js.map": "/Portfolio-Ben-Basic/static/js/main.62dccfad.js.map",
+    "main.a7bb2037.css.map": "/Portfolio-Ben-Basic/static/css/main.a7bb2037.css.map",
+    "main.366ddc0e.js.map": "/Portfolio-Ben-Basic/static/js/main.366ddc0e.js.map",
     "787.12e7f510.chunk.js.map": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bac5027c.css",
-    "static/js/main.62dccfad.js"
+    "static/css/main.a7bb2037.css",
+    "static/js/main.366ddc0e.js"
   ]
 }
