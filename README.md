@@ -9,7 +9,6 @@
   - [Screenshots](#screenshots)
   - [Link (Deployed Application)](#link)
   - [Installation](#installation)
-  - [Guidelines](#guidelines)
   - [Questions](#questions)
 
 

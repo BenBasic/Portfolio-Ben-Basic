@@ -17,16 +17,16 @@ export default function Portfolio() {
             repo: "https://github.com/BenBasic/Toronto-Event-Finder",
         },
         {
+            name: "Fun Cooking Converter",
+            description: "Front end application using React for converting ingredient weight and volume",
+            link: "https://benbasic.github.io/Fun-Cooking-Converter/",
+            repo: "https://github.com/BenBasic/Fun-Cooking-Converter",
+        },
+        {
             name: "PWA Text Editor",
             description: "A Progressive Web Application based Text Editor for online and offline text editing",
             link: "https://afternoon-castle-19497.herokuapp.com",
             repo: "https://github.com/BenBasic/PWA-Text-Editor",
-        },
-        {
-            name: "Weather Dashboard",
-            description: "Front end application using the Open Weather api",
-            link: "https://benbasic.github.io/Module-6-Weather-Dashboard/",
-            repo: "https://github.com/BenBasic/Module-6-Weather-Dashboard",
         },
         {
             name: "Social Network API",
