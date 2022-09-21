@@ -59,6 +59,30 @@ export default function MainContainer() {
 
     const [spriteState, setSpriteState] = useState([]);
 
+    const [pageNameState, setPageNameState] = useState(
+        {about: "nameDissappear",
+        portfolio: "nameDissappear",
+        contact: "nameDissappear",
+        resume: "nameDissappear",
+        instructions: ""}
+    );
+
+    function instructionReappear() {
+        if (
+            pageNameState.about === "nameDissappear" &&
+            pageNameState.portfolio === "nameDissappear" &&
+            pageNameState.contact === "nameDissappear" &&
+            pageNameState.resume === "nameDissappear" 
+            
+            ) {
+                setPageNameState({ ...pageNameState, instructions: "instructionsFadeIn"})
+                console.log("good")
+            } else {
+                console.log("goodbutBAD")
+        }
+    }
+
+
     const [testState1, setTestState1] = useState();
     const [testState2, setTestState2] = useState();
     const [testState3, setTestState3] = useState();
@@ -187,8 +211,33 @@ export default function MainContainer() {
         <div className='row topNavButtons mt-3'>
             <h1 className={clickedState ?
             `instructions hiddenInstructions ${removeItemState}` :
-            `instructions invisibleIcon`
+            `instructions invisibleIcon ${pageNameState.instructions}`
             }>Select an icon</h1>
+
+            <h1 className={clickedState ?
+            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview invisibleIcon ${pageNameState.about}`
+            }
+            onTransitionEnd={ () => {
+                instructionReappear()
+            }}
+            
+            >
+                About Me
+            </h1>
+
+            <h1 className={clickedState ?
+            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview invisibleIcon ${pageNameState.portfolio}`
+            }
+            onTransitionEnd={ () => {
+                instructionReappear()
+            }}
+            
+            >
+                Portfolio
+            </h1>
+
             {buttonArray.map((icon, index) => (
                 <img 
                 src={require(`./assets/images/${icon.image}.webp`)}
@@ -321,7 +370,21 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('About')
                         },500);
-                    }}
+                    }
+                }
+                onMouseOver={ () => {
+                    setPageNameState({ ...pageNameState,
+                        about: "nameAppear",
+                        portfolio: "nameDissappear",
+                        contact: "nameDissappear",
+                        resume: "nameDissappear",
+                        instructions: "instructionsFadeOut"})
+                    }
+                }
+                onMouseOut={ () => {
+                setPageNameState({ ...pageNameState, about: "nameDissappear"})
+                }}
+                    
             />
             <Spritesheet
                 className={fadeState[1] ?
@@ -360,7 +423,20 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Portfolio')
                         },500);
-                    }}
+                    }
+                }
+                onMouseOver={ () => {
+                    setPageNameState({ ...pageNameState,
+                        about: "nameDissappear",
+                        portfolio: "nameAppear",
+                        contact: "nameDissappear",
+                        resume: "nameDissappear",
+                        instructions: "instructionsFadeOut"})
+                    }
+                }
+                onMouseOut={ () => {
+                setPageNameState({ ...pageNameState, portfolio: "nameDissappear"})
+                }}
             />
             </div>
             {/* <div className='row mainButtonContainer justify-content-center'>
