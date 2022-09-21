@@ -67,20 +67,26 @@ export default function MainContainer() {
         instructions: ""}
     );
 
+    // Function which triggers the reappearing of the instruction text if mouse is not hovered on a main icon
     function instructionReappear() {
-        if (
-            pageNameState.about === "nameDissappear" &&
-            pageNameState.portfolio === "nameDissappear" &&
-            pageNameState.contact === "nameDissappear" &&
-            pageNameState.resume === "nameDissappear" 
-            
-            ) {
-                setPageNameState({ ...pageNameState, instructions: "instructionsFadeIn"})
-                console.log("good")
-            } else {
-                console.log("goodbutBAD")
-        }
+        // Timeout required to avoid fadein and fadeout transitions jumping between full and zero opacity values
+        setTimeout(function () {
+            if (
+                pageNameState.about === "nameDissappear" &&
+                pageNameState.portfolio === "nameDissappear" &&
+                pageNameState.contact === "nameDissappear" &&
+                pageNameState.resume === "nameDissappear" &&
+                pageNameState.instructions === "instructionsFadeOut"
+                
+                ) {
+                    setPageNameState({ ...pageNameState, instructions: "instructionsFadeIn"})
+                    console.log("good")
+                } else {
+                    console.log("goodbutBAD")
+            }
+        }, 300);
     }
+
 
 
     const [testState1, setTestState1] = useState();
@@ -236,6 +242,30 @@ export default function MainContainer() {
             
             >
                 Portfolio
+            </h1>
+
+            <h1 className={clickedState ?
+            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview invisibleIcon ${pageNameState.contact}`
+            }
+            onTransitionEnd={ () => {
+                instructionReappear()
+            }}
+            
+            >
+                Contact
+            </h1>
+
+            <h1 className={clickedState ?
+            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview invisibleIcon ${pageNameState.resume}`
+            }
+            onTransitionEnd={ () => {
+                instructionReappear()
+            }}
+            
+            >
+                Resume
             </h1>
 
             {buttonArray.map((icon, index) => (
@@ -484,7 +514,20 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Contact')
                         },500);
-                    }}
+                    }
+                }
+                onMouseOver={ () => {
+                    setPageNameState({ ...pageNameState,
+                        about: "nameDissappear",
+                        portfolio: "nameDissappear",
+                        contact: "nameAppear",
+                        resume: "nameDissappear",
+                        instructions: "instructionsFadeOut"})
+                    }
+                }
+                onMouseOut={ () => {
+                setPageNameState({ ...pageNameState, contact: "nameDissappear"})
+                }}
             />
             <Spritesheet
                 className={fadeState[3] ?
@@ -524,7 +567,20 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Resume')
                         },500);
-                    }}
+                    }
+                }
+                onMouseOver={ () => {
+                    setPageNameState({ ...pageNameState,
+                        about: "nameDissappear",
+                        portfolio: "nameDissappear",
+                        contact: "nameDissappear",
+                        resume: "nameAppear",
+                        instructions: "instructionsFadeOut"})
+                    }
+                }
+                onMouseOut={ () => {
+                setPageNameState({ ...pageNameState, resume: "nameDissappear"})
+                }}
             />
             </div>
             <div className="mainContainer">

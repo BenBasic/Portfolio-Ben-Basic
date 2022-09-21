@@ -637,7 +637,7 @@ code {
 
 .instructionsFadeIn {
   animation: 
-  fadeIn 400ms ease-in-out  100ms forwards;
+  fadeIn 400ms ease-in-out forwards;
   
 }
 
