@@ -67,8 +67,16 @@ export default function MainContainer() {
         instructions: ""}
     );
 
+    const [instructionsDesktopState, setInstructionsDesktopState] = useState({ visible: "instructions", animation: "hiddenInstructions"});
+
     // Function which triggers the reappearing of the instruction text if mouse is not hovered on a main icon
     function instructionReappear() {
+
+        setInstructionsDesktopState({ ...instructionsDesktopState,
+            visible: "instructionsGone",
+            animation: ""
+        })
+
         // Timeout required to avoid fadein and fadeout transitions jumping between full and zero opacity values
         setTimeout(function () {
             if (
@@ -216,12 +224,12 @@ export default function MainContainer() {
         <>
         <div className='row topNavButtons mt-3'>
             <h1 className={clickedState ?
-            `instructions hiddenInstructions ${removeItemState}` :
+            `${instructionsDesktopState.visible} ${instructionsDesktopState.animation} ${removeItemState}` :
             `instructions invisibleIcon ${pageNameState.instructions}`
             }>Select an icon</h1>
 
             <h1 className={clickedState ?
-            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview nameExitTransition ${removeItemState}` :
             `namePreview invisibleIcon ${pageNameState.about}`
             }
             onTransitionEnd={ () => {
@@ -233,7 +241,7 @@ export default function MainContainer() {
             </h1>
 
             <h1 className={clickedState ?
-            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview nameExitTransition ${removeItemState}` :
             `namePreview invisibleIcon ${pageNameState.portfolio}`
             }
             onTransitionEnd={ () => {
@@ -245,7 +253,7 @@ export default function MainContainer() {
             </h1>
 
             <h1 className={clickedState ?
-            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview nameExitTransition ${removeItemState}` :
             `namePreview invisibleIcon ${pageNameState.contact}`
             }
             onTransitionEnd={ () => {
@@ -257,7 +265,7 @@ export default function MainContainer() {
             </h1>
 
             <h1 className={clickedState ?
-            `namePreview hiddenInstructions ${removeItemState}` :
+            `namePreview nameExitTransition ${removeItemState}` :
             `namePreview invisibleIcon ${pageNameState.resume}`
             }
             onTransitionEnd={ () => {
@@ -402,7 +410,12 @@ export default function MainContainer() {
                         },500);
                     }
                 }
-                onMouseOver={ () => {
+                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+                    
+                    () => {
                     setPageNameState({ ...pageNameState,
                         about: "nameAppear",
                         portfolio: "nameDissappear",
@@ -411,9 +424,15 @@ export default function MainContainer() {
                         instructions: "instructionsFadeOut"})
                     }
                 }
-                onMouseOut={ () => {
-                setPageNameState({ ...pageNameState, about: "nameDissappear"})
-                }}
+                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+
+                    () => {
+                    setPageNameState({ ...pageNameState, about: "nameDissappear"})
+                    }
+                }
                     
             />
             <Spritesheet
@@ -455,7 +474,12 @@ export default function MainContainer() {
                         },500);
                     }
                 }
-                onMouseOver={ () => {
+                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+
+                    () => {
                     setPageNameState({ ...pageNameState,
                         about: "nameDissappear",
                         portfolio: "nameAppear",
@@ -464,9 +488,15 @@ export default function MainContainer() {
                         instructions: "instructionsFadeOut"})
                     }
                 }
-                onMouseOut={ () => {
-                setPageNameState({ ...pageNameState, portfolio: "nameDissappear"})
-                }}
+                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+
+                    () => {
+                    setPageNameState({ ...pageNameState, portfolio: "nameDissappear"})
+                    }
+                }
             />
             </div>
             {/* <div className='row mainButtonContainer justify-content-center'>
@@ -516,7 +546,12 @@ export default function MainContainer() {
                         },500);
                     }
                 }
-                onMouseOver={ () => {
+                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+                    
+                    () => {
                     setPageNameState({ ...pageNameState,
                         about: "nameDissappear",
                         portfolio: "nameDissappear",
@@ -525,9 +560,15 @@ export default function MainContainer() {
                         instructions: "instructionsFadeOut"})
                     }
                 }
-                onMouseOut={ () => {
-                setPageNameState({ ...pageNameState, contact: "nameDissappear"})
-                }}
+                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+                    
+                    () => {
+                    setPageNameState({ ...pageNameState, contact: "nameDissappear"})
+                    }
+                }
             />
             <Spritesheet
                 className={fadeState[3] ?
@@ -569,7 +610,12 @@ export default function MainContainer() {
                         },500);
                     }
                 }
-                onMouseOver={ () => {
+                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+
+                    () => {
                     setPageNameState({ ...pageNameState,
                         about: "nameDissappear",
                         portfolio: "nameDissappear",
@@ -578,9 +624,15 @@ export default function MainContainer() {
                         instructions: "instructionsFadeOut"})
                     }
                 }
-                onMouseOut={ () => {
-                setPageNameState({ ...pageNameState, resume: "nameDissappear"})
-                }}
+                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
+
+                    () => null
+                    :
+
+                    () => {
+                    setPageNameState({ ...pageNameState, resume: "nameDissappear"})
+                    }
+                }
             />
             </div>
             <div className="mainContainer">
