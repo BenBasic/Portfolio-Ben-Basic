@@ -228,7 +228,49 @@ export default function MainContainer() {
                 }
                 ></img>
             ))}
+
+            <div className='row topNavButtons topButtonText'>
+                <p className={fadeState[0] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    About
+                </p>
+                <p className={fadeState[1] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Portfolio
+                </p>
+                <p className={fadeState[2] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Contact
+                </p>
+                <p className={fadeState[3] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Resume
+                </p>
+            </div>
+
         </div>
+
+
         
         <div className={fadeState[0] && fadeState[1] ?
         `hiddenRow row mainButtonContainer ${removeItemState}` :
@@ -321,6 +363,10 @@ export default function MainContainer() {
                     }}
             />
             </div>
+            {/* <div className='row mainButtonContainer justify-content-center'>
+            <h1 className='iconText col-md-5'>Test</h1>
+            <h1 className='iconText col-md-5'>Test</h1>
+            </div> */}
             <div className={fadeState[2] && fadeState[3] ?
             `hiddenRow row mainButtonContainer ${removeItemState}` :
             fadeState[0] && fadeState[1] ? "row mt-3 mainButtonContainer" :

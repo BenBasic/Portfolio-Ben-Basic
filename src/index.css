@@ -188,6 +188,13 @@ code {
   /* ADJUST THE ANIMATIONS/COLORS, MAYBE MAKE IT JUST THE BOX THAT GETS A SHADOW? */
 }
 
+@media screen and (min-width : 1500px) {
+
+  .topNavButtons {
+    font-size: 1.4rem !important;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .profilePicture {
     display: none;
@@ -199,6 +206,29 @@ code {
     justify-content: center;
   }
 }
+
+@media screen and (max-width : 1499px) {
+
+  .topNavButtons {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media screen and (min-width : 1024px) {
+  .topButtonText p {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width : 1023px) {
+
+  .topNavButtons {
+    font-size: 1rem !important;
+  }
+}
+
+
 
 @media screen and (max-width: 991px) {
   .top-border {
@@ -323,6 +353,11 @@ code {
     padding-right: 20% !important;
   }
 
+  .topButtonText {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   /* .navIcon {
     max-width: 50% !important;
     padding: 0% !important;
@@ -395,6 +430,19 @@ code {
     padding-right: 15% !important;
   }
 
+  .topButtonText {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+@media screen and (max-width: 415px) {
+
+  .topButtonText {
+    font-size: 0.9rem !important;
+  }
+
 }
 
 @media screen and (max-width: 399px) {
@@ -407,6 +455,31 @@ code {
   }
 
 }
+
+@media screen and (max-width: 360px) {
+
+  .topButtonText {
+    font-size: 0.8rem !important;
+  }
+
+}
+
+@media screen and (max-width: 315px) {
+
+  .topButtonText {
+    font-size: 0.7rem !important;
+  }
+
+}
+
+@media screen and (max-width: 275px) {
+
+  .topButtonText {
+    font-size: 0.6rem !important;
+  }
+
+}
+
 
 .aboutPage {
   color: black;
@@ -507,7 +580,26 @@ code {
   margin-right: 0.5rem;
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
   backface-visibility: hidden;
+  
+}
 
+.iconText {
+  /* Currently unused, maybe delete later */
+  display: inline;
+  text-align: center;
+  width: auto !important;
+  z-index: 5;
+}
+
+
+
+.topButtonText {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.topButtonText p {
+  margin-block-end: 0;
 }
 
 .hoverFX {
