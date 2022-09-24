@@ -275,11 +275,14 @@ export default function MainContainer() {
         <div className={fadeState[0] && fadeState[1] ?
         `hiddenRow row mainButtonContainer ${removeItemState}` :
         "row mt-3 mainButtonContainer"}>
+            <div
+            className={fadeState[0] ?
+                `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[0] ?
-                    `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+                
                 image={require('./assets/images/PortfolioArtAboutMe.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -323,11 +326,19 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+            <div className='relativeText'>
+            <h1 className='iconText'>About</h1>
+            </div>
+            </div>
+
+            <div
+            className={fadeState[1] ?
+                `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[1] ?
-                    `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtPortfolio.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -362,20 +373,27 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className='relativeText'>
+            <h1 className='iconText'>Portfolio</h1>
             </div>
-            {/* <div className='row mainButtonContainer justify-content-center'>
-            <h1 className='iconText col-md-5'>Test</h1>
-            <h1 className='iconText col-md-5'>Test</h1>
-            </div> */}
+
+            </div>
+            </div>
+
             <div className={fadeState[2] && fadeState[3] ?
             `hiddenRow row mainButtonContainer ${removeItemState}` :
             fadeState[0] && fadeState[1] ? "row mt-3 mainButtonContainer" :
             "row mainButtonContainer"}>
+
+            <div
+            className={fadeState[2] ?
+                `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[2] ?
-                    `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtContact.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -410,11 +428,21 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className='relativeText'>
+            <h1 className='iconText'>Contact</h1>
+            </div>
+
+            </div>
+
+            <div
+            className={fadeState[3] ?
+                `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[3] ?
-                    `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtResume.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -450,6 +478,12 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className='relativeText'>
+            <h1 className='iconText'>Resume</h1>
+            </div>
+
+            </div>
             </div>
             <div className="mainContainer">
                 {/* 

@@ -580,15 +580,27 @@ code {
   margin-right: 0.5rem;
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
   backface-visibility: hidden;
-  
+  text-align: center
+}
+
+.relativeText {
+  position: relative;
 }
 
 .iconText {
-  /* Currently unused, maybe delete later */
-  display: inline;
   text-align: center;
-  width: auto !important;
-  z-index: 5;
+  justify-content: center;
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: .25rem;
+  background-color: #2B52C1;
+  color: white;
+  border-top: solid white;
+  border-radius: 1rem;
 }
 
 
