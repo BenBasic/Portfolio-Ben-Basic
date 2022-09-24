@@ -686,12 +686,12 @@ code {
 @keyframes fadeOut {
   from {
     opacity: 1;
-    padding-top: 0rem;
+    transform: translateY(0rem);
   }
 
   to {
     opacity: 0;
-    padding-top: 5rem;
+    transform: translateY(5rem);
   }
 }
 
@@ -708,12 +708,12 @@ code {
 @keyframes smallerFadeOut {
   from {
     opacity: 1;
-    padding-top: 0.5rem;
+    transform: translateY(0rem);
   }
 
   to {
     opacity: 0;
-    padding-top: 2rem;
+    transform: translateY(2rem);
   }
 }
 
@@ -761,6 +761,8 @@ code {
     margin-top: 0rem;
   }
 }
+
+
 
 .removedItem {
   display: none;

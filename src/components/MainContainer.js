@@ -278,7 +278,8 @@ export default function MainContainer() {
             <div
             className={fadeState[0] ?
                 `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
+                (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
             }
             >
             <Spritesheet
@@ -334,7 +335,8 @@ export default function MainContainer() {
             <div
             className={fadeState[1] ?
                 `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
+                (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
             }
             >
             <Spritesheet
@@ -389,7 +391,8 @@ export default function MainContainer() {
             <div
             className={fadeState[2] ?
                 `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
+                (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `contactAnimation col-md-5 iconStartAppear hoverFX`)
             }
             >
             <Spritesheet
@@ -438,7 +441,8 @@ export default function MainContainer() {
             <div
             className={fadeState[3] ?
                 `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
+                (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `resumeAnimation col-md-5 iconStartAppear hoverFX`)
             }
             >
             <Spritesheet
