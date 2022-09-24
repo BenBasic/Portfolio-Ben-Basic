@@ -59,44 +59,6 @@ export default function MainContainer() {
 
     const [spriteState, setSpriteState] = useState([]);
 
-    const [pageNameState, setPageNameState] = useState(
-        {about: "nameDissappear",
-        portfolio: "nameDissappear",
-        contact: "nameDissappear",
-        resume: "nameDissappear",
-        instructions: ""}
-    );
-
-    const [instructionsDesktopState, setInstructionsDesktopState] = useState({ visible: "instructions", animation: "hiddenInstructions"});
-
-    // Function which triggers the reappearing of the instruction text if mouse is not hovered on a main icon
-    function instructionReappear() {
-
-        setInstructionsDesktopState({ ...instructionsDesktopState,
-            visible: "instructionsGone",
-            animation: ""
-        })
-
-        // Timeout required to avoid fadein and fadeout transitions jumping between full and zero opacity values
-        setTimeout(function () {
-            if (
-                pageNameState.about === "nameDissappear" &&
-                pageNameState.portfolio === "nameDissappear" &&
-                pageNameState.contact === "nameDissappear" &&
-                pageNameState.resume === "nameDissappear" &&
-                pageNameState.instructions === "instructionsFadeOut"
-                
-                ) {
-                    setPageNameState({ ...pageNameState, instructions: "instructionsFadeIn"})
-                    console.log("good")
-                } else {
-                    console.log("goodbutBAD")
-            }
-        }, 300);
-    }
-
-
-
     const [testState1, setTestState1] = useState();
     const [testState2, setTestState2] = useState();
     const [testState3, setTestState3] = useState();
@@ -224,58 +186,9 @@ export default function MainContainer() {
         <>
         <div className='row topNavButtons mt-3'>
             <h1 className={clickedState ?
-            `${instructionsDesktopState.visible} ${instructionsDesktopState.animation} ${removeItemState}` :
-            `instructions invisibleIcon ${pageNameState.instructions}`
+            `instructions hiddenInstructions ${removeItemState}` :
+            `instructions invisibleIcon`
             }>Select an icon</h1>
-
-            <h1 className={clickedState ?
-            `namePreview nameExitTransition ${removeItemState}` :
-            `namePreview invisibleIcon ${pageNameState.about}`
-            }
-            onTransitionEnd={ () => {
-                instructionReappear()
-            }}
-            
-            >
-                About Me
-            </h1>
-
-            <h1 className={clickedState ?
-            `namePreview nameExitTransition ${removeItemState}` :
-            `namePreview invisibleIcon ${pageNameState.portfolio}`
-            }
-            onTransitionEnd={ () => {
-                instructionReappear()
-            }}
-            
-            >
-                Portfolio
-            </h1>
-
-            <h1 className={clickedState ?
-            `namePreview nameExitTransition ${removeItemState}` :
-            `namePreview invisibleIcon ${pageNameState.contact}`
-            }
-            onTransitionEnd={ () => {
-                instructionReappear()
-            }}
-            
-            >
-                Contact
-            </h1>
-
-            <h1 className={clickedState ?
-            `namePreview nameExitTransition ${removeItemState}` :
-            `namePreview invisibleIcon ${pageNameState.resume}`
-            }
-            onTransitionEnd={ () => {
-                instructionReappear()
-            }}
-            
-            >
-                Resume
-            </h1>
-
             {buttonArray.map((icon, index) => (
                 <img 
                 src={require(`./assets/images/${icon.image}.webp`)}
@@ -408,32 +321,7 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('About')
                         },500);
-                    }
-                }
-                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-                    
-                    () => {
-                    setPageNameState({ ...pageNameState,
-                        about: "nameAppear",
-                        portfolio: "nameDissappear",
-                        contact: "nameDissappear",
-                        resume: "nameDissappear",
-                        instructions: "instructionsFadeOut"})
-                    }
-                }
-                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-
-                    () => {
-                    setPageNameState({ ...pageNameState, about: "nameDissappear"})
-                    }
-                }
-                    
+                    }}
             />
             <Spritesheet
                 className={fadeState[1] ?
@@ -472,31 +360,7 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Portfolio')
                         },500);
-                    }
-                }
-                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-
-                    () => {
-                    setPageNameState({ ...pageNameState,
-                        about: "nameDissappear",
-                        portfolio: "nameAppear",
-                        contact: "nameDissappear",
-                        resume: "nameDissappear",
-                        instructions: "instructionsFadeOut"})
-                    }
-                }
-                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-
-                    () => {
-                    setPageNameState({ ...pageNameState, portfolio: "nameDissappear"})
-                    }
-                }
+                    }}
             />
             </div>
             {/* <div className='row mainButtonContainer justify-content-center'>
@@ -544,31 +408,7 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Contact')
                         },500);
-                    }
-                }
-                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-                    
-                    () => {
-                    setPageNameState({ ...pageNameState,
-                        about: "nameDissappear",
-                        portfolio: "nameDissappear",
-                        contact: "nameAppear",
-                        resume: "nameDissappear",
-                        instructions: "instructionsFadeOut"})
-                    }
-                }
-                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-                    
-                    () => {
-                    setPageNameState({ ...pageNameState, contact: "nameDissappear"})
-                    }
-                }
+                    }}
             />
             <Spritesheet
                 className={fadeState[3] ?
@@ -608,31 +448,7 @@ export default function MainContainer() {
                             spritesheet.play();
                             handlePageChange('Resume')
                         },500);
-                    }
-                }
-                onMouseOver={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-
-                    () => {
-                    setPageNameState({ ...pageNameState,
-                        about: "nameDissappear",
-                        portfolio: "nameDissappear",
-                        contact: "nameDissappear",
-                        resume: "nameAppear",
-                        instructions: "instructionsFadeOut"})
-                    }
-                }
-                onMouseOut={ instructionsDesktopState.animation === "" && removeItemState === "removedItem" ?
-
-                    () => null
-                    :
-
-                    () => {
-                    setPageNameState({ ...pageNameState, resume: "nameDissappear"})
-                    }
-                }
+                    }}
             />
             </div>
             <div className="mainContainer">
