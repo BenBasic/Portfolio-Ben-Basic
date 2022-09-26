@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
-
 html {
   /* Prevents scrollbar displacing content when toggling appearing/disappearing */
   width: 100%;
@@ -9,7 +7,7 @@ html {
 body {
   margin: 0;
   background: #BAE2F2 !important;
-  font-family: 'Oswald', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   font-weight: 400; 
@@ -59,6 +57,11 @@ code {
   }
 }
 
+h1, h2, h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+}
+
 .row {
   --bs-gutter-x: 0rem !important;
   margin-right: 0 !important;
@@ -94,33 +97,7 @@ code {
 }
 
 .nav-link:hover {
-	-webkit-animation: text-shadow-pop-br 0.3s both !important;
-	        animation: text-shadow-pop-br 0.3s both !important;
-}
 
-@-webkit-keyframes text-shadow-pop-br {
-  0% {
-    text-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white;
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
-  100% {
-    text-shadow: 0.2px 0.2px white, 0.5px 0.5px white, 1px 1px white, 1.5px 1.5px white, 2px 2px white, 2.4px 2.4px white, 2.8px 2.8px white, 3px 3px white;
-    -webkit-transform: translateX(-3px) translateY(-3px);
-            transform: translateX(-3px) translateY(-3px);
-  }
-}
-@keyframes text-shadow-pop-br {
-  0% {
-    text-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white;
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
-  100% {
-    text-shadow: 0.2px 0.2px white, 0.5px 0.5px white, 1px 1px white, 1.5px 1.5px white, 2px 2px white, 2.4px 2.4px white, 2.8px 2.8px white, 3px 3px white;
-    -webkit-transform: translateX(-3px) translateY(-3px);
-            transform: translateX(-3px) translateY(-3px);
-  }
 }
 
 
@@ -158,13 +135,11 @@ code {
 .headerComponent h1 {
   color: white;
   margin-top: 1rem;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent h2 {
   color: white;
   /* opacity: 80%; */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent a {
@@ -175,17 +150,14 @@ code {
   color: black;
   /* background-color: #BAE2F2; */
   background-color: white;
-  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.3);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  font-weight: bold;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
 }
 
 .headerComponent a:hover {
   color: black;
-  -webkit-animation: text-shadow-pop-br 0.3s both !important;
-  animation: text-shadow-pop-br 0.3s both !important;
-  /* ADJUST THE ANIMATIONS/COLORS, MAYBE MAKE IT JUST THE BOX THAT GETS A SHADOW? */
 }
 
 @media screen and (min-width : 1500px) {
@@ -496,10 +468,6 @@ code {
   /* border: 5px solid #2B52C1; */
 }
 
-.aboutPage h1 {
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
-}
-
 .bioContainer .row {
   padding-top: 2rem;
   border-top: 0.1rem solid gray;
@@ -515,10 +483,10 @@ code {
   border-radius: 0.5rem;
   color: #fff;
   background-color: #2B52C1;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
   transition: all 0.4s ease-in-out;
 }
 
@@ -611,6 +579,8 @@ code {
 }
 
 .topButtonText p {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
   margin-block-end: 0;
 }
 
@@ -865,7 +835,6 @@ code {
 
 .portfolioContainer h1 {
   margin-bottom: 1rem;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .imageContainer {
@@ -906,7 +875,6 @@ code {
   text-decoration: none;
   color: black;
   transition: 0.3s ease-in-out;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
   display: inline-block;
 }
 
@@ -920,7 +888,6 @@ code {
 .projectText {
   padding-top: 0.5rem;
   /* padding-bottom: 0.5rem; */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 /* .projectText:hover {
@@ -933,10 +900,10 @@ code {
   border-radius: 0.5rem;
   color: #fff !important;
   background-color: #2B52C1;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
   transition: all 0.4s ease-in-out;
   /* padding-bottom: 0.5rem; */
 }
@@ -972,7 +939,6 @@ code {
 
 .contactTitle {
   color: black;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .contactContainer {
@@ -1054,10 +1020,10 @@ code {
   justify-content: center;
   border-radius: 0.5rem;
   color: #fff;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
   transition: all 0.4s ease-in-out;
   margin-bottom: -1rem;
   padding-bottom: 0.2rem;
@@ -1086,12 +1052,7 @@ code {
 
 .resumeTitle {
   color: black;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
   margin-bottom: 1rem;
-}
-
-.resumePageTitles, .school h3, .work h3, .resumePageDescriptions h3, .mobilePageTitles {
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .resumePage .row {
