@@ -683,6 +683,21 @@ code {
   fadeIn 800ms ease-in-out 100ms forwards;
 }
 
+.bottomRowSmooth {
+  animation: 
+  rowSmoother 300ms ease-out 600ms forwards;
+}
+
+.aboutSmooth {
+  animation: 
+  aboutSmoother 300ms ease-out 600ms forwards;
+}
+
+.portfolioSmooth {
+  animation: 
+  portfolioSmoother 300ms ease-out 600ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -692,6 +707,72 @@ code {
   to {
     opacity: 0;
     transform: translateY(5rem);
+  }
+}
+
+@keyframes rowSmoother {
+  0% {
+    transform: translateY(-1rem);
+  }
+
+  20% {
+    transform: translateY(1rem);
+  }
+
+  40% {
+    transform: translateY(-0.5rem);
+  }
+
+  60% {
+    transform: translateY(0.3rem);
+  }
+
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes aboutSmoother {
+  0% {
+    transform: translateX(1rem);
+  }
+
+  20% {
+    transform: translateX(-1rem);
+  }
+
+  40% {
+    transform: translateX(0.5rem);
+  }
+
+  60% {
+    transform: translateX(-0.3rem);
+  }
+
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes portfolioSmoother {
+  0% {
+    transform: translateX(-1rem);
+  }
+
+  20% {
+    transform: translateX(1rem);
+  }
+
+  40% {
+    transform: translateX(-0.5rem);
+  }
+
+  60% {
+    transform: translateX(0.3rem);
+  }
+
+  100% {
+    transform: translateX(0rem);
   }
 }
 
