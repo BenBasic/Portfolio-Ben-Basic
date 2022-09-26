@@ -167,6 +167,14 @@ h1, h2, h3 {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .iconText {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+
 @media screen and (max-width: 1199px) {
   .profilePicture {
     display: none;
@@ -264,6 +272,12 @@ h1, h2, h3 {
     margin-left: 4rem;
   }
 
+}
+
+@media screen and (max-width: 800px) {
+  .iconText {
+    top: -3.5rem !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -381,6 +395,12 @@ h1, h2, h3 {
   }
 }
 
+@media screen and (max-width: 620px) {
+  .iconText {
+    top: -3rem !important;
+  }
+}
+
 @media screen and (max-width: 532px) {
 
   .mainButtonContainer {
@@ -409,12 +429,25 @@ h1, h2, h3 {
 
 }
 
+@media screen and (max-width: 430px) {
+  .iconText {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}
+
 @media screen and (max-width: 415px) {
 
   .topButtonText {
     font-size: 0.9rem !important;
   }
 
+}
+
+@media screen and (max-width: 400px) {
+  .iconText {
+    top: -2.7rem !important;
+  }
 }
 
 @media screen and (max-width: 399px) {
@@ -428,12 +461,26 @@ h1, h2, h3 {
 
 }
 
+@media screen and (max-width: 370px) {
+  .iconText {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    top: -2rem !important;
+  }
+}
+
 @media screen and (max-width: 360px) {
 
   .topButtonText {
     font-size: 0.8rem !important;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+  .iconText {
+    top: -1.7rem !important;
+  }
 }
 
 @media screen and (max-width: 315px) {
@@ -552,6 +599,7 @@ h1, h2, h3 {
 }
 
 .relativeText {
+  pointer-events: none;
   position: relative;
 }
 
@@ -569,6 +617,7 @@ h1, h2, h3 {
   color: white;
   border-top: solid white;
   border-radius: 1rem;
+  pointer-events: none;
 }
 
 
