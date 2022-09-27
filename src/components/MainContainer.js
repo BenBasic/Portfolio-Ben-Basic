@@ -59,6 +59,12 @@ export default function MainContainer() {
 
     const [spriteState, setSpriteState] = useState([]);
 
+    const [bottomRowSmoothState, setBottomRowSmoothState] = useState("bottomRowSmooth");
+
+    const [aboutSmoothState, setAboutSmoothState] = useState("aboutSmooth");
+
+    const [portfolioSmoothState, setPortfolioSmoothState] = useState("portfolioSmooth");
+
     const [testState1, setTestState1] = useState();
     const [testState2, setTestState2] = useState();
     const [testState3, setTestState3] = useState();
@@ -205,39 +211,105 @@ export default function MainContainer() {
                     setFadeState([false, true, true, true])
                     testState1.goToAndPlay(1);
                     setTransitionState("fadeInIcon")
+                    if (aboutSmoothState === "aboutSmooth") {
+                        setAboutSmoothState("")
+                    }
                     } :
                     index === 1 && clickedState ? () => {
                         handlePageChange('Portfolio')
                         setFadeState([true, false, true, true])
                         testState2.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
+                        if (portfolioSmoothState === "portfolioSmooth") {
+                            setPortfolioSmoothState("")
+                        }
                     } :
                     index === 2 && clickedState ? () => {
                         handlePageChange('Contact')
                         setFadeState([true, true, false, true])
                         testState3.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
+                        if (bottomRowSmoothState === "bottomRowSmooth") {
+                            setBottomRowSmoothState("")
+                        }
                     } :
                     index === 3 && clickedState ? () => {
                         handlePageChange('Resume')
                         setFadeState([true, true, true, false])
                         testState4.goToAndPlay(1);
                         setTransitionState("fadeInIcon")
+                        if (bottomRowSmoothState === "bottomRowSmooth") {
+                            setBottomRowSmoothState("")
+                        }
                     } :
                     null
                 }
                 ></img>
             ))}
+
+            <div className='row topNavButtons topButtonText'>
+                <p className={fadeState[0] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    About
+                </p>
+                <p className={fadeState[1] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Portfolio
+                </p>
+                <p className={fadeState[2] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Contact
+                </p>
+                <p className={fadeState[3] && clickedState ?
+                    `navIcon col-3 col-sm-3 col-md-3 invisibleIcon ${fadeInState}` :
+                    !clickedState ?
+                    'navIcon col-3 col-sm-3 col-md-3 invisibleIcon' :
+                    'navIcon col-3 col-sm-3 col-md-3 hiddenIcon'
+                }
+                >
+                    Resume
+                </p>
+            </div>
+
         </div>
+
+
         
         <div className={fadeState[0] && fadeState[1] ?
         `hiddenRow row mainButtonContainer ${removeItemState}` :
         "row mt-3 mainButtonContainer"}>
+            <div
+            className={fadeState[0] ?
+                `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState} ${aboutSmoothState}` :
+                `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            onAnimationEnd={ !fadeState[0] &&
+                aboutSmoothState === "aboutSmooth" && removeItemState === "removedItem" ?
+                () => {
+                    setAboutSmoothState("")
+                    console.log("great3")
+                } :
+                () => {console.log("great4")}
+            }
+            >
             <Spritesheet
-                className={fadeState[0] ?
-                    `hiddenItem aboutMeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[0] && clickedState ? `aboutMeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `aboutMeAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtAboutMe.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -281,11 +353,34 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+            <div className={ !fadeState[0] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
+            <h1 className='iconText'>About</h1>
+            </div>
+            </div>
+
+            <div
+            className={fadeState[1] ?
+                `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState} ${portfolioSmoothState}` :
+                `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            onAnimationEnd={ !fadeState[1] &&
+                portfolioSmoothState === "portfolioSmooth" && removeItemState === "removedItem" ?
+                () => {
+                    setPortfolioSmoothState("")
+                    console.log("great5")
+                } :
+                () => {console.log("great6")}
+            }
+            >
             <Spritesheet
-                className={fadeState[1] ?
-                    `hiddenItem portfolioAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[1] && clickedState ? `portfolioAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `portfolioAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtPortfolio.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -320,16 +415,43 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className={ !fadeState[1] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
+            <h1 className='iconText'>Portfolio</h1>
             </div>
+
+            </div>
+            </div>
+
             <div className={fadeState[2] && fadeState[3] ?
             `hiddenRow row mainButtonContainer ${removeItemState}` :
-            fadeState[0] && fadeState[1] ? "row mt-3 mainButtonContainer" :
-            "row mainButtonContainer"}>
+            fadeState[0] && fadeState[1] ? `row mt-3 mainButtonContainer ${bottomRowSmoothState}` :
+            "row mainButtonContainer"}
+            onAnimationEnd={ fadeState[0] && fadeState[1] &&
+                bottomRowSmoothState === "bottomRowSmooth" && removeItemState === "removedItem" ?
+                () => {
+                    setBottomRowSmoothState("")
+                    console.log("great")
+                } :
+                () => {console.log("great2")}
+            }
+            >
+
+            <div
+            className={fadeState[2] ?
+                `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `contactAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[2] ?
-                    `hiddenItem contactAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[2] && clickedState ? `contactAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `contactAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtContact.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -364,11 +486,28 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className={ !fadeState[2] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
+            <h1 className='iconText'>Contact</h1>
+            </div>
+
+            </div>
+
+            <div
+            className={fadeState[3] ?
+                `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
+                (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` :
+                `resumeAnimation col-md-5 iconStartAppear hoverFX`)
+            }
+            >
             <Spritesheet
-                className={fadeState[3] ?
-                    `hiddenItem resumeAnimation col-md-5 ${removeItemState}` :
-                    (!fadeState[3] && clickedState ? `resumeAnimation col-md-5 ${transitionButtonClassState} ${transitionState}` : `resumeAnimation col-md-5 iconStartAppear hoverFX`)
-                }
+
                 image={require('./assets/images/PortfolioArtResume.webp')}
                 widthFrame={351}
                 heightFrame={351}
@@ -404,6 +543,18 @@ export default function MainContainer() {
                         },500);
                     }}
             />
+
+            <div className={ !fadeState[3] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
+            <h1 className='iconText'>Resume</h1>
+            </div>
+
+            </div>
             </div>
             <div className="mainContainer">
                 {/* 

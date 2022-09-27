@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
-
 html {
   /* Prevents scrollbar displacing content when toggling appearing/disappearing */
   width: 100%;
@@ -9,7 +7,7 @@ html {
 body {
   margin: 0;
   background: #BAE2F2 !important;
-  font-family: 'Oswald', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   font-weight: 400; 
@@ -59,6 +57,11 @@ code {
   }
 }
 
+h1, h2, h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+}
+
 .row {
   --bs-gutter-x: 0rem !important;
   margin-right: 0 !important;
@@ -94,33 +97,7 @@ code {
 }
 
 .nav-link:hover {
-	-webkit-animation: text-shadow-pop-br 0.3s both !important;
-	        animation: text-shadow-pop-br 0.3s both !important;
-}
 
-@-webkit-keyframes text-shadow-pop-br {
-  0% {
-    text-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white;
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
-  100% {
-    text-shadow: 0.2px 0.2px white, 0.5px 0.5px white, 1px 1px white, 1.5px 1.5px white, 2px 2px white, 2.4px 2.4px white, 2.8px 2.8px white, 3px 3px white;
-    -webkit-transform: translateX(-3px) translateY(-3px);
-            transform: translateX(-3px) translateY(-3px);
-  }
-}
-@keyframes text-shadow-pop-br {
-  0% {
-    text-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white;
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
-  100% {
-    text-shadow: 0.2px 0.2px white, 0.5px 0.5px white, 1px 1px white, 1.5px 1.5px white, 2px 2px white, 2.4px 2.4px white, 2.8px 2.8px white, 3px 3px white;
-    -webkit-transform: translateX(-3px) translateY(-3px);
-            transform: translateX(-3px) translateY(-3px);
-  }
 }
 
 
@@ -136,6 +113,14 @@ code {
 
 .dropdown {
   display: none;
+}
+
+body h1, body h2, body h3
+{
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 
@@ -158,13 +143,11 @@ code {
 .headerComponent h1 {
   color: white;
   margin-top: 1rem;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent h2 {
   color: white;
   /* opacity: 80%; */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
 }
 
 .headerComponent a {
@@ -175,18 +158,32 @@ code {
   color: black;
   /* background-color: #BAE2F2; */
   background-color: white;
-  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.3);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  font-weight: bold;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  transition: .4s ease-in-out;
 }
 
 .headerComponent a:hover {
   color: black;
-  -webkit-animation: text-shadow-pop-br 0.3s both !important;
-  animation: text-shadow-pop-br 0.3s both !important;
-  /* ADJUST THE ANIMATIONS/COLORS, MAYBE MAKE IT JUST THE BOX THAT GETS A SHADOW? */
+  background-color: #BAE2F2;
 }
+
+@media screen and (min-width : 1500px) {
+
+  .topNavButtons {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .iconText {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
 
 @media screen and (max-width: 1199px) {
   .profilePicture {
@@ -198,7 +195,36 @@ code {
   .row {
     justify-content: center;
   }
+  .topButtonText {
+    top: -1.5rem !important;
+  }
 }
+
+@media screen and (max-width : 1499px) {
+
+  .topNavButtons {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media screen and (min-width : 1024px) {
+  .topButtonText p {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width : 1023px) {
+
+  .topNavButtons {
+    font-size: 1rem !important;
+  }
+  .topButtonText {
+    top: -1rem !important;
+  }
+}
+
+
 
 @media screen and (max-width: 991px) {
   .top-border {
@@ -262,6 +288,12 @@ code {
     margin-left: 4rem;
   }
 
+}
+
+@media screen and (max-width: 800px) {
+  .iconText {
+    top: -3.5rem !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -374,6 +406,18 @@ code {
   }
 }
 
+@media screen and (max-width: 620px) {
+  .iconText {
+    top: -3rem !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .topButtonText p {
+    border-radius: 0.6rem !important;
+  }
+}
+
 @media screen and (max-width: 532px) {
 
   .mainButtonContainer {
@@ -395,6 +439,32 @@ code {
     padding-right: 15% !important;
   }
 
+  .topButtonText {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+  .iconText {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}
+
+@media screen and (max-width: 415px) {
+
+  .topButtonText {
+    font-size: 0.9rem !important;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .iconText {
+    top: -2.7rem !important;
+  }
 }
 
 @media screen and (max-width: 399px) {
@@ -407,6 +477,49 @@ code {
   }
 
 }
+
+@media screen and (max-width: 370px) {
+  .iconText {
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    top: -2rem !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .topButtonText {
+    font-size: 0.8rem !important;
+  }
+
+  .topButtonText p {
+    border-radius: 0.4rem !important;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .iconText {
+    top: -1.7rem !important;
+  }
+}
+
+@media screen and (max-width: 315px) {
+
+  .topButtonText {
+    font-size: 0.7rem !important;
+  }
+
+}
+
+@media screen and (max-width: 275px) {
+
+  .topButtonText {
+    font-size: 0.6rem !important;
+  }
+
+}
+
 
 .aboutPage {
   color: black;
@@ -423,8 +536,8 @@ code {
   /* border: 5px solid #2B52C1; */
 }
 
-.aboutPage h1 {
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+.aboutTitle {
+  margin-bottom: 1rem;
 }
 
 .bioContainer .row {
@@ -442,10 +555,10 @@ code {
   border-radius: 0.5rem;
   color: #fff;
   background-color: #2B52C1;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
   transition: all 0.4s ease-in-out;
 }
 
@@ -507,7 +620,53 @@ code {
   margin-right: 0.5rem;
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
   backface-visibility: hidden;
+  text-align: center
+}
 
+.relativeText {
+  pointer-events: none;
+  position: relative;
+}
+
+.iconText {
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-bottom: .25rem;
+  background-color: #2B52C1;
+  color: white;
+  border-top: solid white;
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+
+
+.topButtonText {
+  pointer-events: none;
+  top: -2rem;
+  padding-left: 4.5% !important;
+  padding-right: 4.5% !important;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.topButtonText p {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  margin-block-end: 0;
+  color:white;
+  border-radius: 1rem;
+  background-color: #2B52C1;
+  border-top: solid white;
+  margin-left: 1%;
+  margin-right: 1%;
+  filter: none;
 }
 
 .hoverFX {
@@ -579,15 +738,111 @@ code {
   fadeIn 800ms ease-in-out 100ms forwards;
 }
 
+.bottomRowSmooth {
+  animation: 
+  rowSmoother 300ms ease-out 600ms forwards;
+}
+
+.aboutSmooth {
+  animation: 
+  aboutSmoother 300ms ease-out 600ms forwards;
+}
+
+.portfolioSmooth {
+  animation: 
+  portfolioSmoother 300ms ease-out 600ms forwards;
+}
+
+.iconTextFadeAway {
+  animation: 
+  fadeOutRegular 500ms 0ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
-    padding-top: 0rem;
+    transform: translateY(0rem);
   }
 
   to {
     opacity: 0;
-    padding-top: 5rem;
+    transform: translateY(5rem);
+  }
+}
+
+@keyframes fadeOutRegular {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rowSmoother {
+  0% {
+    transform: translateY(-1rem);
+  }
+
+  20% {
+    transform: translateY(1rem);
+  }
+
+  40% {
+    transform: translateY(-0.5rem);
+  }
+
+  60% {
+    transform: translateY(0.3rem);
+  }
+
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes aboutSmoother {
+  0% {
+    transform: translateX(1rem);
+  }
+
+  20% {
+    transform: translateX(-1rem);
+  }
+
+  40% {
+    transform: translateX(0.5rem);
+  }
+
+  60% {
+    transform: translateX(-0.3rem);
+  }
+
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes portfolioSmoother {
+  0% {
+    transform: translateX(-1rem);
+  }
+
+  20% {
+    transform: translateX(1rem);
+  }
+
+  40% {
+    transform: translateX(-0.5rem);
+  }
+
+  60% {
+    transform: translateX(0.3rem);
+  }
+
+  100% {
+    transform: translateX(0rem);
   }
 }
 
@@ -604,12 +859,12 @@ code {
 @keyframes smallerFadeOut {
   from {
     opacity: 1;
-    padding-top: 0.5rem;
+    transform: translateY(0rem);
   }
 
   to {
     opacity: 0;
-    padding-top: 2rem;
+    transform: translateY(2rem);
   }
 }
 
@@ -658,6 +913,8 @@ code {
   }
 }
 
+
+
 .removedItem {
   display: none;
 }
@@ -678,7 +935,6 @@ code {
 
 .portfolioContainer h1 {
   margin-bottom: 1rem;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .imageContainer {
@@ -719,7 +975,6 @@ code {
   text-decoration: none;
   color: black;
   transition: 0.3s ease-in-out;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
   display: inline-block;
 }
 
@@ -733,7 +988,6 @@ code {
 .projectText {
   padding-top: 0.5rem;
   /* padding-bottom: 0.5rem; */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 /* .projectText:hover {
@@ -746,10 +1000,10 @@ code {
   border-radius: 0.5rem;
   color: #fff !important;
   background-color: #2B52C1;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
   transition: all 0.4s ease-in-out;
   /* padding-bottom: 0.5rem; */
 }
@@ -785,7 +1039,6 @@ code {
 
 .contactTitle {
   color: black;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .contactContainer {
@@ -797,6 +1050,8 @@ code {
 	margin: auto;
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
 }
+
+
 
 #contact-form {
   margin: 0rem 1.5rem 1.5rem 1.5rem;
@@ -867,10 +1122,10 @@ code {
   justify-content: center;
   border-radius: 0.5rem;
   color: #fff;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-  /* font-weight: bold; */
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
   transition: all 0.4s ease-in-out;
   margin-bottom: -1rem;
   padding-bottom: 0.2rem;
@@ -889,6 +1144,34 @@ code {
   filter: drop-shadow(6.7px 6.7px 5.3px rgba(0,0,0,0.3));
 }
 
+@media screen and (max-width: 430px) {
+  .portfolioContainer {
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    border-radius: 0rem;
+  }
+
+  .contactContainer, .resumeContainer {
+    border-radius: 0rem;
+    max-width: 100% !important;
+  }
+
+  .contactContainer {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .aboutContainer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .aboutPage {
+    border-radius: 0rem;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
 .resumePage {
   color: black;
   padding-top: 1rem;
@@ -899,12 +1182,7 @@ code {
 
 .resumeTitle {
   color: black;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
   margin-bottom: 1rem;
-}
-
-.resumePageTitles, .school h3, .work h3, .resumePageDescriptions h3, .mobilePageTitles {
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
 }
 
 .resumePage .row {

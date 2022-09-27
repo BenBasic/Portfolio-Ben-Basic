@@ -45,9 +45,11 @@ export default function Contact() {
               )
                 .then((response) => {
                   console.log('Email has been sent!', response.status, response.text); // If send works, log a message with the response status and text
+                  setErrorMessage("Your email has been sent!");
                 })
                 .catch((err) => {
                   console.log('Email failed to send', err); // If send fails, log a message with the error
+                  setErrorMessage("Your email failed to send, please try again");
                 });
             // Setting the formState to empty values so that the formState clears after being submitted
             setFormState({ ...formState,
