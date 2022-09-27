@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-Ben-Basic/static/css/main.a7bb2037.css",
-    "main.js": "/Portfolio-Ben-Basic/static/js/main.18f5c809.js",
+    "main.css": "/Portfolio-Ben-Basic/static/css/main.eb9f8f08.css",
+    "main.js": "/Portfolio-Ben-Basic/static/js/main.a05820e6.js",
     "static/js/787.12e7f510.chunk.js": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js",
     "static/media/me.webp": "/Portfolio-Ben-Basic/static/media/me.dab420165a1d3cc5e8f2.webp",
     "static/media/PortfolioArtPortfolio.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolio.19fe5bbb594b4ca7de3c.webp",
@@ -17,14 +17,14 @@
     "static/media/PortfolioArtContactSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtContactSingle.170d5daeda2911b40fd3.webp",
     "static/media/PWA Text Editor.webp": "/Portfolio-Ben-Basic/static/media/PWA Text Editor.0eb7c5abddec6fb8f6b0.webp",
     "static/media/PortfolioArtPortfolioSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtPortfolioSingle.829d953d5f13546a569f.webp",
-    "static/media/PortfolioArtResumeSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtResumeSingle.644d6497eed03d9c9115.webp",
     "index.html": "/Portfolio-Ben-Basic/index.html",
-    "main.a7bb2037.css.map": "/Portfolio-Ben-Basic/static/css/main.a7bb2037.css.map",
-    "main.18f5c809.js.map": "/Portfolio-Ben-Basic/static/js/main.18f5c809.js.map",
+    "static/media/PortfolioArtResumeSingle.webp": "/Portfolio-Ben-Basic/static/media/PortfolioArtResumeSingle.644d6497eed03d9c9115.webp",
+    "main.eb9f8f08.css.map": "/Portfolio-Ben-Basic/static/css/main.eb9f8f08.css.map",
+    "main.a05820e6.js.map": "/Portfolio-Ben-Basic/static/js/main.a05820e6.js.map",
     "787.12e7f510.chunk.js.map": "/Portfolio-Ben-Basic/static/js/787.12e7f510.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7bb2037.css",
-    "static/js/main.18f5c809.js"
+    "static/css/main.eb9f8f08.css",
+    "static/js/main.a05820e6.js"
   ]
 }
