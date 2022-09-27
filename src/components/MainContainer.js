@@ -353,7 +353,13 @@ export default function MainContainer() {
                         },500);
                     }}
             />
-            <div className='relativeText'>
+            <div className={ !fadeState[0] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
             <h1 className='iconText'>About</h1>
             </div>
             </div>
@@ -410,7 +416,13 @@ export default function MainContainer() {
                     }}
             />
 
-            <div className='relativeText'>
+            <div className={ !fadeState[1] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
             <h1 className='iconText'>Portfolio</h1>
             </div>
 
@@ -475,7 +487,13 @@ export default function MainContainer() {
                     }}
             />
 
-            <div className='relativeText'>
+            <div className={ !fadeState[2] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
             <h1 className='iconText'>Contact</h1>
             </div>
 
@@ -526,7 +544,13 @@ export default function MainContainer() {
                     }}
             />
 
-            <div className='relativeText'>
+            <div className={ !fadeState[3] && clickedState ?
+                `relativeText iconTextFadeAway ${removeItemState}` :
+                clickedState ?
+                `relativeText ${removeItemState}` :
+                'relativeText'
+            }
+            >
             <h1 className='iconText'>Resume</h1>
             </div>
 

@@ -739,6 +739,11 @@ h1, h2, h3 {
   portfolioSmoother 300ms ease-out 600ms forwards;
 }
 
+.iconTextFadeAway {
+  animation: 
+  fadeOutRegular 500ms 0ms forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -748,6 +753,16 @@ h1, h2, h3 {
   to {
     opacity: 0;
     transform: translateY(5rem);
+  }
+}
+
+@keyframes fadeOutRegular {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 
