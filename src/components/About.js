@@ -11,7 +11,7 @@ export default function About() {
     return (
         <div className={`container aboutContainer ${finishPageAppearState}`}>
             <div className='mx-5 mt-md-5 mt-3 p3 aboutPage'>
-                <h1 className='text-center'>About Me</h1>
+                <h1 className='text-center aboutTitle'>About Me</h1>
                 <div className='row'>
                 <div className="col-md-2">
                     <img className='profilePicture' src={require('./assets/images/me.webp')} alt='Benjamin Basic smiling' />

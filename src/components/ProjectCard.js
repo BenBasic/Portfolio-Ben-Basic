@@ -20,7 +20,7 @@ export default function ProjectCard({ project }) {
                     
                     <a className='githubText' href={repo} target="_blank" rel="noreferrer">GitHub Repository</a>
 
-                <p className='d-flex justify-content-center'>{description}</p>
+                <p className='d-flex mt-3 justify-content-center'>{description}</p>
             </div>
         </div>
     );
