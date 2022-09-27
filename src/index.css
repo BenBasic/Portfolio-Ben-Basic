@@ -162,10 +162,12 @@ body h1, body h2, body h3
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
+  transition: .4s ease-in-out;
 }
 
 .headerComponent a:hover {
   color: black;
+  background-color: #BAE2F2;
 }
 
 @media screen and (min-width : 1500px) {
