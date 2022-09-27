@@ -185,6 +185,9 @@ h1, h2, h3 {
   .row {
     justify-content: center;
   }
+  .topButtonText {
+    top: -1.5rem !important;
+  }
 }
 
 @media screen and (max-width : 1499px) {
@@ -205,6 +208,9 @@ h1, h2, h3 {
 
   .topNavButtons {
     font-size: 1rem !important;
+  }
+  .topButtonText {
+    top: -1rem !important;
   }
 }
 
@@ -339,11 +345,6 @@ h1, h2, h3 {
     padding-right: 20% !important;
   }
 
-  .topButtonText {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
   /* .navIcon {
     max-width: 50% !important;
     padding: 0% !important;
@@ -398,6 +399,12 @@ h1, h2, h3 {
 @media screen and (max-width: 620px) {
   .iconText {
     top: -3rem !important;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .topButtonText p {
+    border-radius: 0.6rem !important;
   }
 }
 
@@ -473,6 +480,10 @@ h1, h2, h3 {
 
   .topButtonText {
     font-size: 0.8rem !important;
+  }
+
+  .topButtonText p {
+    border-radius: 0.4rem !important;
   }
 
 }
@@ -623,6 +634,10 @@ h1, h2, h3 {
 
 
 .topButtonText {
+  pointer-events: none;
+  top: -2rem;
+  padding-left: 4.5% !important;
+  padding-right: 4.5% !important;
   text-align: center;
   font-size: 1rem;
 }
@@ -631,6 +646,13 @@ h1, h2, h3 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 600;
   margin-block-end: 0;
+  color:white;
+  border-radius: 1rem;
+  background-color: #2B52C1;
+  border-top: solid white;
+  margin-left: 1%;
+  margin-right: 1%;
+  filter: none;
 }
 
 .hoverFX {
