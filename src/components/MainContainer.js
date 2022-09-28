@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar';
-import NavBarMobile from './NavBarMobile';
 import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
@@ -8,6 +6,8 @@ import Resume from './Resume';
 import Spritesheet from 'react-responsive-spritesheet';
 
 export default function MainContainer() {
+
+    // Setting currentPage to an empty value, will have a value set when a page is selected
     const [currentPage, setCurrentPage] = useState('');
 
     // Running if statements within the renderPage function to check for what page the user is on, then returning the appropriate component based on that
@@ -26,8 +26,10 @@ export default function MainContainer() {
         }
     };
 
+    // Event handler for changing page content
     const handlePageChange = (page) => setCurrentPage(page);
 
+    // Array of objects containing values required for top navigation icons
     const buttonArray = [
         {
             title: "About Me",
@@ -47,105 +49,126 @@ export default function MainContainer() {
         },
     ]
 
+    // Assigning clickedState a value of false, will be set to true once user clicks on one of the home page icons
     const [clickedState, setClickedState] = useState(false);
 
+    /* Assigning fadeState an array of false values, will set values of unselected pages to true when a page is selected,
+    this will control which icons are invisible/fade away and which ones are set to visible/fade in
+    */
     const [fadeState, setFadeState] = useState([false, false, false, false]);
 
+    /* Assigning removeItemState an empty value, once a timer finishes counting down it will be set to a
+    class name which will make any element containing removeItemState to have a display value of none
+    which will make that element not interfere with positioning of other elements
+    */
     const [removeItemState, setRemoveItemState] = useState("");
 
+    /* Assigning fadeInState an empty value, once a timer finishes counting down it will be set to a
+    class name which will make any element containing fadeInState to play a fading in animation.
+    This is currently used for fading in the top navigation icons
+    */
     const [fadeInState, setFadeInState] = useState("");
 
+    /* Assigning transitionState an empty value, once a timer finishes counting down it will be set to a
+    class name which will make any element containing transitionState to play a fading in animation.
+    This is currently used for fading in the main icon spritesheets when a matching top navigation icon is clicked
+    */
     const [transitionState, setTransitionState] = useState("");
 
-    const [spriteState, setSpriteState] = useState([]);
-
+    /* Assigning bottomRowSmoothState a class name value which will make the bottom 2 homepage icons
+    have a bouncier and less janky looking animation when they move to the center of the screen after being
+    selected from the home page. Will be set to an empty value after the animation finishes to
+    avoid CSS related conflicts
+    */
     const [bottomRowSmoothState, setBottomRowSmoothState] = useState("bottomRowSmooth");
 
+    /* Assigning aboutSmoothState a class name value which will make the About homepage icon
+    have a bouncier animation when moving to the center of the screen after being
+    selected from the home page. Will be set to an empty value after the animation finishes to
+    avoid CSS related conflicts
+    */
     const [aboutSmoothState, setAboutSmoothState] = useState("aboutSmooth");
 
+    /* Assigning portfolioSmoothState a class name value which will make the Portfolio homepage icon
+    have a bouncier animation when moving to the center of the screen after being
+    selected from the home page. Will be set to an empty value after the animation finishes to
+    avoid CSS related conflicts
+    */
     const [portfolioSmoothState, setPortfolioSmoothState] = useState("portfolioSmooth");
 
+    /* Assigning testStates to a null value, will be set to the value of the spritesheet instances for
+    the icon spritesheets and be referenced in a function which prevents errors relating to the spritesheets
+    not playing their animations
+    */
     const [testState1, setTestState1] = useState();
     const [testState2, setTestState2] = useState();
     const [testState3, setTestState3] = useState();
     const [testState4, setTestState4] = useState();
 
+    /* Assigning transitionButtonClassState a class name value which will be referenced in a function
+    which prevents errors relating to the spritesheets not playing their animations
+    */
     const [transitionButtonClassState, setTransitionButtonClassState] = useState("buttonTransition");
     
-    console.log("CLICKED IS");
-    console.log(clickedState);
-    console.log("FADE IS");
-    console.log(fadeState);
-    console.log("FADESTATE ARRAY CHECK IS");
-    console.log(fadeState[0]);
-
-    let removedItem;
-
+    // Assigning count a value of 80, this time is required to have CSS animations trigger at correct times
     var count = 80;
 
-    var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
-
-    console.log("removedItem check")
-    console.log(removeItemState)
+    // Assigning counter to run the timer function, setting a value of 10 which will run the timer every 100th of a second
+    var counter = setInterval(timer, 10);
 
 
+    // Function which counts down the count value, this is used to trigger CSS classes and animations at intended time
     function timer()
     {
+        // Checking if one of the main home page icons has been clicked on
         if (clickedState) {
 
+            /* Checking if countdown has finished, if it has then the counter interval will be cleared
+            and the appropriate elements will be set to a display of none or play a fade in animation,
+            the count value is then set back to its original value
+            */
             if (count <= 0)
             {
-                console.log("COUNTDOWN FINISHED")
                 clearInterval(counter);
                 setRemoveItemState("removedItem")
                 setFadeInState("fadeInIcon")
-                console.log("INSIDE IF REMOVE ITEM IS-----")
-                console.log(removeItemState)
-                removedItem = "removedItem"
                 count = 80
-                //console.log("COUNT WITHIN IF")
-                //console.log(count)
                 return;
             }
+            // Decrements the value of count by 1
             count--; 
-            //console.log("COUNT ELSE")
-            //console.log(count)
-
         }
     }
 
-    console.log("RETURN COUNT CHECK")
-    console.log(count)
 
-    console.log("++++++++++++++++++++++++ INSTANCE CHECK +++++++++++++++++++++++++++")
-    console.log(spriteState)
-
-    console.log("NULL CHECK")
-    console.log(!spriteState[2])
-
-
-
+    /* Function that prevents animation playback errors from occuring on main icon spritesheets if resizing occurs,
+    also prevents main icon spritesheets from being invisible due to errors causing their scale/height to be a value of 0
+    */
     function scaleFix(value) {
         
+        // Assigning variables to elements matching the spritesheet classnames
         const color = document.getElementsByClassName("react-responsive-spritesheet-container")
         const spriteHeights = document.getElementsByClassName("react-responsive-spritesheet")
-        console.log("CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- CSS --- ");
     
+        // Assigning variables to empty arrays, values in the array will be defined by the for loops below
         const cssValueArray = [];
         const cssHeightArray = [];
         
+        // For loop which cycles through the array to add the transform scale value into the cssValueArray
         for (let i = 0; i < color?.length; i++) {
             cssValueArray.push(
                 parseFloat(color[i]?.style.transform.replaceAll("scale(", "").slice(0, -1))
             )
         }
     
+        // For loop which cycles through the array to add the height value into the cssHeightArray
         for (let i = 0; i < spriteHeights?.length; i++) {
             cssHeightArray.push(
                 parseFloat(spriteHeights[i]?.style.height.replaceAll("px", ""))
             )
         }
     
+        // Assigning variables to a value if the numbers within the arrays are greater than 0
         var greaterThanArray = cssValueArray.filter(function(scaleValue) {
             return scaleValue > 0;
         });
@@ -153,25 +176,16 @@ export default function MainContainer() {
         var greaterThanHeightArray = cssHeightArray.filter(function(scaleValue) {
             return scaleValue > 0;
         });
-    
-        console.log(greaterThanArray)
-        console.log(greaterThanHeightArray)
         
-    
+        // Assigning variables to the style property of their elements, using ? to prevent errors if ran before value is grabbed
         let newValueYay = color[value]?.style
         let newHeightYay = spriteHeights[value]?.style
-    
-        console.log(newValueYay)
-        console.log(cssValueArray)
-        console.log(cssHeightArray)
-        console.log(newHeightYay?.height)
 
+        // Assigning new css style values for transform scale and height, overwriting any value which was previously 0
         newValueYay.transform = `scale(${greaterThanArray[0]})`
         newHeightYay.height = `${greaterThanHeightArray[0]}px`
-        console.log("New Scale check is")
-        // console.log(scaleChecking)
-        console.log(newValueYay)
 
+        // Sets transitionButtonClassState to an empty value, and then setting the value to a class name after setTimeout finishes
         setTransitionButtonClassState("")
         setTimeout(function(){
             setTransitionButtonClassState("buttonTransition")
@@ -179,14 +193,6 @@ export default function MainContainer() {
 
     }
 
-    console.log("SPRITE STATE UNDEFINED CHECK%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    console.log(spriteState[3])
-    console.log(spriteState[3] == null)
-    console.log("truthy check")
-    console.log(!fadeState[3])
-    console.log(spriteState.length < 4)
-    console.log("NEW STATE ATTEMPT CHECKING")
-    console.log([testState1, testState2, testState3, testState4])
 
     return (
         <>
@@ -303,9 +309,8 @@ export default function MainContainer() {
                 aboutSmoothState === "aboutSmooth" && removeItemState === "removedItem" ?
                 () => {
                     setAboutSmoothState("")
-                    console.log("great3")
                 } :
-                () => {console.log("great4")}
+                () => null
             }
             >
             <Spritesheet
@@ -318,26 +323,16 @@ export default function MainContainer() {
                 autoplay={false}
                 loop={false}
                 onPlay={spritesheet => {
-                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    // Assigning variable to the scale value from the spritesheet instance
                     let scaleChecking = spritesheet.getInfo('scale')
-                    console.log(scaleChecking)
+
+                    // If the scale value is 0, then the scaleFix function will trigger, preventing errors from occuring
                     if (scaleChecking === 0)  {
-                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                         scaleFix(0);
-                        // setTransitionButtonClassState("")
-                        // setTimeout(function(){
-                        //     setTransitionButtonClassState("buttonTransition")
-                        // },500);
-                        // newValueYay.transform = `scale(${greaterThanArray[1]})`
-                        // newHeightYay.height = `${greaterThanHeightArray[1]}px`
-                        // console.log("New Scale check is")
-                        // console.log(scaleChecking)
-                        // console.log(newValueYay)
                     }
                 }}
                 getInstance={!clickedState && testState1 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState1(spritesheet); // Also cant use the fadeState to check all without additional check cause it also breaks it
-                    console.log("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")
                 } :
                 null}
                 onClick={clickedState ?
@@ -374,9 +369,8 @@ export default function MainContainer() {
                 portfolioSmoothState === "portfolioSmooth" && removeItemState === "removedItem" ?
                 () => {
                     setPortfolioSmoothState("")
-                    console.log("great5")
                 } :
-                () => {console.log("great6")}
+                () => null
             }
             >
             <Spritesheet
@@ -389,17 +383,16 @@ export default function MainContainer() {
                 autoplay={false}
                 loop={false}
                 onPlay={spritesheet => {
-                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    // Assigning variable to the scale value from the spritesheet instance
                     let scaleChecking = spritesheet.getInfo('scale')
-                    console.log(scaleChecking)
+                    
+                    // If the scale value is 0, then the scaleFix function will trigger, preventing errors from occuring
                     if (scaleChecking === 0)  {
-                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                         scaleFix(1);
                     }
                 }}
                 getInstance={!clickedState && testState2 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState2(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
-                    console.log("22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222")
                 } :
                 null}
                 onClick={clickedState ?
@@ -437,9 +430,8 @@ export default function MainContainer() {
                 bottomRowSmoothState === "bottomRowSmooth" && removeItemState === "removedItem" ?
                 () => {
                     setBottomRowSmoothState("")
-                    console.log("great")
                 } :
-                () => {console.log("great2")}
+                () => null
             }
             >
 
@@ -460,17 +452,16 @@ export default function MainContainer() {
                 autoplay={false}
                 loop={false}
                 onPlay={spritesheet => {
-                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    // Assigning variable to the scale value from the spritesheet instance
                     let scaleChecking = spritesheet.getInfo('scale')
-                    console.log(scaleChecking)
+
+                    // If the scale value is 0, then the scaleFix function will trigger, preventing errors from occuring
                     if (scaleChecking === 0)  {
-                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                         scaleFix(2);
                     }
                 }}
                 getInstance={!clickedState && testState3 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState3(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
-                    console.log("3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333")
                 } :
                 null}
                 onClick={clickedState ?
@@ -516,18 +507,17 @@ export default function MainContainer() {
                 autoplay={false}
                 loop={false}
                 onPlay={spritesheet => {
-                    console.log("SCAAAAAAAAAAAAAAAAAAALLLLLEEEEEE")
+                    // Assigning variable to the scale value from the spritesheet instance
                     let scaleChecking = spritesheet.getInfo('scale')
-                    console.log(scaleChecking)
+
+                    // If the scale value is 0, then the scaleFix function will trigger, preventing errors from occuring
                     if (scaleChecking === 0)  {
-                        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                         scaleFix(3);
                     }
                 }}
                 getInstance={
                     !clickedState && testState4 == null ? spritesheet => { // For some reason using clickedState check with this for multiple doesnt work
                     setTestState4(spritesheet); // Using ...current caused items to be added twice, current[0] etc fixed this
-                    console.log("44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444")
                 } :
                 null}
                 onClick={clickedState ?
@@ -557,10 +547,6 @@ export default function MainContainer() {
             </div>
             </div>
             <div className="mainContainer">
-                {/* 
-                <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-                <NavBarMobile currentPage={currentPage} handlePageChange={handlePageChange} />
-                */}
                 {renderPage()}
             </div>
         </>
