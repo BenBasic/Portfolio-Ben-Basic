@@ -5,12 +5,15 @@ import SkillCard from "./SkillCard"
 
 export default function Resume() {
 
+    // Assigning state to class name values, these will make the page content fade in when triggered to appear
     const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
 
+    // After the set time interval finishes, state is set to an empty value to prevent CSS conflicts
     setTimeout(function(){
         setFinishPageAppearState('')
     },490);
 
+    // Assigning state to an array of objects containing information about my education I wish to display on the page
     const [schools] = useState([
         {
             school: "University of Toronto",
@@ -20,6 +23,7 @@ export default function Resume() {
         },
     ]);
 
+    // Assigning state to an array of objects containing information about my work history I wish to display on the page
     const [jobs] = useState([
         {
             company: "NutraBee",
@@ -35,6 +39,7 @@ export default function Resume() {
         // },
     ]);
 
+    // Assigning state to an array of objects containing information about my frontend skills I wish to display on the page
     const [frontEndSkills] = useState([
         {
             skillItem: "JavaScript",
@@ -59,6 +64,7 @@ export default function Resume() {
         },
     ]);
 
+    // Assigning state to an array of objects containing information about my backend skills I wish to display on the page
     const [backEndSkills] = useState([
         {
             skillItem: "Express",

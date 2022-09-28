@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function Portfolio() {
 
+    // Assigning state to an array of objects containing information about my projects I wish to display on the page
     const [projects] = useState([
         {
             name: "Locally",
@@ -42,8 +43,10 @@ export default function Portfolio() {
         },
     ]);
 
+    // Assigning state to class name values, these will make the page content fade in when triggered to appear
     const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
 
+    // After the set time interval finishes, state is set to an empty value to prevent CSS conflicts
     setTimeout(function(){
         setFinishPageAppearState('')
     },490);

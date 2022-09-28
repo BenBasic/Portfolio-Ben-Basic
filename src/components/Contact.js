@@ -6,8 +6,10 @@ import { send } from 'emailjs-com';
 
 export default function Contact() {
 
+    // Assigning state to class name values, these will make the page content fade in when triggered to appear
     const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
 
+    // After the set time interval finishes, state is set to an empty value to prevent CSS conflicts
     setTimeout(function(){
         setFinishPageAppearState('')
     },490);
