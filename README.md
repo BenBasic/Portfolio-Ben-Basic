@@ -6,10 +6,15 @@
  
   ## Table Of Contents
 
-  - [Screenshots](#screenshots)
   - [Link (Deployed Application)](#link)
+  - [Screenshots](#screenshots)
   - [Installation](#installation)
   - [Questions](#questions)
+
+
+  ## Link
+
+https://benbasic.github.io/Portfolio-Ben-Basic/
 
 
   ## Screenshots
@@ -18,10 +23,6 @@
 ![alt text](assets/images/PortfolioScreenshot1.png)
 ![alt text](assets/images/PortfolioScreenshot2.png)
 
-
-  ## Link
-
-https://benbasic.github.io/Portfolio-Ben-Basic/
 
   ## Installation
 
@@ -35,4 +36,4 @@ If you clone this repo and run it on your computer, you can install it doing the
   ## Questions
 
   This repo was created by https://github.com/BenBasic
-  To contact me, please send an email to Benjamin@TreneonGames.com
+  To contact me, please send an email to BenjaminYBasic@gmail.com
