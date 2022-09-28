@@ -96,10 +96,6 @@ h1, h2, h3 {
   color:white !important;
 }
 
-.nav-link:hover {
-
-}
-
 
 .nav-item {
   color: white;
@@ -675,14 +671,6 @@ body h1, body h2, body h3
 
 .hoverFX:hover {
   scale: 1.1;
-}
-
-.navTransition {
-
-}
-
-.contactAnimation, .resumeAnimation {
-  
 }
 
 .instructions {
