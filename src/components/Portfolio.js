@@ -7,37 +7,37 @@ export default function Portfolio() {
     const [projects] = useState([
         {
             name: "Locally",
-            description: "Full stack MERN application for Toronto based e-commerce",
+            description: "Create and manage your online storefront with this full stack application for Toronto based e-commerce. Developed with a MERN tech stack (MongoDB, Express, React, Node).",
             link: "https://dry-badlands-98649.herokuapp.com/",
             repo: "https://github.com/DlonMusk/Locally",
         },
         {
             name: "Toronto Event Finder",
-            description: "Front end application using MapBox API and TicketMaster API",
+            description: "Find current and upcoming events in the Toronto area with this front end application using MapBox API and TicketMaster API.",
             link: "https://benbasic.github.io/Toronto-Event-Finder/",
             repo: "https://github.com/BenBasic/Toronto-Event-Finder",
         },
         {
             name: "Fun Cooking Converter",
-            description: "Front end application using React for converting ingredient weight and volume",
+            description: "Convert common cooking ingredients between weight and volume values with this front end application using React.",
             link: "https://benbasic.github.io/Fun-Cooking-Converter/",
             repo: "https://github.com/BenBasic/Fun-Cooking-Converter",
         },
         {
             name: "PWA Text Editor",
-            description: "A Progressive Web Application based Text Editor for online and offline text editing",
+            description: "A Progressive Web Application based Text Editor for online and offline text editing, can also be downloaded to your computer as a native application.",
             link: "https://afternoon-castle-19497.herokuapp.com",
             repo: "https://github.com/BenBasic/PWA-Text-Editor",
         },
         {
             name: "Social Network API",
-            description: "Backend using MongoDB and Express",
+            description: "Create, edit, and delete users, posts, comments, and friends lists with this fully functional backend for social networks using MongoDB and Express.",
             link: "https://youtu.be/bd3pFJSZYmM",
             repo: "https://github.com/BenBasic/Social-Network-API",
         },
         {
             name: "Rad Employee Tracker",
-            description: "Back end using node.js and mySQL",
+            description: "Add, modify, and manage departments, roles, and employees with this fully functional backend for employee tracking using Node.js and MySQL.",
             link: "https://youtu.be/y3yFcRdOaNg",
             repo: "https://github.com/BenBasic/Rad-Employee-Tracker",
         },

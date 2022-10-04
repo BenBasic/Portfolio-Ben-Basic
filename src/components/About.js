@@ -19,7 +19,13 @@ export default function About() {
                     <img className='profilePicture' src={require('./assets/images/me.webp')} alt='Benjamin Basic smiling' />
                 </div>
                 <div className="col-md-10 bioContainer">
-                    <p className='bio'>My name is Ben Basic, I'm a 27 year old full stack web developer with a background in animation and hotel management driven by a passion to learn and expand my skill set. Recently certified in Full Stack Web Development from the University of Toronto Coding Boot Camp. An adaptive and quick learner with proficiencies for creative thinking, effective communication and collaborative teamwork.</p>
+                    <p className='bio'>My name is Ben Basic, I'm a full stack web developer with a background in animation and hotel management driven by a passion to learn and expand my skill set. Certified in Full Stack Web Development from the University of Toronto Coding Boot Camp. An adaptive and quick learner with proficiencies for creative thinking, effective communication and collaborative teamwork.
+                    <br></br>
+                    <br></br>
+                    <u>My technical skills</u>
+                    <br></br>
+                    JavaScript, CSS, HTML, React, MySQL, GraphQL, MongoDB, Express, Node, UI/UX, Bootstrap, jQuery, Handlebars, Heroku, and GitHub
+                    </p>
                     <div className='row'>
                         <div className='col-md-6 contactDetails'>
                             

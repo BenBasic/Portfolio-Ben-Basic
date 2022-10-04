@@ -9,9 +9,9 @@ export default function Resume() {
     const [finishPageAppearState, setFinishPageAppearState] = useState("invisibleIcon fadeInPage")
 
     // After the set time interval finishes, state is set to an empty value to prevent CSS conflicts
-    setTimeout(function(){
+    setTimeout(function () {
         setFinishPageAppearState('')
-    },490);
+    }, 490);
 
     // Assigning state to an array of objects containing information about my education I wish to display on the page
     const [schools] = useState([
@@ -88,62 +88,64 @@ export default function Resume() {
 
     return (
         <>
-        <div className={`container resumeContainer ${finishPageAppearState}`}>
-            <div className="mx-5 mt-md-5 mt-3 p3 resumePage">
-            <h1 className='text-center resumeTitle'>Resume</h1>
-                <div className='resumeDownload text-center'>
-                    <p>
-                        <a href='https://docs.google.com/document/d/11R4EKIcuLiq21gNKZl-miMzTM2Ezkj7Y/edit?usp=sharing&ouid=102663915874628547290&rtpof=true&sd=true' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
-                    </p>
-                </div>
-                <div className="row top-border">
-                <h1 className="mobilePageTitles"><span>Education</span></h1>
-                    <div className="col-md-2 resumePageTitles">
-                        <h1><span>Education</span></h1>
+            <div className={`container resumeContainer ${finishPageAppearState}`}>
+                <div className="mx-5 mt-md-5 mt-3 p3 resumePage">
+                    <h1 className='text-center resumeTitle'>Resume</h1>
+                    <div className='resumeDownload text-center'>
+                        <p>
+                            <a href='https://docs.google.com/document/d/11R4EKIcuLiq21gNKZl-miMzTM2Ezkj7Y/edit?usp=sharing&ouid=102663915874628547290&rtpof=true&sd=true' rel="noreferrer" className='resumeButton' target='_blank'>Download Resume</a>
+                        </p>
                     </div>
-                    <div className="col-md-10 resumePageDescriptions">
-                    {schools.map((school, index) => (
-                        <EducationCard education={school} key={"school" + index} />
-                    ))}
-                    </div>
-                </div>
 
-                <div className="row">
-                <h1 className="mobilePageTitles"><span>Work Experience</span></h1>
-                    <div className="col-md-2 resumePageTitles">
-                        <h1><span>Work Experience</span></h1>
-                    </div>
-                    <div className="col-md-10 resumePageDescriptions">
-                    {jobs.map((job, index) => (
-                        <WorkCard work={job} key={"job" + index} />
-                    ))}
-                    </div>
-                </div>
-
-                <div className="row">
-                <h1 className="mobilePageTitles"><span>Skills</span></h1>
-                    <div className="col-md-2 resumePageTitles">
-                        <h1><span>Skills</span></h1>
-                    </div>
-                    <div className="col-md-10 resumePageDescriptions">
-                        <div className="row noUnderline">
-                            <div className="col-md-6">
-                                <h3>Front End</h3>
-                                {frontEndSkills.map((singleSkill, index) => (
-                                    <SkillCard skill={singleSkill} key={"skill" + index} />
-                                ))}
-                            </div>
-                            <div className="col-md-6">
-                                <h3 className="bottomSkill">Back End</h3>
-                                {backEndSkills.map((singleSkill, index) => (
-                                    <SkillCard skill={singleSkill} key={"skill" + index} />
-                                ))}
+                    <div className="row top-border">
+                        <h1 className="mobilePageTitles"><span>Skills</span></h1>
+                        <div className="col-md-2 resumePageTitles">
+                            <h1><span>Skills</span></h1>
+                        </div>
+                        <div className="col-md-10 resumePageDescriptions">
+                            <div className="row noUnderline">
+                                <div className="col-md-6">
+                                    <h3>Front End</h3>
+                                    {frontEndSkills.map((singleSkill, index) => (
+                                        <SkillCard skill={singleSkill} key={"skill" + index} />
+                                    ))}
+                                </div>
+                                <div className="col-md-6">
+                                    <h3 className="bottomSkill">Back End</h3>
+                                    {backEndSkills.map((singleSkill, index) => (
+                                        <SkillCard skill={singleSkill} key={"skill" + index} />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div className="row">
+                        <h1 className="mobilePageTitles"><span>Education</span></h1>
+                        <div className="col-md-2 resumePageTitles">
+                            <h1><span>Education</span></h1>
+                        </div>
+                        <div className="col-md-10 resumePageDescriptions">
+                            {schools.map((school, index) => (
+                                <EducationCard education={school} key={"school" + index} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <h1 className="mobilePageTitles"><span>Work Experience</span></h1>
+                        <div className="col-md-2 resumePageTitles">
+                            <h1><span>Work Experience</span></h1>
+                        </div>
+                        <div className="col-md-10 resumePageDescriptions">
+                            {jobs.map((job, index) => (
+                                <WorkCard work={job} key={"job" + index} />
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
         </>
     )
 }
